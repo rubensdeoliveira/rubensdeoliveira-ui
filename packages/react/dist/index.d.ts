@@ -1,3 +1,8 @@
-declare function App(): JSX.Element
+import React from 'react';
 
-export { App }
+type ButtonModel = {
+    children: React.ReactNode;
+};
+declare function Button({ children }: ButtonModel): JSX.Element;
+
+export { Button };
