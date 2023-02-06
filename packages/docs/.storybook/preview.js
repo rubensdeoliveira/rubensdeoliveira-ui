@@ -14,3 +14,7 @@ export const parameters = {
     theme: themes.dark,
   },
 };
+
+export const globalTypes = {
+  darkMode: true,
+};

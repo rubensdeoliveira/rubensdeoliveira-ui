@@ -6,7 +6,5 @@ type ButtonModel = {
 }
 
 export function Button({ children }: ButtonModel) {
-  return (
-    <button className="bg-zinc-800 p-10 dark:bg-gray-900">{children}</button>
-  )
+  return <button className="bg-black p-10 dark:bg-white">{children}</button>
 }

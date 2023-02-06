@@ -25,7 +25,7 @@ __export(src_exports, {
 module.exports = __toCommonJS(src_exports);
 var import_jsx_runtime = require("react/jsx-runtime");
 function Button({ children }) {
-  return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", { className: "bg-zinc-800 p-10 dark:bg-gray-900", children });
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", { className: "bg-black p-10 dark:bg-white", children });
 }
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {

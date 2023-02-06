@@ -7,7 +7,7 @@ module.exports = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
-    //Configuração para o postcss funcionar na versão 8
+    "storybook-tailwind-dark-mode",
     {
       name: '@storybook/addon-postcss',
       options: {
