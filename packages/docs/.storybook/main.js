@@ -7,15 +7,7 @@ module.exports = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
-    "storybook-tailwind-dark-mode",
-    {
-      name: '@storybook/addon-postcss',
-      options: {
-        postcssLoaderOptions: {
-          implementation: require('postcss'),
-        },
-      },
-    },
+    "storybook-tailwind-dark-mode"
   ],
   framework: "@storybook/react",
   core: {
