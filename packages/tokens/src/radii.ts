@@ -1,8 +1,15 @@
-export const radii = {
-  px: '1px',
-  xs: '4px',
-  sm: '6px',
-  md: '8px',
-  lg: '16px',
-  full: '99999px',
+function generateNumberArray(from: number, to: number) {
+  return [...new Array(to - from + 1)]
+    .map((_, index) => from + index)
+    .filter((page) => page > 0)
 }
+
+let radiiGenerate = {}
+
+generateNumberArray(1, 16).forEach((number) => {
+  radiiGenerate = Object.assign(radiiGenerate, {
+    [number]: `${number}px`,
+  })
+})
+
+export const radii = Object.assign(radiiGenerate, { full: '99999px' })

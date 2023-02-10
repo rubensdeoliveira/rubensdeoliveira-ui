@@ -1,7 +1,7 @@
 # @rubensdeoliveira-ui/tokens
 
-## 1.1.0
+## 1.2.0
 
 ### Minor Changes
 
-- Add new token colors
+- Add new components
