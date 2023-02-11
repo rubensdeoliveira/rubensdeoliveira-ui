@@ -1,5 +1,5 @@
 import { SetStateAction } from 'jotai'
-import { Button } from '../../form'
+import { Button } from '../../form/button'
 import { generatePagesArray } from './helpers'
 
 type ListEntitiesModel<EntityType> = {
