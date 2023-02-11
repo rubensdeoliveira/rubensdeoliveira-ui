@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.4.0
+
+### Minor Changes
+
+- Add components import
+
 ## 1.3.0
 
 ### Minor Changes
