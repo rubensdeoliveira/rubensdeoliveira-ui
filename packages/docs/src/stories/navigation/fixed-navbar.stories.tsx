@@ -1,19 +1,19 @@
 import type { StoryObj, Meta } from '@storybook/react'
-import { Icon, SideBar, SideBarModel } from '@rubensdeoliveira-ui/react'
+import { Icon, FixedNavbar, FixedNavbarModel } from '@rubensdeoliveira-ui/react'
 
 export default {
-  title: 'Navigation/SideBar',
-  component: SideBar,
+  title: 'Navigation/FixedNavbar',
+  component: FixedNavbar,
   args: {
-    children: <span>Conteudo da sidebar</span>,
-    sidebarMainItems: [
+    children: <span>Conteudo da navbar</span>,
+    navbarMainItems: [
       {
         liChildren: <Icon name="AcademicCapIcon" />,
         isActive: true,
         label: 'Home',
       },
     ],
-    sidebarSecondaryItems: [
+    navbarSecondaryItems: [
       {
         liChildren: <Icon name="AcademicCapIcon" />,
         isActive: true,
@@ -27,6 +27,6 @@ export default {
       name: 'Rubens de Oliveira',
     },
   },
-} as Meta<SideBarModel>
+} as Meta<FixedNavbarModel>
 
-export const Primary: StoryObj<SideBarModel> = {}
+export const Primary: StoryObj<FixedNavbarModel> = {}
