@@ -1,6 +1,6 @@
 import React, { ReactNode, useCallback, useMemo, useState } from 'react'
 
-type NavbarItemType = {
+export type NavbarItemType = {
   label: string
   liChildren: React.ReactElement
   isActive: boolean

@@ -1,11 +1,11 @@
 import React, { ReactNode, useCallback, useMemo } from 'react'
 
-type NavbarMenuItemType = {
+export type NavbarMenuItemType = {
   liChildren: React.ReactElement
   isActive: boolean
 }
 
-type NavbarFixedItemType = {
+export type NavbarFixedItemType = {
   liChildren: React.ReactElement
 }
 
