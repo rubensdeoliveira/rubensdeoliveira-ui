@@ -8,7 +8,6 @@ export type ButtonModel = ButtonHTMLAttributes<HTMLButtonElement> & {
   iconRight?: IconName
   isLoading?: boolean
   children?: ReactNode
-  className?: string
 }
 
 export function Button({
