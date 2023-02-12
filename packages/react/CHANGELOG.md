@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.7.0
+
+### Minor Changes
+
+- Add children to button
+
 ## 1.6.0
 
 ### Minor Changes

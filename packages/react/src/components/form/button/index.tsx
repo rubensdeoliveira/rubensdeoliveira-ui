@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, useMemo } from 'react'
+import { ButtonHTMLAttributes, ReactNode, useMemo } from 'react'
 import { Icon, IconName } from '../../icon'
 
 export type ButtonModel = ButtonHTMLAttributes<HTMLButtonElement> & {
@@ -7,6 +7,7 @@ export type ButtonModel = ButtonHTMLAttributes<HTMLButtonElement> & {
   iconLeft?: IconName
   iconRight?: IconName
   isLoading?: boolean
+  children?: ReactNode
 }
 
 export function Button({
@@ -16,6 +17,7 @@ export function Button({
   iconRight,
   type = 'submit',
   isLoading = false,
+  children,
   ...rest
 }: ButtonModel) {
   const renderIconLeft = useMemo(
@@ -32,11 +34,11 @@ export function Button({
     () => (
       <>
         {renderIconLeft}
-        {label}
+        {label || children || undefined}
         {renderIconRight}
       </>
     ),
-    [renderIconLeft, renderIconRight, label],
+    [renderIconLeft, renderIconRight, label, children],
   )
 
   const sharedClassName = `btn gap-2 normal-case ${isLoading ? 'loading' : ''}`
