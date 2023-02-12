@@ -1,7 +1,7 @@
 import * as SolidIcon from '@heroicons/react/24/solid'
 import * as OutlineIcon from '@heroicons/react/24/outline'
 
-type IconName = keyof typeof SolidIcon
+export type IconName = keyof typeof SolidIcon
 
 export type IconModel = {
   name: IconName
@@ -19,5 +19,7 @@ export function Icon({
   const { ...solidIcons } = SolidIcon
   const { ...outlineIcons } = OutlineIcon
   const TheIcon = type === 'solid' ? solidIcons[name] : outlineIcons[name]
-  return <TheIcon style={{ width: size, height: size }} className={className} />
+  return TheIcon ? (
+    <TheIcon style={{ width: size, height: size }} className={className} />
+  ) : null
 }

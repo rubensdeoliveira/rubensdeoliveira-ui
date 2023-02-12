@@ -1,72 +1,73 @@
-import React, { ButtonHTMLAttributes, useMemo } from 'react'
+import { ButtonHTMLAttributes, useMemo } from 'react'
+import { Icon, IconName } from '../../icon'
 
 export type ButtonModel = ButtonHTMLAttributes<HTMLButtonElement> & {
-  label: string
-  buttonType?: 'learnMore' | 'link' | 'dashboard'
-  iconLeft?: React.ForwardRefExoticComponent<
-    React.SVGProps<SVGSVGElement> & {
-      title?: string | undefined
-      titleId?: string | undefined
-    }
-  >
-  iconRight?: React.ForwardRefExoticComponent<
-    React.SVGProps<SVGSVGElement> & {
-      title?: string | undefined
-      titleId?: string | undefined
-    }
-  >
+  label?: string
+  variant?: 'primary' | 'secondary' | 'link' | 'ghost'
+  iconLeft?: IconName
+  iconRight?: IconName
+  isLoading?: boolean
 }
 
 export function Button({
   label,
-  buttonType = 'dashboard',
-  iconLeft: IconLeft,
-  iconRight: IconRight,
+  variant = 'primary',
+  iconLeft,
+  iconRight,
   type = 'submit',
+  isLoading = false,
   ...rest
 }: ButtonModel) {
   const renderIconLeft = useMemo(
-    () => IconLeft && <IconLeft className="h-6 w-6" />,
-    [IconLeft],
+    () => iconLeft && <Icon name={iconLeft} size={24} />,
+    [iconLeft],
   )
 
   const renderIconRight = useMemo(
-    () => IconRight && <IconRight className="h-6 w-6" />,
-    [IconRight],
+    () => iconRight && <Icon name={iconRight} size={24} />,
+    [iconRight],
   )
 
-  if (buttonType === 'learnMore') {
-    return (
-      <button {...rest} className="flex">
-        <span className="flex items-center gap-[0.625rem] text-sm font-medium leading-[1.3] text-[#F50D32] dark:text-red500 md:text-[0.9375rem] lg:text-base">
-          {renderIconLeft}
-          {label}
-          {renderIconRight}
-        </span>
-      </button>
-    )
-  }
-
-  if (buttonType === 'dashboard') {
-    return (
-      <button className="btn gap-2">
+  const renderButtonContent = useMemo(
+    () => (
+      <>
         {renderIconLeft}
         {label}
         {renderIconRight}
-      </button>
-    )
-  }
-
-  return (
-    <button
-      {...rest}
-      className="flex max-h-12 items-center justify-center rounded-lg bg-red900 px-10 py-4 text-white dark:bg-red500 md:max-h-[3.25rem] lg:max-h-14"
-    >
-      <span className="text-sm font-medium leading-[1.3] lg:text-base">
-        {renderIconLeft}
-        {label}
-        {renderIconRight}
-      </span>
-    </button>
+      </>
+    ),
+    [renderIconLeft, renderIconRight, label],
   )
+
+  const sharedClassName = `btn gap-2 normal-case ${isLoading ? 'loading' : ''}`
+
+  switch (variant) {
+    case 'secondary':
+      return (
+        <button {...rest} className={`${sharedClassName} btn-outline`}>
+          {renderButtonContent}
+        </button>
+      )
+    case 'link':
+      return (
+        <button
+          {...rest}
+          className={`${sharedClassName} btn-link no-underline`}
+        >
+          {renderButtonContent}
+        </button>
+      )
+    case 'ghost':
+      return (
+        <button {...rest} className={`${sharedClassName} btn-ghost`}>
+          {renderButtonContent}
+        </button>
+      )
+    default:
+      return (
+        <button {...rest} className={sharedClassName}>
+          {renderButtonContent}
+        </button>
+      )
+  }
 }

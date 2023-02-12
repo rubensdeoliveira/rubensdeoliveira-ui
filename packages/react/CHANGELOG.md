@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.5.0
+
+### Minor Changes
+
+- Add new button types
+
 ## 1.4.0
 
 ### Minor Changes
