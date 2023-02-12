@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.6.0
+
+### Minor Changes
+
+- Add all icons comp
+
 ## 1.5.0
 
 ### Minor Changes
