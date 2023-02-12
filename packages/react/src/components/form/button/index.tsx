@@ -8,6 +8,7 @@ export type ButtonModel = ButtonHTMLAttributes<HTMLButtonElement> & {
   iconRight?: IconName
   isLoading?: boolean
   children?: ReactNode
+  className?: string
 }
 
 export function Button({
@@ -18,6 +19,7 @@ export function Button({
   type = 'submit',
   isLoading = false,
   children,
+  className,
   ...rest
 }: ButtonModel) {
   const renderIconLeft = useMemo(
@@ -41,7 +43,9 @@ export function Button({
     [renderIconLeft, renderIconRight, label, children],
   )
 
-  const sharedClassName = `btn gap-2 normal-case ${isLoading ? 'loading' : ''}`
+  const sharedClassName = `btn gap-2 ${className || ''} ${
+    isLoading ? 'loading' : ''
+  }`
 
   switch (variant) {
     case 'secondary':
