@@ -26,8 +26,11 @@ export function ResponsiveNavbar({
   className,
 }: ResponsiveNavbarModel) {
   const renderNavbarItem = useCallback(
-    (liChildren: React.ReactElement, isActive?: boolean) => (
-      <li className={`${isActive ? 'dark:bg-gray-800 dark:text-gray-50' : ''}`}>
+    (liChildren: React.ReactElement, id: number, isActive?: boolean) => (
+      <li
+        key={id}
+        className={`${isActive ? 'dark:bg-gray-800 dark:text-gray-50' : ''}`}
+      >
         {liChildren}
       </li>
     ),
@@ -36,15 +39,17 @@ export function ResponsiveNavbar({
 
   const renderNavbarMenuItems = useMemo(
     () =>
-      navbarMenuItems.map(({ liChildren, isActive }) =>
-        renderNavbarItem(liChildren, isActive),
+      navbarMenuItems.map(({ liChildren, isActive }, index) =>
+        renderNavbarItem(liChildren, index, isActive),
       ),
     [navbarMenuItems, renderNavbarItem],
   )
 
   const renderNavbarFixedItems = useMemo(
     () =>
-      navbarFixedItems.map(({ liChildren }) => renderNavbarItem(liChildren)),
+      navbarFixedItems.map(({ liChildren }, index) =>
+        renderNavbarItem(liChildren, index),
+      ),
     [navbarFixedItems, renderNavbarItem],
   )
 
