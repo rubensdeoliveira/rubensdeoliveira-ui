@@ -1,5 +1,5 @@
-import type { StoryObj, Meta } from '@storybook/react'
-import { Icon, Navbar, NavbarModel } from '@rubensdeoliveira-ui/react'
+import type { StoryObj } from '@storybook/react'
+import { Icon, Navbar } from '@rubensdeoliveira-ui/react'
 
 export default {
   title: 'Navigation/Navbar',
@@ -27,6 +27,6 @@ export default {
       name: 'Rubens de Oliveira',
     },
   },
-} as Meta<NavbarModel>
+}
 
-export const Primary: StoryObj<NavbarModel> = {}
+export const Primary: StoryObj = {}
