@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.11.0
+
+### Minor Changes
+
+- Add new nvbar
+
 ## 1.10.0
 
 ### Minor Changes
