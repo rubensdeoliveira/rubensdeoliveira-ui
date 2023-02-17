@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.14.0
+
+### Minor Changes
+
+- Add new table
+
 ## 1.13.0
 
 ### Minor Changes

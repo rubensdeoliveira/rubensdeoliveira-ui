@@ -7,7 +7,12 @@ export default {
   args: {
     setPage: () => {},
     page: 1,
-    data: { data: [], last_page: 10, page: 1, record_count: 1000 },
+    data: {
+      data: [{ name: 'arthur' }, { name: 'jose' }],
+      last_page: 10,
+      page: 1,
+      record_count: 1000,
+    },
     header: [
       { columnLabel: 'Nome', columnName: 'name', columnType: 'default' },
     ],

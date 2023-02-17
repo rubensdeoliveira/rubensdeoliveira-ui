@@ -9,10 +9,11 @@ export default {
     buttonType: 'primary',
     iconLeft: 'AcademicCapIcon',
     isLoading: false,
+    className: 'bg-red-500 dark:bg-blue-600',
   },
   argTypes: {
     variant: {
-      options: ['primary', 'secondary', 'link', 'ghost'],
+      options: ['primary', 'secondary', 'link', 'ghost', 'google'],
       control: {
         type: 'inline-radio',
       },

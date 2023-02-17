@@ -21,8 +21,8 @@ export function Navbar({
 
   return (
     <nav className={`${className || ''} w-full md:static`}>
-      <div className="items-center px-4 max-w-screen-xl mx-auto md:flex md:px-8">
-        <div className="flex items-center justify-between py-3 md:py-5 md:block max-w-[1200px]">
+      <div className="items-center px-5 max-w-screen-xl mx-auto md:flex xl:px-0">
+        <div className="flex items-center justify-between py-3 md:py-5 md:block max-w-[1240px]">
           {logo}
           <div className="md:hidden">
             <button
@@ -70,7 +70,9 @@ export function Navbar({
             {navigationItems.map(({ liChildren }, idx) => {
               return <li key={idx}>{liChildren}</li>
             })}
-            {ctaButton}
+            <div className='md:flex hidden'>
+              {ctaButton}
+            </div>
           </ul>
         </div>
         <div className="hidden md:inline-block">{ctaButton}</div>
