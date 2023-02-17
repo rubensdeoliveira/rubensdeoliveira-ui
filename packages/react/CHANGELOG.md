@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.15.0
+
+### Minor Changes
+
+- Add new navbar with left open
+
 ## 1.14.0
 
 ### Minor Changes

@@ -8,6 +8,7 @@ export default {
     logo: <p>logo</p>,
     navigationItems: [{ liChildren: <a>Home</a> }],
     ctaButton: <p>Button</p>,
+    className: 'py-5',
   },
 } as Meta<NavbarModel>
 

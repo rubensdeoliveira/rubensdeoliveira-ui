@@ -1,4 +1,5 @@
 import { ReactElement, useState } from 'react'
+import { ColorModel } from '../../../models/color.model'
 
 export type NavigationItemModel = {
   liChildren: ReactElement
@@ -7,76 +8,86 @@ export type NavigationItemModel = {
 export type NavbarModel = {
   logo: ReactElement
   navigationItems: NavigationItemModel[]
-  ctaButton: ReactElement
-  className?: string
+  ctaButton?: ReactElement
+  paddingY?: string
+  bgColor?: ColorModel
+  mobileMenuBgColor?: ColorModel
 }
 
 export function Navbar({
   logo,
   navigationItems,
   ctaButton,
-  className,
+  paddingY = '1rem',
+  bgColor = { light: 'red-400', dark: 'blue-400' },
+  mobileMenuBgColor = { light: 'white', dark: 'red-400' },
 }: NavbarModel) {
-  const [state, setState] = useState(false)
+  const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <nav className={`${className || ''} w-full md:static`}>
-      <div className="items-center px-5 max-w-screen-xl mx-auto md:flex xl:px-0">
-        <div className="flex items-center justify-between py-3 md:py-5 md:block max-w-[1240px]">
-          {logo}
-          <div className="md:hidden">
-            <button
-              className="text-gray-700 outline-none p-2 rounded-md focus:border-gray-400 focus:border"
-              onClick={() => setState(!state)}
-            >
-              {state ? (
+    <>
+      <nav
+        className={`fixed top-0 left-0 z-50 w-full bg-${bgColor.light} border-b border-gray-200 dark:bg-${bgColor.dark} dark:border-gray-700`}
+      >
+        <div className={`py-[${paddingY}]`}>
+          <div className="flex items-center justify-between">
+            <div className="flex items-center justify-start">
+              <button
+                onClick={() => setIsOpen((oldValue) => !oldValue)}
+                data-drawer-target="logo-sidebar"
+                data-drawer-toggle="logo-sidebar"
+                aria-controls="logo-sidebar"
+                type="button"
+                className="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+              >
+                <span className="sr-only">Open sidebar</span>
                 <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6"
-                  viewBox="0 0 20 20"
+                  className="w-6 h-6"
+                  aria-hidden="true"
                   fill="currentColor"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              ) : (
-                <svg
+                  viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
                 >
                   <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 8h16M4 16h16"
-                  />
+                    clipRule="evenodd"
+                    fillRule="evenodd"
+                    d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"
+                  ></path>
                 </svg>
-              )}
-            </button>
+              </button>
+              {logo}
+            </div>
+            <ul className="hidden justify-center items-center space-y-8 md:flex md:space-x-6 md:space-y-0">
+              {navigationItems.map(({ liChildren }, idx) => {
+                return <li key={idx}>{liChildren}</li>
+              })}
+            </ul>
+            {ctaButton}
           </div>
         </div>
+      </nav>
+
+      <aside
+        id="logo-sidebar"
+        className={`fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform ${
+          isOpen ? 'translate-none' : '-translate-x-full'
+        } bg-${
+          mobileMenuBgColor.light
+        } border-r border-gray-200 md:translate-x-0 md:hidden dark:bg-${
+          mobileMenuBgColor.dark
+        } dark:border-gray-700`}
+        aria-label="Sidebar"
+      >
         <div
-          className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
-            state ? 'block' : 'hidden'
-          }`}
+          className={`h-full px-3 pb-4 overflow-y-auto bg-${mobileMenuBgColor.light} dark:bg-${mobileMenuBgColor.dark}`}
         >
-          <ul className="justify-center items-center space-y-8 md:flex md:space-x-6 md:space-y-0">
+          <ul className="space-y-2">
             {navigationItems.map(({ liChildren }, idx) => {
               return <li key={idx}>{liChildren}</li>
             })}
-            <div className='md:flex hidden'>
-              {ctaButton}
-            </div>
           </ul>
         </div>
-        <div className="hidden md:inline-block">{ctaButton}</div>
-      </div>
-    </nav>
+      </aside>
+    </>
   )
 }
