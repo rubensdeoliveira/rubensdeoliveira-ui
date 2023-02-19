@@ -30,7 +30,7 @@ export function Navbar({
       <nav
         className={`${
           style?.bar || ''
-        } fixed top-0 left-0 z-50 w-full border-b border-gray-200 dark:border-gray-700`}
+        } top-0 left-0 z-50 w-full border-b border-gray-200 dark:border-gray-700`}
       >
         <div className={`${style?.container || ''}`}>
           <div className="flex items-center justify-between">

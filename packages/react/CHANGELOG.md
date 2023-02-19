@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.17.0
+
+### Minor Changes
+
+- Change fixed navbar
+
 ## 1.16.0
 
 ### Minor Changes
