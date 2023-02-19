@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.16.0
+
+### Minor Changes
+
+- Add new styles to navbar
+
 ## 1.15.0
 
 ### Minor Changes

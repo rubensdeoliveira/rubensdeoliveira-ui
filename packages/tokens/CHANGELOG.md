@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/tokens
 
+## 1.4.0
+
+### Minor Changes
+
+- Add new styles to navbar
+
 ## 1.3.0
 
 ### Minor Changes
