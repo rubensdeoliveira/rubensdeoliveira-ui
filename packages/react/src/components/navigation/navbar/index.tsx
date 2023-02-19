@@ -1,35 +1,38 @@
 import { ReactElement, useState } from 'react'
-import { ColorModel } from '../../../models/color.model'
 
-export type NavigationItemModel = {
+export type NavbarNavigationItemModel = {
   liChildren: ReactElement
+}
+
+type NavbarStyle = {
+  bar?: string
+  mobileMenu?: string
+  container?: string
 }
 
 export type NavbarModel = {
   logo: ReactElement
-  navigationItems: NavigationItemModel[]
+  navigationItems: NavbarNavigationItemModel[]
   ctaButton?: ReactElement
-  paddingY?: string
-  bgColor?: ColorModel
-  mobileMenuBgColor?: ColorModel
+  style?: NavbarStyle
 }
 
 export function Navbar({
   logo,
   navigationItems,
   ctaButton,
-  paddingY = '1rem',
-  bgColor = { light: 'red-400', dark: 'blue-400' },
-  mobileMenuBgColor = { light: 'white', dark: 'red-400' },
+  style,
 }: NavbarModel) {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 z-50 w-full bg-${bgColor.light} border-b border-gray-200 dark:bg-${bgColor.dark} dark:border-gray-700`}
+        className={`${
+          style?.bar || ''
+        } fixed top-0 left-0 z-50 w-full border-b border-gray-200 dark:border-gray-700`}
       >
-        <div className={`py-[${paddingY}]`}>
+        <div className={`${style?.container || ''}`}>
           <div className="flex items-center justify-between">
             <div className="flex items-center justify-start">
               <button
@@ -69,18 +72,12 @@ export function Navbar({
 
       <aside
         id="logo-sidebar"
-        className={`fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform ${
+        className={`${style?.mobileMenu || ''} ${
           isOpen ? 'translate-none' : '-translate-x-full'
-        } bg-${
-          mobileMenuBgColor.light
-        } border-r border-gray-200 md:translate-x-0 md:hidden dark:bg-${
-          mobileMenuBgColor.dark
-        } dark:border-gray-700`}
+        } fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform border-r border-gray-200 md:translate-x-0 md:hidden dark:border-gray-700`}
         aria-label="Sidebar"
       >
-        <div
-          className={`h-full px-3 pb-4 overflow-y-auto bg-${mobileMenuBgColor.light} dark:bg-${mobileMenuBgColor.dark}`}
-        >
+        <div className={`h-full px-3 pb-4 overflow-y-auto`}>
           <ul className="space-y-2">
             {navigationItems.map(({ liChildren }, idx) => {
               return <li key={idx}>{liChildren}</li>
