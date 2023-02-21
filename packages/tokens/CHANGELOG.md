@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/tokens
 
+## 1.6.0
+
+### Minor Changes
+
+- edit token
+
 ## 1.5.0
 
 ### Minor Changes
