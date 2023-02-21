@@ -1,6 +1,6 @@
 export * from './colors'
 
-export * from './space'
+export * from './py'
 export * from './radii'
 
 export * from './fonts'

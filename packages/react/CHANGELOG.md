@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.19.0
+
+### Minor Changes
+
+- Add new py token
+
 ## 1.18.0
 
 ### Minor Changes

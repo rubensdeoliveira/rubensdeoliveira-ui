@@ -5,10 +5,10 @@ export default {
   title: 'Navigation/Navbar',
   component: Navbar,
   args: {
-    logo: <p>logo</p>,
+    elementsLeft: <p>logo</p>,
     navigationItems: [{ liChildren: <a>Home</a> }],
-    ctaButton: <p>Button</p>,
-    style: { bar: 'bg-red-500', container: 'py-6', mobileMenu: 'bg-blue-500' },
+    elementsRight: <p>Button</p>,
+    paddingY: '120px',
   },
 } as Meta<NavbarModel>
 

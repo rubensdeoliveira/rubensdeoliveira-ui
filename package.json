@@ -15,7 +15,6 @@
     "turbo": "^1.7.4"
   },
   "dependencies": {
-    "build": "^0.1.4",
-    "flowbite": "^1.6.3"
+    "build": "^0.1.4"
   }
 }
