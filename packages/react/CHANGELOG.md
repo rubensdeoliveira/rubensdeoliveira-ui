@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.18.0
+
+### Minor Changes
+
+- Add flowbite
+
 ## 1.17.0
 
 ### Minor Changes
