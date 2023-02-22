@@ -49,7 +49,7 @@ export function Button({
       return (
         <button
           {...rest}
-          className={`${sharedClassName} border focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2`}
+          className={`${sharedClassName} border focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center`}
         >
           {renderButtonContent}
         </button>
@@ -71,7 +71,7 @@ export function Button({
       )
     case 'google':
       return (
-        <button className="bg-white flex items-center text-gray-700 dark:text-gray-300 justify-center gap-x-3 text-sm sm:text-base  dark:bg-gray-900 dark:border-gray-700 dark:hover:bg-gray-800 rounded-lg hover:bg-gray-100 duration-300 transition-colors border px-8 py-2.5">
+        <button className="bg-white flex items-center text-gray-700 dark:text-gray-300 justify-center gap-x-3 text-sm sm:text-base dark:bg-gray-900 dark:border-gray-700 dark:hover:bg-gray-800 rounded-lg hover:bg-gray-100 duration-300 transition-colors border px-8 py-2.5">
           <svg
             className="w-5 h-5 sm:h-6 sm:w-6"
             viewBox="0 0 24 24"

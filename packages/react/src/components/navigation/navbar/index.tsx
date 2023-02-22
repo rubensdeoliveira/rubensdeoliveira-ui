@@ -36,7 +36,7 @@ export function Navbar({
       <nav className={navStyles({ paddingY, className })}>
         <div className="container mx-auto flex max-w-[1240px] flex-wrap items-center justify-between">
           {elementsLeft}
-          <div className="flex md:order-2">
+          <div className="flex gap-4 md:order-2">
             {elementsRight}
             <button
               className="inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 md:hidden"
@@ -66,7 +66,7 @@ export function Navbar({
             className="hidden w-full items-center justify-between md:order-1 md:flex md:w-auto"
             id="navbar-sticky"
           >
-            <ul className="mt-4 flex flex-col rounded-lg p-4 md:mt-0 md:flex-row md:space-x-8 md:text-sm md:font-medium">
+            <ul className="flex flex-col rounded-lg md:flex-row md:space-x-8 md:text-sm md:font-medium">
               {navigationItems}
             </ul>
           </div>

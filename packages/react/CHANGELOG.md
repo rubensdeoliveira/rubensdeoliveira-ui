@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.23.0
+
+### Minor Changes
+
+- add new navbar with left side
+
 ## 1.22.0
 
 ### Minor Changes

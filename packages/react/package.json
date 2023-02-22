@@ -1,6 +1,6 @@
 {
   "name": "@rubensdeoliveira-ui/react",
-  "version": "1.22.0",
+  "version": "1.23.0",
   "description": "",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -34,6 +34,7 @@
   "dependencies": {
     "@heroicons/react": "^2.0.14",
     "class-variance-authority": "^0.4.0",
+    "daisyui": "^2.50.2",
     "jotai": "^2.0.0",
     "npm": "^8.0.0"
   }
