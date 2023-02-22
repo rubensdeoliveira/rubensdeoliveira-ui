@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.20.0
+
+### Minor Changes
+
+- add new navbar with cva
+
 ## 1.19.0
 
 ### Minor Changes
