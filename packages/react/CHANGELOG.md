@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.22.0
+
+### Minor Changes
+
+- Add new bg to navbar
+
 ## 1.21.0
 
 ### Minor Changes

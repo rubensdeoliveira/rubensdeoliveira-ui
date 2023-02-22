@@ -2,16 +2,7 @@ import { cva, VariantProps } from 'class-variance-authority'
 import React, { ReactElement } from 'react'
 
 const navStyles = cva(
-  [
-    'bg-white',
-    'px-5',
-    'xl:px-0',
-    'dark:bg-gray-900',
-    'w-full',
-    'z-20',
-    'top-0',
-    'left-0',
-  ],
+  ['px-5', 'xl:px-0', 'w-full', 'z-20', 'top-0', 'left-0'],
   {
     variants: {
       paddingY: {
