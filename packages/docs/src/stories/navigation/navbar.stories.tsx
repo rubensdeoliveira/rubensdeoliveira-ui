@@ -6,9 +6,14 @@ export default {
   component: Navbar,
   args: {
     elementsLeft: <p>logo</p>,
-    navigationItems: [{ liChildren: <a>Home</a> }],
+    navigationItems: (
+      <>
+        <li>teste</li>
+        <li>teste2</li>
+      </>
+    ),
     elementsRight: <p>Button</p>,
-    paddingY: '120px',
+    paddingY: 16,
   },
 } as Meta<NavbarModel>
 
