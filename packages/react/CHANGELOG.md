@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.24.0
+
+### Minor Changes
+
+- add new navbar
+
 ## 1.23.0
 
 ### Minor Changes

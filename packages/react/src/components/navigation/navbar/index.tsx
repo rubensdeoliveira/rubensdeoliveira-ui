@@ -1,8 +1,8 @@
 import { cva, VariantProps } from 'class-variance-authority'
-import React, { ReactElement } from 'react'
+import { ReactElement } from 'react'
 
 const navStyles = cva(
-  ['px-5', 'xl:px-0', 'w-full', 'z-20', 'top-0', 'left-0'],
+  'w-full max-w-[1240px] flex justify-between px-5 xl:px-0 mx-auto',
   {
     variants: {
       paddingY: {
@@ -17,9 +17,13 @@ const navStyles = cva(
   },
 )
 
+type LiChildrenModel = {
+  liChildren: ReactElement
+}
+
 export type NavbarModel = VariantProps<typeof navStyles> & {
   elementsLeft: ReactElement
-  navigationItems: ReactElement
+  navigationItems: LiChildrenModel[]
   elementsRight?: ReactElement
   className?: string
 }
@@ -31,85 +35,55 @@ export function Navbar({
   className,
   navigationItems,
 }: NavbarModel) {
-  return (
-    <>
-      <nav className={navStyles({ paddingY, className })}>
-        <div className="container mx-auto flex max-w-[1240px] flex-wrap items-center justify-between">
-          {elementsLeft}
-          <div className="flex gap-4 md:order-2">
-            {elementsRight}
-            <button
-              className="inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 md:hidden"
-              type="button"
-              data-drawer-target="drawer-backdrop"
-              data-drawer-show="drawer-backdrop"
-              data-drawer-backdrop="true"
-              aria-controls="drawer-backdrop"
-            >
-              <span className="sr-only">Open main menu</span>
-              <svg
-                className="h-6 w-6"
-                aria-hidden="true"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                  clipRule="evenodd"
-                ></path>
-              </svg>
-            </button>
-          </div>
-          <div
-            className="hidden w-full items-center justify-between md:order-1 md:flex md:w-auto"
-            id="navbar-sticky"
-          >
-            <ul className="flex flex-col rounded-lg md:flex-row md:space-x-8 md:text-sm md:font-medium">
-              {navigationItems}
-            </ul>
-          </div>
-        </div>
-      </nav>
+  function renderNavigationItems() {
+    return navigationItems.map((navigationItem, index) => (
+      <li key={index}>{navigationItem.liChildren}</li>
+    ))
+  }
 
-      <div
-        id="drawer-backdrop"
-        className="fixed top-0 left-0 z-40 h-screen w-80 -translate-x-full overflow-y-auto bg-white p-4 transition-transform dark:bg-gray-800"
-        tabIndex={-1}
-        aria-labelledby="drawer-backdrop-label"
-      >
-        <h5
-          id="drawer-backdrop-label"
-          className="text-base font-semibold uppercase text-gray-500 dark:text-gray-400"
-        >
-          Menu
-        </h5>
-        <button
-          type="button"
-          data-drawer-hide="drawer-backdrop"
-          aria-controls="drawer-backdrop"
-          className="absolute top-2.5 right-2.5 inline-flex items-center rounded-lg bg-transparent p-1.5 text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white"
-        >
-          <svg
-            aria-hidden="true"
-            className="h-5 w-5"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fillRule="evenodd"
-              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-              clipRule="evenodd"
-            ></path>
-          </svg>
-          <span className="sr-only">Close menu</span>
-        </button>
-        <div className="overflow-y-auto py-4">
-          <ul className="space-y-2">{navigationItems}</ul>
+  return (
+    <div className="drawer">
+      <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
+      <div className="drawer-content flex flex-col">
+        <div className="w-full navbar p-0">
+          <div className={navStyles({ paddingY, className })}>
+            <div className="flex items-center gap-4">
+              <div className="flex-none lg:hidden">
+                <label
+                  htmlFor="my-drawer-3"
+                  className="btn btn-square btn-ghost"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    className="inline-block w-6 h-6 stroke-current"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M4 6h16M4 12h16M4 18h16"
+                    ></path>
+                  </svg>
+                </label>
+              </div>
+              <div>{elementsLeft}</div>
+            </div>
+            <div className="flex-none hidden lg:block">
+              <ul className="menu menu-horizontal">
+                {renderNavigationItems()}
+              </ul>
+            </div>
+            <div>{elementsRight}</div>
+          </div>
         </div>
+        Content
       </div>
-    </>
+      <div className="drawer-side">
+        <label htmlFor="my-drawer-3" className="drawer-overlay"></label>
+        <ul className="menu p-4 w-80 bg-base-100">{renderNavigationItems()}</ul>
+      </div>
+    </div>
   )
 }
