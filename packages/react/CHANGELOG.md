@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.25.0
+
+### Minor Changes
+
+- add navigationitems to navbar
+
 ## 1.24.0
 
 ### Minor Changes

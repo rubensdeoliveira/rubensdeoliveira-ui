@@ -6,7 +6,7 @@ export default {
   component: Navbar,
   args: {
     elementsLeft: <p>logo</p>,
-    navigationItems: [{ liChildren: <a>teste</a> }],
+    navigationItems: <a>Home</a>,
     elementsRight: <p>Button</p>,
     paddingY: 16,
   },
