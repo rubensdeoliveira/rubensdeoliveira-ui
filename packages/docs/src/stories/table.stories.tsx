@@ -1,8 +1,8 @@
 import type { StoryObj, Meta } from '@storybook/react'
-import { Table, TableModel } from '@rubensdeoliveira-ui/react'
+import { Table, TableProps } from '@rubensdeoliveira-ui/react'
 
 export default {
-  title: 'Data/Table',
+  title: 'Components/Table',
   component: Table,
   args: {
     setPage: () => {},
@@ -17,6 +17,6 @@ export default {
       { columnLabel: 'Nome', columnName: 'name', columnType: 'default' },
     ],
   },
-} as Meta<TableModel>
+} as Meta<TableProps>
 
-export const Primary: StoryObj<TableModel> = {}
+export const Primary: StoryObj<TableProps> = {}

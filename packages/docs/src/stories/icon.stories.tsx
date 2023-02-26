@@ -1,8 +1,8 @@
 import type { StoryObj, Meta } from '@storybook/react'
-import { Icon, IconModel } from '@rubensdeoliveira-ui/react'
+import { Icon, IconProps } from '@rubensdeoliveira-ui/react'
 
 export default {
-  title: 'Icon/Icon',
+  title: 'Components/Icon',
   component: Icon,
   args: {
     name: 'AdjustmentsHorizontalIcon',
@@ -10,6 +10,6 @@ export default {
     size: 24,
     type: 'outline',
   },
-} as Meta<IconModel>
+} as Meta<IconProps>
 
-export const Primary: StoryObj<IconModel> = {}
+export const Primary: StoryObj<IconProps> = {}

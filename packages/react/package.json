@@ -36,6 +36,9 @@
     "class-variance-authority": "0.4.0",
     "daisyui": "2.50.2",
     "jotai": "2.0.0",
+    "@radix-ui/react-slot": "1.0.0",
+    "@storybook/addon-a11y": "6.5.12",
+    "clsx": "1.2.1",
     "npm": "8.0.0"
   }
 }

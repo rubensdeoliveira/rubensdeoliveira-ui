@@ -1,9 +1,9 @@
 import { FormHTMLAttributes, ReactNode } from 'react'
 
-export type FormModel = FormHTMLAttributes<HTMLFormElement> & {
+export type FormProps = FormHTMLAttributes<HTMLFormElement> & {
   children: ReactNode
 }
 
-export function Form({ children, ...rest }: FormModel) {
+export function Form({ children, ...rest }: FormProps) {
   return <form {...rest}>{children}</form>
 }

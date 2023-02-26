@@ -1,7 +1,7 @@
 import { ButtonHTMLAttributes, ReactNode, useMemo } from 'react'
-import { Icon, IconName } from '../../icon'
+import { Icon, IconName } from './icon'
 
-export type ButtonModel = ButtonHTMLAttributes<HTMLButtonElement> & {
+export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   label?: string
   variant?: 'primary' | 'secondary' | 'link' | 'ghost' | 'google'
   iconLeft?: IconName
@@ -20,7 +20,7 @@ export function Button({
   children,
   className,
   ...rest
-}: ButtonModel) {
+}: ButtonProps) {
   const renderIconLeft = useMemo(
     () => iconLeft && <Icon name={iconLeft} size={24} />,
     [iconLeft],

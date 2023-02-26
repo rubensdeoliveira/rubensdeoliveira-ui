@@ -1,8 +1,8 @@
 import type { StoryObj, Meta } from '@storybook/react'
-import { Form, FormModel } from '@rubensdeoliveira-ui/react'
+import { Form, FormProps } from '@rubensdeoliveira-ui/react'
 
 export default {
-  title: 'Form/Form',
+  title: 'Components/Form',
   component: Form,
   args: {
     children: <span>Testando o elemento Form</span>,
@@ -14,6 +14,6 @@ export default {
       },
     },
   },
-} as Meta<FormModel>
+} as Meta<FormProps>
 
-export const Primary: StoryObj<FormModel> = {}
+export const Primary: StoryObj<FormProps> = {}

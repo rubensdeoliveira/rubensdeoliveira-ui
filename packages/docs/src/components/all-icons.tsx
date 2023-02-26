@@ -1,14 +1,6 @@
 import * as SolidIcon from '@heroicons/react/24/solid'
 import * as OutlineIcon from '@heroicons/react/24/outline'
-
-export type IconName = keyof typeof SolidIcon
-
-export type IconModel = {
-  name: IconName
-  size?: number
-  type?: 'solid' | 'outline'
-  className?: string
-}
+import { IconName } from '@rubensdeoliveira-ui/react'
 
 export function AllIcons() {
   const { ...solidIcons } = SolidIcon
@@ -45,18 +37,4 @@ export function AllIcons() {
       <div className="flex flex-wrap gap-4">{renderOutlineIcons}</div>
     </>
   )
-}
-
-export function Icon({
-  name,
-  size = 24,
-  type = 'solid',
-  className = '',
-}: IconModel) {
-  const { ...solidIcons } = SolidIcon
-  const { ...outlineIcons } = OutlineIcon
-  const TheIcon = type === 'solid' ? solidIcons[name] : outlineIcons[name]
-  return TheIcon ? (
-    <TheIcon style={{ width: size, height: size }} className={className} />
-  ) : null
 }

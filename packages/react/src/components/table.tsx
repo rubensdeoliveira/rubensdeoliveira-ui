@@ -1,7 +1,7 @@
 import { SetStateAction } from 'jotai'
-import { generatePagesArray } from './helpers'
+import { generatePagesArray } from '../helpers/generate-pages-array'
 
-type ListEntitiesModel<EntityType> = {
+type ListEntitiesProps<EntityType> = {
   data: EntityType[]
   page: number
   last_page: number
@@ -14,14 +14,14 @@ type TableHeader = {
   columnType?: 'default' | 'subtitled' | 'tagged'
 }
 
-export type TableModel = {
+export type TableProps = {
   header: TableHeader[]
-  data: ListEntitiesModel<any> | undefined
+  data: ListEntitiesProps<any> | undefined
   page: number
   setPage: (update: SetStateAction<number>) => void
 }
 
-export function Table({ header, page, data, setPage }: TableModel) {
+export function Table({ header, page, data, setPage }: TableProps) {
   if (!data) {
     return null
   }

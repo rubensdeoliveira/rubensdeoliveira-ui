@@ -1,8 +1,8 @@
 import type { StoryObj, Meta } from '@storybook/react'
-import { Button, ButtonModel } from '@rubensdeoliveira-ui/react'
+import { Button, ButtonProps } from '@rubensdeoliveira-ui/react'
 
 export default {
-  title: 'Form/Button',
+  title: 'Components/Button',
   component: Button,
   args: {
     label: 'Enviar',
@@ -31,6 +31,6 @@ export default {
     },
     onClick: { action: 'clicked' },
   },
-} as Meta<ButtonModel>
+} as Meta<ButtonProps>
 
-export const Primary: StoryObj<ButtonModel> = {}
+export const Primary: StoryObj<ButtonProps> = {}
