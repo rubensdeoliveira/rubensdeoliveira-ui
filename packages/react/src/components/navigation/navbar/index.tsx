@@ -19,7 +19,7 @@ const navStyles = cva(
 
 export type NavbarModel = VariantProps<typeof navStyles> & {
   elementsLeft: ReactElement
-  navigationItems: ReactElement
+  navigationItems: ReactElement[]
   elementsRight?: ReactElement
   className?: string
 }
@@ -31,6 +31,12 @@ export function Navbar({
   className,
   navigationItems,
 }: NavbarModel) {
+  function renderNavigationItems() {
+    return navigationItems.map((navigationItem, index) => (
+      <li key={index}>{navigationItem}</li>
+    ))
+  }
+
   return (
     <div className="drawer">
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
@@ -61,7 +67,9 @@ export function Navbar({
               <div>{elementsLeft}</div>
             </div>
             <div className="flex-none hidden lg:block">
-              <ul className="menu menu-horizontal">{navigationItems}</ul>
+              <ul className="menu menu-horizontal">
+                {renderNavigationItems()}
+              </ul>
             </div>
             <div>{elementsRight}</div>
           </div>
@@ -70,7 +78,7 @@ export function Navbar({
       </div>
       <div className="drawer-side">
         <label htmlFor="my-drawer-3" className="drawer-overlay"></label>
-        <ul className="menu p-4 w-80 bg-base-100">{navigationItems}</ul>
+        <ul className="menu p-4 w-80 bg-base-100">{renderNavigationItems()}</ul>
       </div>
     </div>
   )

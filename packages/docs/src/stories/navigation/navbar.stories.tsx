@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 import type { StoryObj, Meta } from '@storybook/react'
 import { Navbar, NavbarModel } from '@rubensdeoliveira-ui/react'
 
@@ -6,7 +7,7 @@ export default {
   component: Navbar,
   args: {
     elementsLeft: <p>logo</p>,
-    navigationItems: <a>Home</a>,
+    navigationItems: [<a>Home</a>],
     elementsRight: <p>Button</p>,
     paddingY: 16,
   },
