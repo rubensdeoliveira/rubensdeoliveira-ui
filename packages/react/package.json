@@ -33,7 +33,6 @@
   },
   "dependencies": {
     "@heroicons/react": "2.0.14",
-    "class-variance-authority": "0.4.0",
     "daisyui": "2.50.2",
     "jotai": "2.0.0",
     "@radix-ui/react-slot": "1.0.0",
