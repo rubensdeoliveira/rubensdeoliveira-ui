@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.27.0
+
+### Minor Changes
+
+- Add new navbar with composition
+
 ## 1.26.0
 
 ### Minor Changes
