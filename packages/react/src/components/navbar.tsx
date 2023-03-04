@@ -4,27 +4,13 @@ import { ReactElement, ReactNode } from 'react'
 function renderNavigationItems(children: ReactElement | ReactElement[]) {
   if (Array.isArray(children)) {
     return children.map((navigationItem, index) => (
-      <li key={index}>{navigationItem}</li>
+      <li key={index} className="text-16">
+        {navigationItem}
+      </li>
     ))
   }
   return <li>{children}</li>
 }
-
-const navStyles = cva(
-  'w-full max-w-[1240px] flex justify-between px-5 xl:px-0 mx-auto',
-  {
-    variants: {
-      py: {
-        16: 'py-[0.75rem] md:py-[0.875rem] lg:py-[1rem]',
-        32: 'py-[1.5rem] md:py-[1.75rem] lg:py-[2rem]',
-        48: 'py-[2.5rem] md:py-[2.75rem] lg:py-[3rem]',
-      },
-    },
-    defaultVariants: {
-      py: 16,
-    },
-  },
-)
 
 export type NavbarRootProps = {
   children: ReactNode
@@ -66,13 +52,19 @@ function NavbarAside({ children }: NavbarAsideProps) {
 
 NavbarAside.displayName = 'Navbar.Aside'
 
+const navbarAsideStyles = cva('menu w-80 p-4')
+
 export type NavbarAsideMenuItemsProps = {
   children: ReactElement | ReactElement[]
+  className?: string
 }
 
-function NavbarAsideMenuItems({ children }: NavbarAsideMenuItemsProps) {
+function NavbarAsideMenuItems({
+  children,
+  className,
+}: NavbarAsideMenuItemsProps) {
   return (
-    <ul className="menu w-80 bg-base-100 p-4">
+    <ul className={navbarAsideStyles({ className })}>
       {renderNavigationItems(children)}
     </ul>
   )
@@ -80,7 +72,23 @@ function NavbarAsideMenuItems({ children }: NavbarAsideMenuItemsProps) {
 
 NavbarAsideMenuItems.displayName = 'Navbar.AsideMenuItems'
 
-export type NavbarBarProps = VariantProps<typeof navStyles> & {
+const navBarStyles = cva(
+  'w-full max-w-[1240px] flex justify-between px-5 xl:px-0 mx-auto',
+  {
+    variants: {
+      py: {
+        16: 'py-[0.75rem] md:py-[0.875rem] lg:py-[1rem]',
+        32: 'py-[1.5rem] md:py-[1.75rem] lg:py-[2rem]',
+        48: 'py-[2.5rem] md:py-[2.75rem] lg:py-[3rem]',
+      },
+    },
+    defaultVariants: {
+      py: 16,
+    },
+  },
+)
+
+export type NavbarBarProps = VariantProps<typeof navBarStyles> & {
   children: ReactNode
   className?: string
 }
@@ -88,7 +96,7 @@ export type NavbarBarProps = VariantProps<typeof navStyles> & {
 function NavbarBar({ py, className, children }: NavbarBarProps) {
   return (
     <div className="navbar w-full p-0">
-      <div className={navStyles({ py, className })}>{children}</div>
+      <div className={navBarStyles({ py, className })}>{children}</div>
     </div>
   )
 }
@@ -143,7 +151,7 @@ export type NavbarBarMenuItemsProps = {
 function NavbarBarMenuItems({ children }: NavbarBarMenuItemsProps) {
   return (
     <div className="hidden flex-none md:block">
-      <ul className="menu menu-horizontal">
+      <ul className="menu menu-horizontal flex items-center gap-[4.5rem]">
         {renderNavigationItems(children)}
       </ul>
     </div>

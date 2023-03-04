@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.29.0
+
+### Minor Changes
+
+- Add navbar spaces
+
 ## 1.28.0
 
 ### Minor Changes
