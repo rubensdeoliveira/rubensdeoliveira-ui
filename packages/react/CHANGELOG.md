@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.34.0
+
+### Minor Changes
+
+- Remove min height from navbar
+
 ## 1.33.0
 
 ### Minor Changes

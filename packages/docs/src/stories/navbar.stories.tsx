@@ -13,7 +13,7 @@ export default {
             <img
               alt="Logo"
               src="https://cdn-icons-png.flaticon.com/512/187/187830.png?w=1800&t=st=1677394510~exp=1677395110~hmac=cf12f61ad348fb9f8294a1a53d00a001b8d26286afe9c2f9c499c20ee26e2001"
-              className="w-10 h-10"
+              className="h-24px w-24px"
             />
             <span>Minha logo</span>
           </Navbar.BarLogo>

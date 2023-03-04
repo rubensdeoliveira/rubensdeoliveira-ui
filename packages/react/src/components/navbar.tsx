@@ -97,7 +97,7 @@ export type NavbarBarProps = VariantProps<typeof navBarStyles> & {
 
 function NavbarBar({ py, className, children }: NavbarBarProps) {
   return (
-    <header className="navbar min-h-0 w-full p-0">
+    <header className="navbar w-full p-0">
       <div className={navBarStyles({ py, className })}>{children}</div>
     </header>
   )
@@ -125,7 +125,7 @@ function NavbarBarLogo({ children }: NavbarBarLogoProps) {
       <div className="flex-none md:hidden">
         <label
           htmlFor="my-drawer-3"
-          className="w-6 btn-ghost btn pl-0 pr-0 hover:bg-transparent"
+          className="btn btn-ghost w-24px pl-0 pr-0 hover:bg-transparent"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
