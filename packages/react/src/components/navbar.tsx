@@ -72,7 +72,7 @@ export type NavbarAsideMenuItemsProps = {
 
 function NavbarAsideMenuItems({ children }: NavbarAsideMenuItemsProps) {
   return (
-    <ul className="menu p-4 w-80 bg-base-100">
+    <ul className="menu w-80 bg-base-100 p-4">
       {renderNavigationItems(children)}
     </ul>
   )
@@ -87,7 +87,7 @@ export type NavbarBarProps = VariantProps<typeof navStyles> & {
 
 function NavbarBar({ paddingY, className, children }: NavbarBarProps) {
   return (
-    <div className="w-full navbar p-0">
+    <div className="navbar w-full p-0">
       <div className={navStyles({ paddingY, className })}>{children}</div>
     </div>
   )
@@ -113,12 +113,12 @@ function NavbarBarLogo({ children }: NavbarBarLogoProps) {
   return (
     <div className="flex items-center gap-4">
       <div className="flex-none lg:hidden">
-        <label htmlFor="my-drawer-3" className="btn btn-square btn-ghost">
+        <label htmlFor="my-drawer-3" className="btn-ghost btn-square btn">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
-            className="inline-block w-6 h-6 stroke-current"
+            className="inline-block h-6 w-6 stroke-current"
           >
             <path
               strokeLinecap="round"
@@ -142,7 +142,7 @@ export type NavbarBarMenuItemsProps = {
 
 function NavbarBarMenuItems({ children }: NavbarBarMenuItemsProps) {
   return (
-    <div className="flex-none hidden lg:block">
+    <div className="hidden flex-none lg:block">
       <ul className="menu menu-horizontal">
         {renderNavigationItems(children)}
       </ul>

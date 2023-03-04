@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.28.0
+
+### Minor Changes
+
+- Add new component styles
+
 ## 1.27.0
 
 ### Minor Changes

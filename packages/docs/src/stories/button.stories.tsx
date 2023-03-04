@@ -1,36 +1,36 @@
-import type { StoryObj, Meta } from '@storybook/react'
-import { Button, ButtonProps } from '@rubensdeoliveira-ui/react'
+/* eslint-disable react/jsx-key */
+
+import { Meta, StoryObj } from '@storybook/react'
+import { Button, ButtonRootProps } from '@rubensdeoliveira-ui/react'
 
 export default {
   title: 'Components/Button',
-  component: Button,
+  component: Button.Root,
   args: {
-    label: 'Enviar',
-    buttonType: 'primary',
-    iconLeft: 'AcademicCapIcon',
-    isLoading: false,
-    className: 'bg-red-500 dark:bg-blue-600',
+    children: <Button.Text>Enviar</Button.Text>,
+    className: 'bg-red-400',
   },
-  argTypes: {
-    variant: {
-      options: ['primary', 'secondary', 'link', 'ghost', 'google'],
-      control: {
-        type: 'inline-radio',
-      },
-    },
-    disabled: {
-      control: {
-        type: 'boolean',
-      },
-    },
-    iconLeft: {
-      type: 'string',
-    },
-    iconRight: {
-      type: 'string',
-    },
-    onClick: { action: 'clicked' },
-  },
-} as Meta<ButtonProps>
+} as Meta<ButtonRootProps>
 
-export const Primary: StoryObj<ButtonProps> = {}
+export const Default: StoryObj<ButtonRootProps> = {}
+
+export const Big: StoryObj<ButtonRootProps> = {
+  args: {
+    size: 'big',
+  },
+}
+
+export const Small: StoryObj<ButtonRootProps> = {
+  args: {
+    size: 'small',
+  },
+}
+
+export const WithIcon: StoryObj<ButtonRootProps> = {
+  args: {
+    children: [
+      <Button.Text>Navegar</Button.Text>,
+      <Button.Icon name="ChevronRightIcon" />,
+    ],
+  },
+}

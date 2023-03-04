@@ -1,15 +1,54 @@
-import { ButtonHTMLAttributes, InputHTMLAttributes, ReactNode } from 'react'
+import { cva } from 'class-variance-authority'
+import { ButtonHTMLAttributes, ReactNode } from 'react'
+import { renderResponsizeProp } from '../helpers/render-responsive-prop'
 import { Icon, IconName } from './icon'
+
+const buttonStyles = cva(
+  'flex items-center gap-[0.625rem] focus:ring-4 font-medium rounded-lg focus:outline-none text-center',
+  {
+    variants: {
+      size: {
+        small: 'text-sm px-5 py-2.5',
+        default: 'px-5 py-3 text-base',
+        big: ' text-base px-6 py-3.5',
+      },
+      sizeMd: {
+        small: 'text-sm px-5 py-2.5',
+        default: 'px-5 py-3 text-base',
+        big: ' text-base px-6 py-3.5',
+      },
+      sizeLg: {
+        small: 'text-sm px-5 py-2.5',
+        default: 'px-5 py-3 text-base',
+        big: ' text-base px-6 py-3.5',
+      },
+    },
+    defaultVariants: {
+      size: 'default',
+      sizeMd: 'default',
+      sizeLg: 'default',
+    },
+  },
+)
+
+type ButtonSizeProps = 'default' | 'small' | 'big'
 
 export type ButtonRootProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   children: ReactNode
+  size?: ButtonSizeProps | ButtonSizeProps[]
+  className?: string
 }
 
-function ButtonRoot({ children, ...rest }: ButtonRootProps) {
+function ButtonRoot({ children, size, className, ...rest }: ButtonRootProps) {
   return (
     <button
       {...rest}
-      className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+      className={buttonStyles({
+        size: renderResponsizeProp(size),
+        sizeMd: renderResponsizeProp(size, 'md'),
+        sizeLg: renderResponsizeProp(size, 'lg'),
+        className,
+      })}
     >
       {children}
     </button>
@@ -28,21 +67,18 @@ function ButtonIcon({ name }: ButtonIconProps) {
 
 ButtonIcon.displayName = 'Button.Icon'
 
-export type ButtonInputProps = InputHTMLAttributes<HTMLInputElement> & {}
-
-function ButtonInput({ ...inputProps }: ButtonInputProps) {
-  return (
-    <input
-      {...inputProps}
-      className="text-gray-100 placeholder:text-gray-400 flex-1 bg-transparent text-16 outline-none"
-    />
-  )
+export type ButtonTextProps = {
+  children: string
 }
 
-ButtonInput.displayName = 'Button.Input'
+function ButtonText({ children }: ButtonTextProps) {
+  return <>{children}</>
+}
+
+ButtonText.displayName = 'Button.Text'
 
 export const Button = {
   Root: ButtonRoot,
-  Input: ButtonInput,
+  Text: ButtonText,
   Icon: ButtonIcon,
 }
