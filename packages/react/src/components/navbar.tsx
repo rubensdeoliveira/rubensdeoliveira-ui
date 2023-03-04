@@ -14,14 +14,14 @@ const navStyles = cva(
   'w-full max-w-[1240px] flex justify-between px-5 xl:px-0 mx-auto',
   {
     variants: {
-      paddingY: {
-        16: 'py-[1rem] md:py-[1.25rem] lg:py-[1.5rem]',
-        32: 'py-[2rem] md:py-[2.25rem] lg:py-[2.5rem]',
+      py: {
+        16: 'py-[0.75rem] md:py-[0.875rem] lg:py-[1rem]',
+        32: 'py-[1.5rem] md:py-[1.75rem] lg:py-[2rem]',
         48: 'py-[2.5rem] md:py-[2.75rem] lg:py-[3rem]',
       },
     },
     defaultVariants: {
-      paddingY: 16,
+      py: 16,
     },
   },
 )
@@ -85,10 +85,10 @@ export type NavbarBarProps = VariantProps<typeof navStyles> & {
   className?: string
 }
 
-function NavbarBar({ paddingY, className, children }: NavbarBarProps) {
+function NavbarBar({ py, className, children }: NavbarBarProps) {
   return (
     <div className="navbar w-full p-0">
-      <div className={navStyles({ paddingY, className })}>{children}</div>
+      <div className={navStyles({ py, className })}>{children}</div>
     </div>
   )
 }
@@ -112,8 +112,8 @@ export type NavbarBarLogoProps = {
 function NavbarBarLogo({ children }: NavbarBarLogoProps) {
   return (
     <div className="flex items-center gap-4">
-      <div className="flex-none lg:hidden">
-        <label htmlFor="my-drawer-3" className="btn-ghost btn-square btn">
+      <div className="flex-none md:hidden">
+        <label htmlFor="my-drawer-3" className="btn btn-ghost btn-square">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -129,7 +129,7 @@ function NavbarBarLogo({ children }: NavbarBarLogoProps) {
           </svg>
         </label>
       </div>
-      <div className="flex items-center gap-4">{children}</div>
+      <div className="hidden items-center gap-4 md:flex">{children}</div>
     </div>
   )
 }
@@ -142,7 +142,7 @@ export type NavbarBarMenuItemsProps = {
 
 function NavbarBarMenuItems({ children }: NavbarBarMenuItemsProps) {
   return (
-    <div className="hidden flex-none lg:block">
+    <div className="hidden flex-none md:block">
       <ul className="menu menu-horizontal">
         {renderNavigationItems(children)}
       </ul>
