@@ -52,7 +52,7 @@ function NavbarAside({ children }: NavbarAsideProps) {
 
 NavbarAside.displayName = 'Navbar.Aside'
 
-const navbarAsideStyles = cva('menu w-80 p-4')
+const navbarAsideStyles = cva('menu w-320px] p-16px')
 
 export type NavbarAsideMenuItemsProps = {
   children: ReactElement | ReactElement[]
@@ -97,7 +97,7 @@ export type NavbarBarProps = VariantProps<typeof navBarStyles> & {
 
 function NavbarBar({ py, className, children }: NavbarBarProps) {
   return (
-    <header className="navbar w-full p-0">
+    <header className="navbar min-h-[unset] w-full p-0">
       <div className={navBarStyles({ py, className })}>{children}</div>
     </header>
   )
