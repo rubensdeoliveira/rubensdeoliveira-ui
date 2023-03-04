@@ -123,7 +123,10 @@ function NavbarBarLogo({ children }: NavbarBarLogoProps) {
   return (
     <div className="flex items-center gap-4">
       <div className="flex-none md:hidden">
-        <label htmlFor="my-drawer-3" className="btn-ghost btn-square btn">
+        <label
+          htmlFor="my-drawer-3"
+          className="btn-ghost btn w-6 pl-0 pr-0 hover:bg-transparent"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.31.0
+
+### Minor Changes
+
+- Add new button size
+
 ## 1.30.0
 
 ### Minor Changes

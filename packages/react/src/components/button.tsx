@@ -8,16 +8,19 @@ const buttonStyles = cva(
   {
     variants: {
       size: {
+        smaller: 'p-2.5',
         small: 'text-sm px-5 py-2.5',
         default: 'px-5 py-3 text-base',
         big: ' text-base px-6 py-3.5',
       },
       sizeMd: {
+        smaller: 'p-2.5',
         small: 'text-sm px-5 py-2.5',
         default: 'px-5 py-3 text-base',
         big: ' text-base px-6 py-3.5',
       },
       sizeLg: {
+        smaller: 'p-2.5',
         small: 'text-sm px-5 py-2.5',
         default: 'px-5 py-3 text-base',
         big: ' text-base px-6 py-3.5',
@@ -31,7 +34,7 @@ const buttonStyles = cva(
   },
 )
 
-type ButtonSizeProps = 'default' | 'small' | 'big'
+type ButtonSizeProps = 'default' | 'small' | 'big' | 'smaller'
 
 export type ButtonRootProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   children: ReactNode
