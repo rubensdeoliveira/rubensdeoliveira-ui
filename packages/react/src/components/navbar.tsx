@@ -73,7 +73,7 @@ function NavbarAsideMenuItems({
 NavbarAsideMenuItems.displayName = 'Navbar.AsideMenuItems'
 
 const navBarStyles = cva(
-  'w-full max-w-[1240px] flex justify-between px-5 xl:px-0 mx-auto',
+  'w-full max-w-[1200px] flex justify-between px-20px xl:px-0 mx-[auto]',
   {
     variants: {
       py: {
@@ -121,17 +121,17 @@ export type NavbarBarLogoProps = {
 
 function NavbarBarLogo({ children }: NavbarBarLogoProps) {
   return (
-    <div className="flex items-center gap-4">
+    <div className="flex items-center gap-16px">
       <div className="flex-none md:hidden">
         <label
           htmlFor="my-drawer-3"
-          className="btn-ghost btn w-6 pl-0 pr-0 hover:bg-transparent"
+          className="w-6 btn-ghost btn pl-0 pr-0 hover:bg-transparent"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
-            className="inline-block h-6 w-6 stroke-current"
+            className="h-6 w-6 inline-block stroke-current"
           >
             <path
               strokeLinecap="round"
@@ -142,7 +142,7 @@ function NavbarBarLogo({ children }: NavbarBarLogoProps) {
           </svg>
         </label>
       </div>
-      <div className="hidden items-center gap-4 md:flex">{children}</div>
+      <div className="hidden items-center gap-16px md:flex">{children}</div>
     </div>
   )
 }
@@ -170,7 +170,7 @@ export type NavbarBarActionProps = {
 }
 
 function NavbarBarAction({ children }: NavbarBarActionProps) {
-  return <div className="flex items-center gap-4">{children}</div>
+  return <div className="flex items-center gap-16px">{children}</div>
 }
 
 NavbarBarAction.displayName = 'Navbar.BarAction'

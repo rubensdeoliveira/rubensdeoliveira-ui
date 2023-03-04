@@ -43,12 +43,16 @@ export function Table({ header, page, data, setPage }: TableProps) {
         </th>
         {header.map((headerItem) => (
           <>
-            <th scope="col" className="px-6 py-3" key={headerItem.columnName}>
+            <th
+              scope="col"
+              className="py-12px px-24px"
+              key={headerItem.columnName}
+            >
               {headerItem.columnLabel}
             </th>
           </>
         ))}
-        <th scope="col" className="px-6 py-3">
+        <th scope="col" className="px-24px py-12px">
           Action
         </th>
       </tr>
@@ -79,7 +83,7 @@ export function Table({ header, page, data, setPage }: TableProps) {
               <th
                 key={headerItem.columnName}
                 scope="row"
-                className="flex items-center whitespace-nowrap px-6 py-4 font-medium text-gray-900 dark:text-white"
+                className="flex items-center whitespace-nowrap py-16px px-24px font-medium text-gray-900 dark:text-white"
               >
                 <img
                   className="h-10 w-10 rounded-full"
@@ -96,12 +100,12 @@ export function Table({ header, page, data, setPage }: TableProps) {
             )
           }
           return (
-            <td key={headerItem.columnName} className="px-6 py-4">
+            <td key={headerItem.columnName} className="py-12px px-24px">
               {dataItem[headerItem.columnName]}
             </td>
           )
         })}
-        <td className="px-6 py-4">
+        <td className="py-16px px-24px">
           <a
             href="#"
             type="button"
@@ -132,12 +136,12 @@ export function Table({ header, page, data, setPage }: TableProps) {
           <>
             <button
               onClick={() => setPage(1)}
-              className="border border-gray-300 bg-white px-3 py-2 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+              className="border border-gray-300 bg-white px-12px py-8px leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
             >
               1
             </button>
             {page > 2 + siblingsCount && (
-              <button className="border border-gray-300 bg-white px-3 py-2 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+              <button className="border border-gray-300 bg-white px-12px py-8px leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
                 ...
               </button>
             )}
@@ -147,7 +151,7 @@ export function Table({ header, page, data, setPage }: TableProps) {
         {previousPages.map((previousPage) => (
           <button
             key={previousPage}
-            className="border border-gray-300 bg-white px-3 py-2 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+            className="border border-gray-300 bg-white px-12px py-8px leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
             onClick={() => setPage(previousPage)}
           >
             {previousPage}
@@ -156,7 +160,7 @@ export function Table({ header, page, data, setPage }: TableProps) {
 
         <button
           key={page}
-          className="z-10 border border-blue-300 bg-blue-50 px-3 py-2 leading-tight text-blue-600 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white"
+          className="z-10 border border-blue-300 bg-blue-50 px-12px py-8px leading-tight text-blue-600 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white"
           onClick={() => setPage(1)}
         >
           {page}
@@ -165,7 +169,7 @@ export function Table({ header, page, data, setPage }: TableProps) {
         {nextPages.map((nextPage) => (
           <button
             key={nextPage}
-            className="border border-gray-300 bg-white px-3 py-2 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+            className="border border-gray-300 bg-white px-12px py-8px leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
             onClick={() => setPage(nextPage)}
           >
             {nextPage}
@@ -175,12 +179,12 @@ export function Table({ header, page, data, setPage }: TableProps) {
         {data && page + siblingsCount < data.last_page && (
           <>
             {page + 1 + siblingsCount < data.last_page && (
-              <button className="border border-gray-300 bg-white px-3 py-2 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+              <button className="border border-gray-300 bg-white px-12px py-8px leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
                 ...
               </button>
             )}
             <button
-              className="border border-gray-300 bg-white px-3 py-2 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+              className="border border-gray-300 bg-white px-12px py-8px leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
               onClick={() => setPage(data.last_page)}
             >
               {data.last_page}
@@ -193,12 +197,12 @@ export function Table({ header, page, data, setPage }: TableProps) {
 
   return (
     <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
-      <div className="flex items-center justify-between bg-white pb-4 dark:bg-gray-800">
+      <div className="pb-4 flex items-center justify-between bg-white dark:bg-gray-800">
         <label htmlFor="table-search" className="sr-only">
           Search
         </label>
         <div className="relative">
-          <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+          <div className="pl-3 pointer-events-none absolute inset-y-0 left-0 flex items-center">
             <svg
               className="h-5 w-5 text-gray-500 dark:text-gray-400"
               aria-hidden="true"
@@ -216,7 +220,7 @@ export function Table({ header, page, data, setPage }: TableProps) {
           <input
             type="text"
             id="table-search-users"
-            className="text-sm block w-80 rounded-lg border border-gray-300 bg-gray-50 p-2 pl-10 text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+            className="text-sm w-80 p-2 pl-10 block rounded-lg border border-gray-300 bg-gray-50 text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
             placeholder="Search for users"
           />
         </div>
@@ -231,20 +235,20 @@ export function Table({ header, page, data, setPage }: TableProps) {
         id="editUserModal"
         tabIndex={-1}
         aria-hidden="true"
-        className="h-modal fixed top-0 left-0 right-0 z-50 hidden w-full items-center justify-center overflow-y-auto overflow-x-hidden p-4 md:inset-0 md:h-full"
+        className="h-modal p-4 fixed top-0 left-0 right-0 z-50 hidden w-full items-center justify-center overflow-y-auto overflow-x-hidden md:inset-0 md:h-full"
       >
         <div className="relative h-full w-full max-w-2xl md:h-auto">
           <form
             action="#"
             className="relative rounded-lg bg-white shadow dark:bg-gray-700"
           >
-            <div className="flex items-start justify-between rounded-t border-b p-4 dark:border-gray-600">
+            <div className="p-4 flex items-start justify-between rounded-t border-b dark:border-gray-600">
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
                 Edit user
               </h3>
               <button
                 type="button"
-                className="text-sm ml-auto inline-flex items-center rounded-lg bg-transparent p-1.5 text-gray-400 hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white"
+                className="text-sm p-1.5 ml-auto inline-flex items-center rounded-lg bg-transparent text-gray-400 hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white"
                 data-modal-hide="editUserModal"
               >
                 <svg
@@ -263,7 +267,7 @@ export function Table({ header, page, data, setPage }: TableProps) {
               </button>
             </div>
             <div className="space-y-6 p-6">
-              <div className="grid grid-cols-6 gap-6">
+              <div className="grid grid-cols-6 gap-24px">
                 <div className="col-span-6 sm:col-span-3">
                   <label
                     htmlFor="first-name"
@@ -275,7 +279,7 @@ export function Table({ header, page, data, setPage }: TableProps) {
                     type="text"
                     name="first-name"
                     id="first-name"
-                    className="text-sm block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-blue-600 focus:ring-blue-600 dark:border-gray-500 dark:bg-gray-600 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                    className="text-sm p-2.5 block w-full rounded-lg border border-gray-300 bg-gray-50 text-gray-900 shadow-sm focus:border-blue-600 focus:ring-blue-600 dark:border-gray-500 dark:bg-gray-600 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                     placeholder="Bonnie"
                   />
                 </div>
@@ -290,7 +294,7 @@ export function Table({ header, page, data, setPage }: TableProps) {
                     type="text"
                     name="last-name"
                     id="last-name"
-                    className="text-sm block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-blue-600 focus:ring-blue-600 dark:border-gray-500 dark:bg-gray-600 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                    className="text-sm p-2.5 block w-full rounded-lg border border-gray-300 bg-gray-50 text-gray-900 shadow-sm focus:border-blue-600 focus:ring-blue-600 dark:border-gray-500 dark:bg-gray-600 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                     placeholder="Green"
                   />
                 </div>
@@ -305,7 +309,7 @@ export function Table({ header, page, data, setPage }: TableProps) {
                     type="email"
                     name="email"
                     id="email"
-                    className="text-sm block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-blue-600 focus:ring-blue-600 dark:border-gray-500 dark:bg-gray-600 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                    className="text-sm p-2.5 block w-full rounded-lg border border-gray-300 bg-gray-50 text-gray-900 shadow-sm focus:border-blue-600 focus:ring-blue-600 dark:border-gray-500 dark:bg-gray-600 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                     placeholder="example@company.com"
                   />
                 </div>
@@ -320,7 +324,7 @@ export function Table({ header, page, data, setPage }: TableProps) {
                     type="number"
                     name="phone-number"
                     id="phone-number"
-                    className="text-sm block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-blue-600 focus:ring-blue-600 dark:border-gray-500 dark:bg-gray-600 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                    className="text-sm p-2.5 block w-full rounded-lg border border-gray-300 bg-gray-50 text-gray-900 shadow-sm focus:border-blue-600 focus:ring-blue-600 dark:border-gray-500 dark:bg-gray-600 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                     placeholder="e.g. +(12)3456 789"
                   />
                 </div>
@@ -335,7 +339,7 @@ export function Table({ header, page, data, setPage }: TableProps) {
                     type="text"
                     name="department"
                     id="department"
-                    className="text-sm block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-blue-600 focus:ring-blue-600 dark:border-gray-500 dark:bg-gray-600 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                    className="text-sm p-2.5 block w-full rounded-lg border border-gray-300 bg-gray-50 text-gray-900 shadow-sm focus:border-blue-600 focus:ring-blue-600 dark:border-gray-500 dark:bg-gray-600 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                     placeholder="Development"
                   />
                 </div>
@@ -350,7 +354,7 @@ export function Table({ header, page, data, setPage }: TableProps) {
                     type="number"
                     name="company"
                     id="company"
-                    className="text-sm block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-blue-600 focus:ring-blue-600 dark:border-gray-500 dark:bg-gray-600 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                    className="text-sm p-2.5 block w-full rounded-lg border border-gray-300 bg-gray-50 text-gray-900 shadow-sm focus:border-blue-600 focus:ring-blue-600 dark:border-gray-500 dark:bg-gray-600 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                     placeholder="123456"
                   />
                 </div>
@@ -365,7 +369,7 @@ export function Table({ header, page, data, setPage }: TableProps) {
                     type="password"
                     name="current-password"
                     id="current-password"
-                    className="text-sm block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-blue-600 focus:ring-blue-600 dark:border-gray-500 dark:bg-gray-600 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                    className="text-sm p-2.5 block w-full rounded-lg border border-gray-300 bg-gray-50 text-gray-900 shadow-sm focus:border-blue-600 focus:ring-blue-600 dark:border-gray-500 dark:bg-gray-600 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                     placeholder="••••••••"
                   />
                 </div>
@@ -380,16 +384,16 @@ export function Table({ header, page, data, setPage }: TableProps) {
                     type="password"
                     name="new-password"
                     id="new-password"
-                    className="text-sm block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-blue-600 focus:ring-blue-600 dark:border-gray-500 dark:bg-gray-600 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                    className="text-sm p-2.5 block w-full rounded-lg border border-gray-300 bg-gray-50 text-gray-900 shadow-sm focus:border-blue-600 focus:ring-blue-600 dark:border-gray-500 dark:bg-gray-600 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                     placeholder="••••••••"
                   />
                 </div>
               </div>
             </div>
-            <div className="flex items-center space-x-2 rounded-b border-t border-gray-200 p-6 dark:border-gray-600">
+            <div className="space-x-2 p-6 flex items-center rounded-b border-t border-gray-200 dark:border-gray-600">
               <button
                 type="submit"
-                className="text-sm rounded-lg bg-blue-700 px-5 py-2.5 text-center font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                className="text-sm py-2.5 rounded-lg bg-blue-700 px-20px text-center font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
               >
                 Save all
               </button>
@@ -398,7 +402,7 @@ export function Table({ header, page, data, setPage }: TableProps) {
         </div>
       </div>
       <nav
-        className="flex items-center justify-between pt-4"
+        className="pt-4 flex items-center justify-between"
         aria-label="Table navigation"
       >
         <span className="text-sm font-normal text-gray-500 dark:text-gray-400">
@@ -411,11 +415,11 @@ export function Table({ header, page, data, setPage }: TableProps) {
             {data.record_count}
           </span>
         </span>
-        <ul className="inline-flex items-center -space-x-px">
+        <ul className="-space-x-px inline-flex items-center">
           <li>
             <a
               href="#"
-              className="ml-0 block rounded-l-lg border border-gray-300 bg-white px-3 py-2 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+              className="ml-0 block rounded-l-lg border border-gray-300 bg-white px-12px py-8px leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
             >
               <span className="sr-only">Previous</span>
               <svg
@@ -439,7 +443,7 @@ export function Table({ header, page, data, setPage }: TableProps) {
           <li>
             <a
               href="#"
-              className="block rounded-r-lg border border-gray-300 bg-white px-3 py-2 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+              className="block rounded-r-lg border border-gray-300 bg-white px-12px py-8px leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
             >
               <span className="sr-only">Next</span>
               <svg

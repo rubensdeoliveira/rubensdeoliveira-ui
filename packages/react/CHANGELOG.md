@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.33.0
+
+### Minor Changes
+
+- Add new default values to tailwind
+
 ## 1.32.0
 
 ### Minor Changes

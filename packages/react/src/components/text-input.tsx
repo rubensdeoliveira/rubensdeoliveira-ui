@@ -7,7 +7,7 @@ export type TextInputRootProps = {
 
 function TextInputRoot({ children }: TextInputRootProps) {
   return (
-    <div className="flex w-full items-center gap-3 rounded bg-gray-900 py-4 px-3 ring-gray-900 focus-within:ring-2">
+    <div className="flex w-full items-center gap-12px rounded bg-gray-900 py-16px px-12px ring-gray-900 focus-within:ring-2">
       {children}
     </div>
   )
@@ -31,7 +31,7 @@ function TextInputInput({ ...inputProps }: TextInputInputProps) {
   return (
     <input
       {...inputProps}
-      className="flex-1 bg-transparent text-16 text-gray-100 outline-none placeholder:text-gray-400"
+      className="text-16 flex-1 bg-transparent text-gray-100 outline-none placeholder:text-gray-400"
     />
   )
 }

@@ -9,7 +9,7 @@ export function AllIcons() {
     const TheIcon = solidIcons[iconName as IconName]
     return (
       <div
-        className="flex flex-col gap-4 p-4 border border-sky-500 rounded items-center"
+        className="gap-16px p-16px flex flex-col items-center rounded border border-sky-500"
         key={iconName}
       >
         <TheIcon style={{ width: 24, height: 24 }} />
@@ -21,7 +21,7 @@ export function AllIcons() {
     const TheIcon = outlineIcons[iconName as IconName]
     return (
       <div
-        className="flex flex-col gap-4 p-4 border border-sky-500 rounded items-center"
+        className="gap-16px p-16px flex flex-col items-center rounded border border-sky-500"
         key={iconName}
       >
         <TheIcon style={{ width: 24, height: 24 }} />
@@ -32,9 +32,9 @@ export function AllIcons() {
   return (
     <>
       <p className="mb-4">Solid Icons:</p>
-      <div className="flex flex-wrap gap-4">{renderSolidIcons}</div>
+      <div className="gap-16px flex flex-wrap">{renderSolidIcons}</div>
       <p className="my-4">Outline Icons:</p>
-      <div className="flex flex-wrap gap-4">{renderOutlineIcons}</div>
+      <div className="gap-16px flex flex-wrap">{renderOutlineIcons}</div>
     </>
   )
 }
