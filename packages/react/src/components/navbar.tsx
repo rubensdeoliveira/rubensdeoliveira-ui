@@ -97,9 +97,9 @@ export type NavbarBarProps = VariantProps<typeof navBarStyles> & {
 
 function NavbarBar({ py, className, children }: NavbarBarProps) {
   return (
-    <div className="navbar w-full p-0">
+    <header className="navbar min-h-0 w-full p-0">
       <div className={navBarStyles({ py, className })}>{children}</div>
-    </div>
+    </header>
   )
 }
 

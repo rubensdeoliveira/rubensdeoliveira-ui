@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.32.0
+
+### Minor Changes
+
+- Add header to navbar
+
 ## 1.31.0
 
 ### Minor Changes

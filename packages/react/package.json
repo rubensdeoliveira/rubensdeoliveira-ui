@@ -1,6 +1,6 @@
 {
   "name": "@rubensdeoliveira-ui/react",
-  "version": "1.31.0",
+  "version": "1.32.0",
   "description": "",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -36,7 +36,7 @@
     "@heroicons/react": "2.0.14",
     "@radix-ui/react-slot": "1.0.0",
     "@storybook/addon-a11y": "6.5.12",
-    "class-variance-authority": "^0.4.0",
+    "class-variance-authority": "0.4.0",
     "daisyui": "2.50.2",
     "jotai": "2.0.0",
     "npm": "8.0.0"
