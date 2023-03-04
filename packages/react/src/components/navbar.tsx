@@ -78,7 +78,9 @@ const navBarStyles = cva(
     variants: {
       py: {
         16: 'py-[0.75rem] md:py-[0.875rem] lg:py-[1rem]',
+        24: 'py-[1rem] md:py-[1.25rem] lg:py-[1.5rem]',
         32: 'py-[1.5rem] md:py-[1.75rem] lg:py-[2rem]',
+        40: 'py-[1.5rem] md:py-[1.75rem] lg:py-[2.5rem]',
         48: 'py-[2.5rem] md:py-[2.75rem] lg:py-[3rem]',
       },
     },
@@ -121,7 +123,7 @@ function NavbarBarLogo({ children }: NavbarBarLogoProps) {
   return (
     <div className="flex items-center gap-4">
       <div className="flex-none md:hidden">
-        <label htmlFor="my-drawer-3" className="btn btn-ghost btn-square">
+        <label htmlFor="my-drawer-3" className="btn-ghost btn-square btn">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/tokens
 
+## 1.7.0
+
+### Minor Changes
+
+- Add new py values
+
 ## 1.6.0
 
 ### Minor Changes
