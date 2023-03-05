@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.37.0
+
+### Minor Changes
+
+- Add new atributes to text
+
 ## 1.36.0
 
 ### Minor Changes
