@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.36.0
+
+### Minor Changes
+
+- Take off important for tailwind
+
 ## 1.35.0
 
 ### Minor Changes

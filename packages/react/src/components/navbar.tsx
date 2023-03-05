@@ -52,7 +52,7 @@ function NavbarAside({ children }: NavbarAsideProps) {
 
 NavbarAside.displayName = 'Navbar.Aside'
 
-const navbarAsideStyles = cva('menu w-320px] p-16px')
+const navbarAsideStyles = cva('menu w-[320px] p-16px')
 
 export type NavbarAsideMenuItemsProps = {
   children: ReactElement | ReactElement[]
