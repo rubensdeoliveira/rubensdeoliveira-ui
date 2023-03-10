@@ -125,7 +125,7 @@ function NavbarBarLogo({ children }: NavbarBarLogoProps) {
       <div className="flex-none md:hidden">
         <label
           htmlFor="my-drawer-3"
-          className="btn-ghost btn w-24px pl-0 pr-0 hover:bg-transparent"
+          className="btn btn-ghost w-24px pl-0 pr-0 hover:bg-transparent"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

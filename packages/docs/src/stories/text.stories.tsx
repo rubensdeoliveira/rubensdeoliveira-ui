@@ -7,24 +7,24 @@ export default {
   args: {
     children: 'Lorem ipsum.',
     className: '',
-    lineHeight: '1',
+    lineHeight: 1,
   },
 } as Meta<TextProps>
 
 export const Default: StoryObj<TextProps> = {
   args: {
-    size: '16',
+    size: 16,
   },
 }
 export const Size12: StoryObj<TextProps> = {
   args: {
-    size: '12',
+    size: 12,
   },
 }
 
 export const Size20: StoryObj<TextProps> = {
   args: {
-    size: '20',
+    size: 20,
   },
 }
 

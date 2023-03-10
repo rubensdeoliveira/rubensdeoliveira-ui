@@ -1,5 +1,6 @@
 import './styles/index.css'
 export * from './components/button'
+export * from './components/card'
 export * from './components/form-row'
 export * from './components/form'
 export * from './components/icon'
