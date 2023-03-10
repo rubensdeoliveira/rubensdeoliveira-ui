@@ -4,26 +4,26 @@ import { renderResponsizeProp } from '../helpers/render-responsive-prop'
 import { Icon, IconName } from './icon'
 
 const buttonStyles = cva(
-  'flex items-center gap-10px focus:ring-4 font-medium rounded-lg focus:outline-none text-center',
+  'flex items-center justify-center gap-10px focus:ring-4 font-medium rounded-lg focus:outline-none text-center',
   {
     variants: {
       size: {
         smaller: 'p-2.5',
         small: 'text-14px px-20px py-2.5',
         default: 'px-20px py-12px text-16px',
-        big: ' text-16px px-24px py-3.5',
+        big: 'text-16px px-24px py-3.5',
       },
       sizeMd: {
         smaller: 'p-2.5',
         small: 'text-14px px-20px py-2.5',
         default: 'px-20px py-12px text-16px',
-        big: ' text-16px px-24px py-3.5',
+        big: 'text-16px px-24px py-3.5',
       },
       sizeLg: {
         smaller: 'p-2.5',
         small: 'text-14px px-20px py-2.5',
         default: 'px-20px py-12px text-16px',
-        big: ' text-16px px-24px py-3.5',
+        big: 'text-16px px-24px py-3.5',
       },
     },
     defaultVariants: {

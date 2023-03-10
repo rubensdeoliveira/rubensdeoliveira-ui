@@ -1,0 +1,26 @@
+.icon-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-direction: column;
+  padding: 20px;
+  width: 200px;
+  border: 1px solid white;
+  font-size: 12px;
+}
+
+.icon-items-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.icon-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}

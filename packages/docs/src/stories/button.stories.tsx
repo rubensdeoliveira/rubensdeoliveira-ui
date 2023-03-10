@@ -8,7 +8,6 @@ export default {
   component: Button.Root,
   args: {
     children: <Button.Text>Enviar</Button.Text>,
-    className: 'bg-red-400',
   },
 } as Meta<ButtonRootProps>
 
@@ -23,6 +22,12 @@ export const Big: StoryObj<ButtonRootProps> = {
 export const Small: StoryObj<ButtonRootProps> = {
   args: {
     size: 'small',
+  },
+}
+
+export const Smaller: StoryObj<ButtonRootProps> = {
+  args: {
+    size: 'smaller',
   },
 }
 

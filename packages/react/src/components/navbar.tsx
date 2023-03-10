@@ -4,7 +4,7 @@ import { ReactElement, ReactNode } from 'react'
 function renderNavigationItems(children: ReactElement | ReactElement[]) {
   if (Array.isArray(children)) {
     return children.map((navigationItem, index) => (
-      <li key={index} className="text-16">
+      <li key={index} className="text-16px">
         {navigationItem}
       </li>
     ))

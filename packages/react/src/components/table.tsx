@@ -226,7 +226,7 @@ export function Table({ header, page, data, setPage }: TableProps) {
         </div>
       </div>
       <table className="text-sm w-full text-left text-gray-500 dark:text-gray-400">
-        <thead className="text-xs bg-gray-50 uppercase text-gray-700 dark:bg-gray-700 dark:text-gray-400">
+        <thead className="text-12px bg-gray-50 uppercase text-gray-700 dark:bg-gray-700 dark:text-gray-400">
           {renderTableHeader()}
         </thead>
         <tbody>{renderTableRows()}</tbody>

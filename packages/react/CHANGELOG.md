@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.38.0
+
+### Minor Changes
+
+- Add new text sizes
+
 ## 1.37.0
 
 ### Minor Changes

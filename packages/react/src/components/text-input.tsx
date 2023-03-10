@@ -31,7 +31,7 @@ function TextInputInput({ ...inputProps }: TextInputInputProps) {
   return (
     <input
       {...inputProps}
-      className="text-16 flex-1 bg-transparent text-gray-100 outline-none placeholder:text-gray-400"
+      className="flex-1 bg-transparent text-16px text-gray-100 outline-none placeholder:text-gray-400"
     />
   )
 }
