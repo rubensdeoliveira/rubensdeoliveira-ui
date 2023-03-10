@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.39.0
+
+### Minor Changes
+
+- fe56939: Add new card component
+
 ## 1.38.0
 
 ### Minor Changes
