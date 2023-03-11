@@ -51,14 +51,14 @@ export type ButtonRootProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 function ButtonRoot({
   children,
   size,
-  className,
+  className = '',
   buttonType,
   ...rest
 }: ButtonRootProps) {
   function getCorrectClass() {
     switch (buttonType) {
       case 'ghost':
-        return 'flex items-center gap-8px border-0'
+        return `${className} flex items-center gap-8px border-0`
       default:
         return buttonStyles({
           size: renderResponsizeProp(size),

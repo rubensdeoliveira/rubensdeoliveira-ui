@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.45.0
+
+### Minor Changes
+
+- Add classname to ghost button
+
 ## 1.44.0
 
 ### Minor Changes
