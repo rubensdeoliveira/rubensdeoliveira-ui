@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.42.0
+
+### Minor Changes
+
+- Add new padding to card component
+
 ## 1.41.0
 
 ### Minor Changes

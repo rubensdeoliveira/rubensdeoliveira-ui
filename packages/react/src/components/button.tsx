@@ -3,7 +3,7 @@ import { ButtonHTMLAttributes, ReactNode } from 'react'
 import { renderResponsizeProp } from '../helpers/render-responsive-prop'
 import { Icon, IconName } from './icon'
 
-const buttonStyles = cva('btn capitalize gap-8px', {
+const buttonStyles = cva('btn normal-case gap-8px', {
   variants: {
     size: {
       circle: 'btn-circle',
