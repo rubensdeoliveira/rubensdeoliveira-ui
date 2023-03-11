@@ -58,3 +58,13 @@ export const Outline: StoryObj<ButtonRootProps> = {
     buttonType: 'outline',
   },
 }
+
+export const Ghost: StoryObj<ButtonRootProps> = {
+  args: {
+    buttonType: 'ghost',
+    children: [
+      <Button.Text>Navegar</Button.Text>,
+      <Button.Icon name="ChevronRightIcon" />,
+    ],
+  },
+}

@@ -45,7 +45,7 @@ export type ButtonRootProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   children: ReactNode
   size?: ButtonSizeProps | ButtonSizeProps[]
   className?: string
-  buttonType?: 'outline' | 'default'
+  buttonType?: 'outline' | 'default' | 'ghost'
 }
 
 function ButtonRoot({
@@ -55,17 +55,23 @@ function ButtonRoot({
   buttonType,
   ...rest
 }: ButtonRootProps) {
+  function getCorrectClass() {
+    switch (buttonType) {
+      case 'ghost':
+        return 'flex items-center gap-8px border-0'
+      default:
+        return buttonStyles({
+          size: renderResponsizeProp(size),
+          sizeMd: renderResponsizeProp(size, 'md'),
+          sizeLg: renderResponsizeProp(size, 'lg'),
+          buttonType,
+          className,
+        })
+    }
+  }
+
   return (
-    <button
-      {...rest}
-      className={buttonStyles({
-        size: renderResponsizeProp(size),
-        sizeMd: renderResponsizeProp(size, 'md'),
-        sizeLg: renderResponsizeProp(size, 'lg'),
-        buttonType,
-        className,
-      })}
-    >
+    <button {...rest} className={getCorrectClass()}>
       {children}
     </button>
   )
