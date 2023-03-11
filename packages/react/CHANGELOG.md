@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.41.0
+
+### Minor Changes
+
+- Add text mb and mt
+
 ## 1.40.0
 
 ### Minor Changes
