@@ -1,0 +1,2 @@
+import{d as t}from"./index.7c7fa249.js";import"./index.fac4b0b7.js";import"./index.42352f01.js";import"./iframe.3ffd534f.js";import"./jsx-runtime.c4170add.js";const e={title:"Components/Toast",component:t,args:{message:"Essa \xE9 uma mensagem de um toast",type:"success"}},p={},i=["Primary"];export{p as Primary,i as __namedExportsOrder,e as default};
+//# sourceMappingURL=toast.stories.c2f3b6c2.js.map

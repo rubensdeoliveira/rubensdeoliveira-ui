@@ -1,0 +1,2 @@
+import{T as e}from"./index.7c7fa249.js";import"./index.fac4b0b7.js";import"./index.42352f01.js";import"./iframe.3ffd534f.js";import"./jsx-runtime.c4170add.js";const n={title:"Components/Table",component:e,args:{setPage:()=>{},page:1,data:{data:[{name:"arthur"},{name:"jose"}],last_page:10,page:1,record_count:1e3},header:[{columnLabel:"Nome",columnName:"name",columnType:"default"}]}},p={},s=["Primary"];export{p as Primary,s as __namedExportsOrder,n as default};
+//# sourceMappingURL=table.stories.d3b24b5b.js.map

@@ -1,0 +1,2 @@
+import{I as t}from"./index.7c7fa249.js";import"./index.fac4b0b7.js";import"./index.42352f01.js";import"./iframe.3ffd534f.js";import"./jsx-runtime.c4170add.js";const i={title:"Components/Icon",component:t,args:{name:"AdjustmentsHorizontalIcon",className:"text-white",size:24,type:"outline"}},m={},a=["Primary"];export{m as Primary,a as __namedExportsOrder,i as default};
+//# sourceMappingURL=icon.stories.c52a5449.js.map

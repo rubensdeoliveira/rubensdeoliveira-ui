@@ -1,0 +1,2 @@
+import{C as r}from"./index.7c7fa249.js";import{j as t}from"./jsx-runtime.c4170add.js";import"./index.fac4b0b7.js";import"./index.42352f01.js";import"./iframe.3ffd534f.js";const m={title:"Components/Card",component:r,args:{children:t("p",{children:"Card content"}),className:"bg-red-500"}},d={args:{}},p=["Default"];export{d as Default,p as __namedExportsOrder,m as default};
+//# sourceMappingURL=card.stories.b9aefda6.js.map

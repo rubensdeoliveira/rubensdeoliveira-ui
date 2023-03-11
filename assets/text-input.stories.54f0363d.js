@@ -1,0 +1,2 @@
+import{b as t}from"./index.7c7fa249.js";import{j as e}from"./jsx-runtime.c4170add.js";import"./index.fac4b0b7.js";import"./index.42352f01.js";import"./iframe.3ffd534f.js";const s={title:"Components/TextInput",component:t.Root,args:{children:[e(t.Input,{placeholder:"Digite seu e-mail"})]}},a={},c={args:{children:[e(t.Icon,{name:"EnvelopeIcon"}),e(t.Input,{placeholder:"Digite seu e-mail"})]}},l=["Default","WithIcon"];export{a as Default,c as WithIcon,l as __namedExportsOrder,s as default};
+//# sourceMappingURL=text-input.stories.54f0363d.js.map

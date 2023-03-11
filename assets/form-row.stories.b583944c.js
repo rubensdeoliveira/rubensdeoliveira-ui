@@ -1,0 +1,2 @@
+import{F as o}from"./index.7c7fa249.js";import{j as r}from"./jsx-runtime.c4170add.js";import"./index.fac4b0b7.js";import"./index.42352f01.js";import"./iframe.3ffd534f.js";const i={title:"Components/FormRow",component:o,args:{children:r("span",{children:"Testando o elemento FormRow"})},argTypes:{children:{control:{type:null}}}},p={},a=["Primary"];export{p as Primary,a as __namedExportsOrder,i as default};
+//# sourceMappingURL=form-row.stories.b583944c.js.map

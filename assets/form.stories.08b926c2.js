@@ -1,0 +1,2 @@
+import{a as o}from"./index.7c7fa249.js";import{j as r}from"./jsx-runtime.c4170add.js";import"./index.fac4b0b7.js";import"./index.42352f01.js";import"./iframe.3ffd534f.js";const a={title:"Components/Form",component:o,args:{children:r("span",{children:"Testando o elemento Form"})},argTypes:{children:{control:{type:null}}}},i={},p=["Primary"];export{i as Primary,p as __namedExportsOrder,a as default};
+//# sourceMappingURL=form.stories.08b926c2.js.map
