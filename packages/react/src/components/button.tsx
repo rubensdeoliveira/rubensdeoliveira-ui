@@ -81,10 +81,11 @@ ButtonRoot.displayName = 'Button.Root'
 
 export type ButtonIconProps = {
   name: IconName
+  className?: string
 }
 
-function ButtonIcon({ name }: ButtonIconProps) {
-  return <Icon name={name} />
+function ButtonIcon({ name, className }: ButtonIconProps) {
+  return <Icon name={name} className={className} />
 }
 
 ButtonIcon.displayName = 'Button.Icon'

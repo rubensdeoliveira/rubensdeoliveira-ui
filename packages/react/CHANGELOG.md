@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.44.0
+
+### Minor Changes
+
+- Add classname to button icon
+
 ## 1.43.0
 
 ### Minor Changes
