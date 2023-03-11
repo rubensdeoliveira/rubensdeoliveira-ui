@@ -13,29 +13,48 @@ export default {
 
 export const Default: StoryObj<ButtonRootProps> = {}
 
-export const Big: StoryObj<ButtonRootProps> = {
+export const BigSize: StoryObj<ButtonRootProps> = {
   args: {
     size: 'big',
   },
 }
 
-export const Small: StoryObj<ButtonRootProps> = {
+export const SmallSize: StoryObj<ButtonRootProps> = {
   args: {
     size: 'small',
   },
 }
 
-export const Smaller: StoryObj<ButtonRootProps> = {
+export const SmallerSize: StoryObj<ButtonRootProps> = {
   args: {
     size: 'smaller',
   },
 }
 
-export const WithIcon: StoryObj<ButtonRootProps> = {
+export const Responsive: StoryObj<ButtonRootProps> = {
+  args: {
+    size: ['small', 'default', 'big'],
+  },
+}
+
+export const TextIcon: StoryObj<ButtonRootProps> = {
   args: {
     children: [
       <Button.Text>Navegar</Button.Text>,
       <Button.Icon name="ChevronRightIcon" />,
     ],
+  },
+}
+
+export const Icon: StoryObj<ButtonRootProps> = {
+  args: {
+    children: [<Button.Icon name="ChevronRightIcon" />],
+    size: 'circle',
+  },
+}
+
+export const Outline: StoryObj<ButtonRootProps> = {
+  args: {
+    buttonType: 'outline',
   },
 }

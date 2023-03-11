@@ -83,7 +83,7 @@ export function Table({ header, page, data, setPage }: TableProps) {
               <th
                 key={headerItem.columnName}
                 scope="row"
-                className="flex items-center whitespace-nowrap py-16px px-24px font-medium text-gray-900 dark:text-white"
+                className="flex items-center whitespace-nowrap py-16px px-24px font-500 text-gray-900 dark:text-white"
               >
                 <img
                   className="h-10 w-10 rounded-full"
@@ -91,8 +91,8 @@ export function Table({ header, page, data, setPage }: TableProps) {
                   alt="Jese image"
                 />
                 <div className="pl-3">
-                  <div className="text-base font-semibold">Bonnie Green</div>
-                  <div className="font-normal text-gray-500">
+                  <div className="text-base font-600">Bonnie Green</div>
+                  <div className="font-400 text-gray-500">
                     {dataItem[headerItem.columnName]}
                   </div>
                 </div>
@@ -110,7 +110,7 @@ export function Table({ header, page, data, setPage }: TableProps) {
             href="#"
             type="button"
             data-modal-show="editUserModal"
-            className="font-medium text-blue-600 hover:underline dark:text-blue-500"
+            className="font-500 text-blue-600 hover:underline dark:text-blue-500"
           >
             Edit user
           </a>
@@ -202,7 +202,7 @@ export function Table({ header, page, data, setPage }: TableProps) {
           Search
         </label>
         <div className="relative">
-          <div className="pl-3 pointer-events-none absolute inset-y-0 left-0 flex items-center">
+          <div className="pl-3 pointer-events-none absolute inset-y-0px left-0px flex items-center">
             <svg
               className="h-5 w-5 text-gray-500 dark:text-gray-400"
               aria-hidden="true"
@@ -226,7 +226,7 @@ export function Table({ header, page, data, setPage }: TableProps) {
         </div>
       </div>
       <table className="text-sm w-full text-left text-gray-500 dark:text-gray-400">
-        <thead className="text-12px bg-gray-50 uppercase text-gray-700 dark:bg-gray-700 dark:text-gray-400">
+        <thead className="bg-gray-50 text-12px uppercase text-gray-700 dark:bg-gray-700 dark:text-gray-400">
           {renderTableHeader()}
         </thead>
         <tbody>{renderTableRows()}</tbody>
@@ -235,7 +235,7 @@ export function Table({ header, page, data, setPage }: TableProps) {
         id="editUserModal"
         tabIndex={-1}
         aria-hidden="true"
-        className="h-modal p-4 fixed top-0 left-0 right-0 z-50 hidden w-full items-center justify-center overflow-y-auto overflow-x-hidden md:inset-0 md:h-full"
+        className="h-modal p-4 fixed top-0px left-0px right-0px z-50 hidden w-full items-center justify-center overflow-y-auto overflow-x-hidden md:inset-0px md:h-full"
       >
         <div className="relative h-full w-full max-w-2xl md:h-auto">
           <form
@@ -243,7 +243,7 @@ export function Table({ header, page, data, setPage }: TableProps) {
             className="relative rounded-lg bg-white shadow dark:bg-gray-700"
           >
             <div className="p-4 flex items-start justify-between rounded-t border-b dark:border-gray-600">
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+              <h3 className="text-xl font-600 text-gray-900 dark:text-white">
                 Edit user
               </h3>
               <button
@@ -271,7 +271,7 @@ export function Table({ header, page, data, setPage }: TableProps) {
                 <div className="col-span-6 sm:col-span-3">
                   <label
                     htmlFor="first-name"
-                    className="text-sm mb-2 block font-medium text-gray-900 dark:text-white"
+                    className="text-sm mb-2 block font-500 text-gray-900 dark:text-white"
                   >
                     First Name
                   </label>
@@ -286,7 +286,7 @@ export function Table({ header, page, data, setPage }: TableProps) {
                 <div className="col-span-6 sm:col-span-3">
                   <label
                     htmlFor="last-name"
-                    className="text-sm mb-2 block font-medium text-gray-900 dark:text-white"
+                    className="text-sm mb-2 block font-500 text-gray-900 dark:text-white"
                   >
                     Last Name
                   </label>
@@ -301,7 +301,7 @@ export function Table({ header, page, data, setPage }: TableProps) {
                 <div className="col-span-6 sm:col-span-3">
                   <label
                     htmlFor="email"
-                    className="text-sm mb-2 block font-medium text-gray-900 dark:text-white"
+                    className="text-sm mb-2 block font-500 text-gray-900 dark:text-white"
                   >
                     Email
                   </label>
@@ -316,7 +316,7 @@ export function Table({ header, page, data, setPage }: TableProps) {
                 <div className="col-span-6 sm:col-span-3">
                   <label
                     htmlFor="phone-number"
-                    className="text-sm mb-2 block font-medium text-gray-900 dark:text-white"
+                    className="text-sm mb-2 block font-500 text-gray-900 dark:text-white"
                   >
                     Phone Number
                   </label>
@@ -331,7 +331,7 @@ export function Table({ header, page, data, setPage }: TableProps) {
                 <div className="col-span-6 sm:col-span-3">
                   <label
                     htmlFor="department"
-                    className="text-sm mb-2 block font-medium text-gray-900 dark:text-white"
+                    className="text-sm mb-2 block font-500 text-gray-900 dark:text-white"
                   >
                     Department
                   </label>
@@ -346,7 +346,7 @@ export function Table({ header, page, data, setPage }: TableProps) {
                 <div className="col-span-6 sm:col-span-3">
                   <label
                     htmlFor="company"
-                    className="text-sm mb-2 block font-medium text-gray-900 dark:text-white"
+                    className="text-sm mb-2 block font-500 text-gray-900 dark:text-white"
                   >
                     Company
                   </label>
@@ -361,7 +361,7 @@ export function Table({ header, page, data, setPage }: TableProps) {
                 <div className="col-span-6 sm:col-span-3">
                   <label
                     htmlFor="current-password"
-                    className="text-sm mb-2 block font-medium text-gray-900 dark:text-white"
+                    className="text-sm mb-2 block font-500 text-gray-900 dark:text-white"
                   >
                     Current Password
                   </label>
@@ -376,7 +376,7 @@ export function Table({ header, page, data, setPage }: TableProps) {
                 <div className="col-span-6 sm:col-span-3">
                   <label
                     htmlFor="new-password"
-                    className="text-sm mb-2 block font-medium text-gray-900 dark:text-white"
+                    className="text-sm mb-2 block font-500 text-gray-900 dark:text-white"
                   >
                     New Password
                   </label>
@@ -393,7 +393,7 @@ export function Table({ header, page, data, setPage }: TableProps) {
             <div className="space-x-2 p-6 flex items-center rounded-b border-t border-gray-200 dark:border-gray-600">
               <button
                 type="submit"
-                className="text-sm py-2.5 rounded-lg bg-blue-700 px-20px text-center font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                className="text-sm py-2.5 rounded-lg bg-blue-700 px-20px text-center font-500 text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
               >
                 Save all
               </button>
@@ -405,13 +405,13 @@ export function Table({ header, page, data, setPage }: TableProps) {
         className="pt-4 flex items-center justify-between"
         aria-label="Table navigation"
       >
-        <span className="text-sm font-normal text-gray-500 dark:text-gray-400">
+        <span className="text-sm font-400 text-gray-500 dark:text-gray-400">
           Exibindo{' '}
-          <span className="font-semibold text-gray-900 dark:text-white">
+          <span className="font-600 text-gray-900 dark:text-white">
             {(data.page - 1) * 20 + 1}-{data.page * 20}
           </span>{' '}
           de{' '}
-          <span className="font-semibold text-gray-900 dark:text-white">
+          <span className="font-600 text-gray-900 dark:text-white">
             {data.record_count}
           </span>
         </span>
@@ -419,7 +419,7 @@ export function Table({ header, page, data, setPage }: TableProps) {
           <li>
             <a
               href="#"
-              className="ml-0 block rounded-l-lg border border-gray-300 bg-white px-12px py-8px leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+              className="ml-0px block rounded-l-lg border border-gray-300 bg-white px-12px py-8px leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
             >
               <span className="sr-only">Previous</span>
               <svg

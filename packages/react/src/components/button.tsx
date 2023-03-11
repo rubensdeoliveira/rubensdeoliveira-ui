@@ -3,46 +3,58 @@ import { ButtonHTMLAttributes, ReactNode } from 'react'
 import { renderResponsizeProp } from '../helpers/render-responsive-prop'
 import { Icon, IconName } from './icon'
 
-const buttonStyles = cva(
-  'flex items-center justify-center gap-10px focus:ring-4 font-medium rounded-lg focus:outline-none text-center',
-  {
-    variants: {
-      size: {
-        smaller: 'p-2.5',
-        small: 'text-14px px-20px py-2.5',
-        default: 'px-20px py-12px text-16px',
-        big: 'text-16px px-24px py-3.5',
-      },
-      sizeMd: {
-        smaller: 'p-2.5',
-        small: 'text-14px px-20px py-2.5',
-        default: 'px-20px py-12px text-16px',
-        big: 'text-16px px-24px py-3.5',
-      },
-      sizeLg: {
-        smaller: 'p-2.5',
-        small: 'text-14px px-20px py-2.5',
-        default: 'px-20px py-12px text-16px',
-        big: 'text-16px px-24px py-3.5',
-      },
+const buttonStyles = cva('btn capitalize gap-8px', {
+  variants: {
+    size: {
+      circle: 'btn-circle',
+      smaller: 'btn-xs',
+      small: 'btn-sm',
+      default: 'btn-md',
+      big: 'btn-lg',
     },
-    defaultVariants: {
-      size: 'default',
-      sizeMd: 'default',
-      sizeLg: 'default',
+    sizeMd: {
+      circle: 'md:btn-circle',
+      smaller: 'md:btn-xs',
+      small: 'md:btn-sm',
+      default: 'md:btn-md',
+      big: 'md:btn-lg',
+    },
+    sizeLg: {
+      circle: 'lg:btn-circle',
+      smaller: 'lg:btn-xs',
+      small: 'lg:btn-sm',
+      default: 'lg:btn-md',
+      big: 'lg:btn-lg',
+    },
+    buttonType: {
+      outline: 'btn-outline',
+      default: '',
     },
   },
-)
+  defaultVariants: {
+    size: 'default',
+    sizeMd: 'default',
+    sizeLg: 'default',
+    buttonType: 'default',
+  },
+})
 
-type ButtonSizeProps = 'default' | 'small' | 'big' | 'smaller'
+type ButtonSizeProps = 'default' | 'small' | 'big' | 'smaller' | 'circle'
 
 export type ButtonRootProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   children: ReactNode
   size?: ButtonSizeProps | ButtonSizeProps[]
   className?: string
+  buttonType?: 'outline' | 'default'
 }
 
-function ButtonRoot({ children, size, className, ...rest }: ButtonRootProps) {
+function ButtonRoot({
+  children,
+  size,
+  className,
+  buttonType,
+  ...rest
+}: ButtonRootProps) {
   return (
     <button
       {...rest}
@@ -50,6 +62,7 @@ function ButtonRoot({ children, size, className, ...rest }: ButtonRootProps) {
         size: renderResponsizeProp(size),
         sizeMd: renderResponsizeProp(size, 'md'),
         sizeLg: renderResponsizeProp(size, 'lg'),
+        buttonType,
         className,
       })}
     >

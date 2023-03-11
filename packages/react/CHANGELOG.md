@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.40.0
+
+### Minor Changes
+
+- Add new text type
+
 ## 1.39.0
 
 ### Minor Changes

@@ -28,6 +28,12 @@ export const Size20: StoryObj<TextProps> = {
   },
 }
 
+export const Bold: StoryObj<TextProps> = {
+  args: {
+    weight: 600,
+  },
+}
+
 export const Heading: StoryObj<TextProps> = {
   args: {
     as: 'h1',

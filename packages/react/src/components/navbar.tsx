@@ -73,7 +73,7 @@ function NavbarAsideMenuItems({
 NavbarAsideMenuItems.displayName = 'Navbar.AsideMenuItems'
 
 const navBarStyles = cva(
-  'w-full max-w-[1200px] flex justify-between px-20px xl:px-0 mx-[auto]',
+  'w-full max-w-[1200px] flex justify-between px-20px xl:px-0px mx-[auto]',
   {
     variants: {
       py: {
@@ -97,7 +97,7 @@ export type NavbarBarProps = VariantProps<typeof navBarStyles> & {
 
 function NavbarBar({ py, className, children }: NavbarBarProps) {
   return (
-    <header className="navbar min-h-[unset] w-full p-0">
+    <header className="navbar min-h-[unset] w-full p-0px">
       <div className={navBarStyles({ py, className })}>{children}</div>
     </header>
   )
@@ -125,7 +125,7 @@ function NavbarBarLogo({ children }: NavbarBarLogoProps) {
       <div className="flex-none md:hidden">
         <label
           htmlFor="my-drawer-3"
-          className="btn btn-ghost w-24px pl-0 pr-0 hover:bg-transparent"
+          className="btn-ghost btn w-24px pl-0px pr-0px hover:bg-transparent"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -156,7 +156,7 @@ export type NavbarBarMenuItemsProps = {
 function NavbarBarMenuItems({ children }: NavbarBarMenuItemsProps) {
   return (
     <div className="hidden flex-none md:block">
-      <ul className="menu menu-horizontal flex items-center gap-[4.5rem]">
+      <ul className="menu menu-horizontal flex items-center gap-72px">
         {renderNavigationItems(children)}
       </ul>
     </div>
