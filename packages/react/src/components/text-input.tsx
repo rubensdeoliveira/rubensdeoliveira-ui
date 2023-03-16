@@ -1,5 +1,6 @@
 import { InputHTMLAttributes, ReactNode } from 'react'
 import { Icon, IconName } from './icon'
+import { UseFormRegister } from 'react-hook-form'
 
 export type TextInputRootProps = {
   children: ReactNode
@@ -25,12 +26,20 @@ function TextInputIcon({ name }: TextInputIconProps) {
 
 TextInputIcon.displayName = 'TextInput.Icon'
 
-export type TextInputInputProps = InputHTMLAttributes<HTMLInputElement> & {}
+export type TextInputInputProps = InputHTMLAttributes<HTMLInputElement> & {
+  name: string
+  register: UseFormRegister<any>
+}
 
-function TextInputInput({ ...inputProps }: TextInputInputProps) {
+function TextInputInput({
+  name,
+  register,
+  ...inputProps
+}: TextInputInputProps) {
   return (
     <input
       {...inputProps}
+      {...register(name)}
       className="flex-1 bg-transparent text-16px text-gray-100 outline-none placeholder:text-gray-400"
     />
   )

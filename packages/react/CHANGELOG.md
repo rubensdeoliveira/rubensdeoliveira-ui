@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.46.0
+
+### Minor Changes
+
+- Add react hook form to text input
+
 ## 1.45.0
 
 ### Minor Changes
