@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.48.0
+
+### Minor Changes
+
+- add ds provider
+
 ## 1.47.0
 
 ### Minor Changes
