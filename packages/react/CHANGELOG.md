@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.51.0
+
+### Minor Changes
+
+- Add card and navbar props
+
 ## 1.50.0
 
 ### Minor Changes
