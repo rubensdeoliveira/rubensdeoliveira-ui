@@ -8,23 +8,18 @@ export default {
     children: 'Lorem ipsum.',
     className: '',
     lineHeight: 1,
+    size: 16,
+    mb: 0,
+    mt: 0,
+    weight: 400,
   },
 } as Meta<TextProps>
 
-export const Default: StoryObj<TextProps> = {
-  args: {
-    size: 16,
-  },
-}
-export const Size12: StoryObj<TextProps> = {
-  args: {
-    size: 12,
-  },
-}
+export const Default: StoryObj<TextProps> = {}
 
-export const Size20: StoryObj<TextProps> = {
+export const Size32: StoryObj<TextProps> = {
   args: {
-    size: 20,
+    size: 32,
   },
 }
 
@@ -37,6 +32,5 @@ export const Bold: StoryObj<TextProps> = {
 export const Heading: StoryObj<TextProps> = {
   args: {
     as: 'h1',
-    children: <h1>Heading</h1>,
   },
 }
