@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.52.0
+
+### Minor Changes
+
+- Add navbar width
+
 ## 1.51.0
 
 ### Minor Changes

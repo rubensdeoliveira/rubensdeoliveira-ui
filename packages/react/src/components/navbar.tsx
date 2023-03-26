@@ -82,7 +82,10 @@ export type NavbarBarProps = {
 function NavbarBar({ py, className, children }: NavbarBarProps) {
   return (
     <header className="navbar min-h-[unset] w-full p-0px">
-      <S.navbarBar className={className} py={py}>
+      <S.navbarBar
+        className={`${className} mx-[auto] flex w-full max-w-[1200px] justify-between px-20px xl:px-0px`}
+        py={py}
+      >
         {children}
       </S.navbarBar>
     </header>
@@ -111,7 +114,7 @@ function NavbarBarLogo({ children }: NavbarBarLogoProps) {
       <div className="flex-none md:hidden">
         <label
           htmlFor="my-drawer-3"
-          className="btn-ghost btn w-24px pl-0px pr-0px hover:bg-transparent"
+          className="btn btn-ghost w-24px pl-0px pr-0px hover:bg-transparent"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
