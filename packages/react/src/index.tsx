@@ -3,6 +3,8 @@ import './styles/global.css'
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
 
+const defaultTheme = {}
+
 interface DSProviderProps {
   children: React.ReactNode
 }
@@ -11,7 +13,7 @@ export const DSProvider: React.FC<DSProviderProps> = ({
   children,
 }: DSProviderProps) => {
   return (
-    <ThemeProvider theme={null}>
+    <ThemeProvider theme={defaultTheme}>
       <>{children}</>
     </ThemeProvider>
   )

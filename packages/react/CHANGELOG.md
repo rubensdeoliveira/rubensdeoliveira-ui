@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.49.0
+
+### Minor Changes
+
+- add default theme
+
 ## 1.48.0
 
 ### Minor Changes
