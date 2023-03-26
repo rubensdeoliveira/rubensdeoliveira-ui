@@ -1,10 +1,10 @@
 import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
 
 type TextProps = {
-  size: number | number[]
-  weight: number | number[]
-  mb: number | number[]
-  mt: number | number[]
+  size?: number | number[]
+  weight?: number | number[]
+  mb?: number | number[]
+  mt?: number | number[]
   lineHeight?: number
 }
 
@@ -13,7 +13,7 @@ const transformInRem = (value: number): string => {
 }
 
 const getFontSizeValue = (
-  value: number | number[],
+  value?: number | number[],
 ): FlattenSimpleInterpolation => {
   if (Array.isArray(value)) {
     if (value.length === 1) {
@@ -43,7 +43,8 @@ const getFontSizeValue = (
         }
       `
     }
-  } else {
+  }
+  if (typeof value === 'number') {
     return css`
       font-size: ${transformInRem(value)};
     `
@@ -52,7 +53,7 @@ const getFontSizeValue = (
 }
 
 const getFontWeightValue = (
-  value: number | number[],
+  value?: number | number[],
 ): FlattenSimpleInterpolation => {
   if (Array.isArray(value)) {
     if (value.length === 1) {
@@ -82,7 +83,8 @@ const getFontWeightValue = (
         }
       `
     }
-  } else {
+  }
+  if (typeof value === 'number') {
     return css`
       font-weight: ${value};
     `
@@ -90,7 +92,7 @@ const getFontWeightValue = (
   return css``
 }
 
-const getMbValue = (value: number | number[]): FlattenSimpleInterpolation => {
+const getMbValue = (value?: number | number[]): FlattenSimpleInterpolation => {
   if (Array.isArray(value)) {
     if (value.length === 1) {
       return css`
@@ -119,7 +121,8 @@ const getMbValue = (value: number | number[]): FlattenSimpleInterpolation => {
         }
       `
     }
-  } else {
+  }
+  if (typeof value === 'number') {
     return css`
       margin-bottom: ${transformInRem(value)};
     `
@@ -127,7 +130,7 @@ const getMbValue = (value: number | number[]): FlattenSimpleInterpolation => {
   return css``
 }
 
-const getMtValue = (value: number | number[]): FlattenSimpleInterpolation => {
+const getMtValue = (value?: number | number[]): FlattenSimpleInterpolation => {
   if (Array.isArray(value)) {
     if (value.length === 1) {
       return css`
@@ -156,7 +159,8 @@ const getMtValue = (value: number | number[]): FlattenSimpleInterpolation => {
         }
       `
     }
-  } else {
+  }
+  if (typeof value === 'number') {
     return css`
       margin-top: ${transformInRem(value)};
     `

@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.50.0
+
+### Minor Changes
+
+- refactor text props
+
 ## 1.49.0
 
 ### Minor Changes

@@ -15,14 +15,14 @@ export type TextProps = {
 }
 
 export function Text({
-  size = 16,
-  weight = 400,
+  size,
+  weight,
   as,
   lineHeight,
   className,
   children,
-  mb = 0,
-  mt = 0,
+  mb,
+  mt,
 }: TextProps) {
   switch (as) {
     case 'h1':
