@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/tokens
 
+## 1.8.0
+
+### Minor Changes
+
+- Add new button
+
 ## 1.7.0
 
 ### Minor Changes
