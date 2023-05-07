@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.56.0
+
+### Minor Changes
+
+- change px to py on styles
+
 ## 1.55.0
 
 ### Minor Changes

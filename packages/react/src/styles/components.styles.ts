@@ -192,7 +192,7 @@ const getMtValue = (value?: number | number[]): FlattenSimpleInterpolation => {
   return css``
 }
 
-const getPxValue = (value?: number | number[]): FlattenSimpleInterpolation => {
+const getPyValue = (value?: number | number[]): FlattenSimpleInterpolation => {
   if (Array.isArray(value)) {
     if (value.length === 1) {
       return css`
@@ -237,7 +237,7 @@ const getPxValue = (value?: number | number[]): FlattenSimpleInterpolation => {
   return css``
 }
 
-const getPyValue = (value?: number | number[]): FlattenSimpleInterpolation => {
+const getPxValue = (value?: number | number[]): FlattenSimpleInterpolation => {
   if (Array.isArray(value)) {
     if (value.length === 1) {
       return css`
