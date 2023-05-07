@@ -22,7 +22,7 @@ export function Text({
   className,
   children,
   mb,
-  mt,
+  mt
 }: TextProps) {
   switch (as) {
     case 'h1':

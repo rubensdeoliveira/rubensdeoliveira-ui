@@ -1,6 +1,6 @@
 export function renderResponsizeProp(
   prop: any | any[],
-  screenSize: 'sm' | 'md' | 'lg' = 'sm',
+  screenSize: 'sm' | 'md' | 'lg' = 'sm'
 ) {
   if (Array.isArray(prop) && prop.length === 0) {
     return undefined

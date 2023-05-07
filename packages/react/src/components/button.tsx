@@ -7,14 +7,43 @@ import * as S from '../styles'
 export type ButtonRootProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   w?: number | number[] | 'full'
   h?: number | number[]
+  px?: number | number[]
+  py?: number | number[]
   isLoading?: boolean
   className?: string
   children: ReactNode
 }
-function ButtonRoot({ w, h, isLoading, children, className, disabled, ...rest }: ButtonRootProps) {
+function ButtonRoot({
+  w,
+  h,
+  px,
+  py,
+  isLoading,
+  children,
+  className,
+  disabled,
+  ...rest
+}: ButtonRootProps) {
   return (
-    <S.button {...rest} w={w} h={h} className={className} disabled={isLoading || disabled}>
-      {isLoading ? <div className="lds-ring"><div></div><div></div><div></div><div></div></div> : children}
+    <S.button
+      {...rest}
+      w={w}
+      h={h}
+      px={px}
+      py={py}
+      className={className}
+      disabled={isLoading || disabled}
+    >
+      {isLoading ? (
+        <div className="lds-ring">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      ) : (
+        children
+      )}
     </S.button>
   )
 }
@@ -39,5 +68,5 @@ ButtonText.displayName = 'Button.Text'
 export const Button = {
   Root: ButtonRoot,
   Text: ButtonText,
-  Icon: ButtonIcon,
+  Icon: ButtonIcon
 }

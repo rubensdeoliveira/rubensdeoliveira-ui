@@ -62,7 +62,7 @@ export type NavbarAsideMenuItemsProps = {
 
 function NavbarAsideMenuItems({
   children,
-  className,
+  className
 }: NavbarAsideMenuItemsProps) {
   return (
     <ul className={navbarAsideStyles({ className })}>
@@ -114,7 +114,7 @@ function NavbarBarLogo({ children }: NavbarBarLogoProps) {
       <div className="flex-none md:hidden">
         <label
           htmlFor="my-drawer-3"
-          className="btn btn-ghost w-24px pl-0px pr-0px hover:bg-transparent"
+          className="btn-ghost btn w-24px pl-0px pr-0px hover:bg-transparent"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -173,5 +173,5 @@ export const Navbar = {
   Content: NavbarContent,
   BarLogo: NavbarBarLogo,
   BarMenuItems: NavbarBarMenuItems,
-  BarAction: NavbarBarAction,
+  BarAction: NavbarBarAction
 }

@@ -1,0 +1,37 @@
+import { Meta } from '@storybook/addon-docs'
+
+<Meta title="Get Started" />
+
+# Instalaçāo
+
+## Instalaçāo do pacote
+
+`yarn add @rubensdeoliveira-ui/react`
+
+## Importaçāo de estilos
+
+no arquivo inicial da sua aplicaçāo importe:
+
+```
+import '@rubensdeoliveira-ui/react/dist/index.css'
+import { DSProvider } from '@rubensdeoliveira-ui/react'
+```
+
+e coloque o DSProvider ao redor do componente principal da sua aplicaçāo.
+
+Exemplo com Next.js:
+
+```
+import '@rubensdeoliveira-ui/react/dist/index.css'
+import '@/styles/globals.css'
+import type { AppProps } from 'next/app'
+import { DSProvider } from '@rubensdeoliveira-ui/react'
+
+export default function App({ Component, pageProps }: AppProps) {
+  return (
+    <DSProvider>
+      <Component {...pageProps} />
+    </DSProvider>
+  )
+}
+```

@@ -23,6 +23,8 @@ type NavbarBarProps = {
 type ButtonProps = {
   w?: number | number[] | 'full'
   h?: number | number[]
+  px?: number | number[]
+  py?: number | number[]
 }
 
 const transformInRem = (value: number): string => {
@@ -538,4 +540,6 @@ export const button = styled.button<ButtonProps>`
   ${(props) => props.w !== 'full' && getWidth(props.w)}
   ${(props) => getHeight(props.h)}
   ${(props) => props.disabled && css`opacity: 0.6`}
+  ${(props) => getPxValue(props.px)}
+  ${(props) => getPyValue(props.py)}
 `

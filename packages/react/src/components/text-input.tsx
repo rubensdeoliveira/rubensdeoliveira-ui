@@ -50,5 +50,5 @@ TextInputInput.displayName = 'TextInput.Input'
 export const TextInput = {
   Root: TextInputRoot,
   Input: TextInputInput,
-  Icon: TextInputIcon,
+  Icon: TextInputIcon
 }
