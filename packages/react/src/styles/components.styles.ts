@@ -25,6 +25,7 @@ type ButtonProps = {
   h?: number | number[]
   px?: number | number[]
   py?: number | number[]
+  alignContent: 'start' | 'center'
 }
 
 const transformInRem = (value: number): string => {
@@ -36,7 +37,7 @@ const transformInPx = (value: number): string => {
 }
 
 const getFontSizeValue = (
-  value?: number | number[],
+  value?: number | number[]
 ): FlattenSimpleInterpolation => {
   if (Array.isArray(value)) {
     if (value.length === 1) {
@@ -76,7 +77,7 @@ const getFontSizeValue = (
 }
 
 const getFontWeightValue = (
-  value?: number | number[],
+  value?: number | number[]
 ): FlattenSimpleInterpolation => {
   if (Array.isArray(value)) {
     if (value.length === 1) {
@@ -282,7 +283,7 @@ const getPyValue = (value?: number | number[]): FlattenSimpleInterpolation => {
 }
 
 const getBorderRadiusValue = (
-  value?: BorderRadius | BorderRadius[],
+  value?: BorderRadius | BorderRadius[]
 ): FlattenSimpleInterpolation => {
   if (Array.isArray(value)) {
     if (value.length === 1) {
@@ -536,10 +537,21 @@ export const button = styled.button<ButtonProps>`
     }
   }
 
-
+  ${(props) =>
+    props.alignContent === 'start'
+      ? css`
+          justify-content: flex-start;
+        `
+      : css`
+          justify-content: center;
+        `}
   ${(props) => props.w !== 'full' && getWidth(props.w)}
   ${(props) => getHeight(props.h)}
-  ${(props) => props.disabled && css`opacity: 0.6`}
+  ${(props) =>
+    props.disabled &&
+    css`
+      opacity: 0.6;
+    `}
   ${(props) => getPxValue(props.px)}
   ${(props) => getPyValue(props.py)}
 `

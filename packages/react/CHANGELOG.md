@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.55.0
+
+### Minor Changes
+
+- add new prop content to button
+
 ## 1.54.0
 
 ### Minor Changes

@@ -11,6 +11,7 @@ export type ButtonRootProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   py?: number | number[]
   isLoading?: boolean
   className?: string
+  alignContent?: 'start' | 'center'
   children: ReactNode
 }
 function ButtonRoot({
@@ -22,6 +23,7 @@ function ButtonRoot({
   children,
   className,
   disabled,
+  alignContent = 'center',
   ...rest
 }: ButtonRootProps) {
   return (
@@ -33,6 +35,7 @@ function ButtonRoot({
       py={py}
       className={className}
       disabled={isLoading || disabled}
+      alignContent={alignContent}
     >
       {isLoading ? (
         <div className="lds-ring">

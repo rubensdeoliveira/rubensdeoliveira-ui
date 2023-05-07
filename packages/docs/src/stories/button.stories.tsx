@@ -9,6 +9,8 @@ export default {
     className: 'bg-[#29BFC0] text-white rounded-full justify-center',
     h: 50,
     w: 327,
+    px: 40,
+    py: 0,
   },
 } as Meta<ButtonRootProps>
 
