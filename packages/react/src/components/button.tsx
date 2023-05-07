@@ -1,105 +1,41 @@
-import { cva } from 'class-variance-authority'
 import { ButtonHTMLAttributes, ReactNode } from 'react'
-import { renderResponsizeProp } from '../helpers/render-responsive-prop'
-import { Icon, IconName } from './icon'
+import { Icon, IconProps } from './icon'
+import { TextProps, Text } from './text'
+import * as S from '../styles'
 
-const buttonStyles = cva('btn normal-case gap-8px', {
-  variants: {
-    size: {
-      circle: 'btn-circle',
-      smaller: 'btn-xs',
-      small: 'btn-sm',
-      default: 'btn-md',
-      big: 'btn-lg',
-    },
-    sizeMd: {
-      circle: 'md:btn-circle',
-      smaller: 'md:btn-xs',
-      small: 'md:btn-sm',
-      default: 'md:btn-md',
-      big: 'md:btn-lg',
-    },
-    sizeLg: {
-      circle: 'lg:btn-circle',
-      smaller: 'lg:btn-xs',
-      small: 'lg:btn-sm',
-      default: 'lg:btn-md',
-      big: 'lg:btn-lg',
-    },
-    buttonType: {
-      outline: 'btn-outline',
-      default: '',
-    },
-  },
-  defaultVariants: {
-    size: 'default',
-    sizeMd: 'default',
-    sizeLg: 'default',
-    buttonType: 'default',
-  },
-})
-
-type ButtonSizeProps = 'default' | 'small' | 'big' | 'smaller' | 'circle'
-
+// Button Root
 export type ButtonRootProps = ButtonHTMLAttributes<HTMLButtonElement> & {
-  children: ReactNode
-  size?: ButtonSizeProps | ButtonSizeProps[]
+  w?: number | number[] | 'full'
+  h?: number | number[]
+  isLoading?: boolean
   className?: string
-  buttonType?: 'outline' | 'default' | 'ghost'
+  children: ReactNode
 }
-
-function ButtonRoot({
-  children,
-  size,
-  className = '',
-  buttonType,
-  ...rest
-}: ButtonRootProps) {
-  function getCorrectClass() {
-    switch (buttonType) {
-      case 'ghost':
-        return `${className} flex items-center gap-8px border-0`
-      default:
-        return buttonStyles({
-          size: renderResponsizeProp(size),
-          sizeMd: renderResponsizeProp(size, 'md'),
-          sizeLg: renderResponsizeProp(size, 'lg'),
-          buttonType,
-          className,
-        })
-    }
-  }
-
+function ButtonRoot({ w, h, isLoading, children, className, disabled, ...rest }: ButtonRootProps) {
   return (
-    <button {...rest} className={getCorrectClass()}>
-      {children}
-    </button>
+    <S.button {...rest} w={w} h={h} className={className} disabled={isLoading || disabled}>
+      {isLoading ? <div className="lds-ring"><div></div><div></div><div></div><div></div></div> : children}
+    </S.button>
   )
 }
 
 ButtonRoot.displayName = 'Button.Root'
 
-export type ButtonIconProps = {
-  name: IconName
-  className?: string
+// Button Icon
+export type ButtonIconProps = IconProps
+function ButtonIcon({ ...iconProps }: ButtonIconProps) {
+  return <Icon {...iconProps} />
 }
-
-function ButtonIcon({ name, className }: ButtonIconProps) {
-  return <Icon name={name} className={className} />
-}
-
 ButtonIcon.displayName = 'Button.Icon'
 
-export type ButtonTextProps = {
-  children: string
+// Button Text
+export type ButtonTextProps = TextProps
+function ButtonText({ ...textProps }: ButtonTextProps) {
+  return <Text {...textProps} />
 }
-
-function ButtonText({ children }: ButtonTextProps) {
-  return <>{children}</>
-}
-
 ButtonText.displayName = 'Button.Text'
 
+// Export components
 export const Button = {
   Root: ButtonRoot,
   Text: ButtonText,

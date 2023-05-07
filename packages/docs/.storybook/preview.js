@@ -1,5 +1,6 @@
 import { themes } from "@storybook/theming";
 
+import '../src/styles/global.css'
 import '@rubensdeoliveira-ui/react/dist/index.css';
 
 export const parameters = {

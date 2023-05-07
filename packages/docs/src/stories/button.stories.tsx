@@ -1,5 +1,3 @@
-/* eslint-disable react/jsx-key */
-
 import { Meta, StoryObj } from '@storybook/react'
 import { Button, ButtonRootProps } from '@rubensdeoliveira-ui/react'
 
@@ -8,63 +6,33 @@ export default {
   component: Button.Root,
   args: {
     children: <Button.Text>Enviar</Button.Text>,
+    className: 'bg-[#29BFC0] text-white rounded-full justify-center',
+    h: 50,
+    w: 327,
   },
 } as Meta<ButtonRootProps>
 
 export const Default: StoryObj<ButtonRootProps> = {}
 
-export const BigSize: StoryObj<ButtonRootProps> = {
+export const IsLoading: StoryObj<ButtonRootProps> = {
   args: {
-    size: 'big',
+    isLoading: true,
   },
 }
 
-export const SmallSize: StoryObj<ButtonRootProps> = {
+export const Disabled: StoryObj<ButtonRootProps> = {
   args: {
-    size: 'small',
+    disabled: true,
   },
 }
 
-export const SmallerSize: StoryObj<ButtonRootProps> = {
+export const WithIcon: StoryObj<ButtonRootProps> = {
   args: {
-    size: 'smaller',
-  },
-}
-
-export const Responsive: StoryObj<ButtonRootProps> = {
-  args: {
-    size: ['small', 'default', 'big'],
-  },
-}
-
-export const TextIcon: StoryObj<ButtonRootProps> = {
-  args: {
-    children: [
-      <Button.Text>Navegar</Button.Text>,
-      <Button.Icon name="ChevronRightIcon" />,
-    ],
-  },
-}
-
-export const Icon: StoryObj<ButtonRootProps> = {
-  args: {
-    children: [<Button.Icon name="ChevronRightIcon" />],
-    size: 'circle',
-  },
-}
-
-export const Outline: StoryObj<ButtonRootProps> = {
-  args: {
-    buttonType: 'outline',
-  },
-}
-
-export const Ghost: StoryObj<ButtonRootProps> = {
-  args: {
-    buttonType: 'ghost',
-    children: [
-      <Button.Text>Navegar</Button.Text>,
-      <Button.Icon name="ChevronRightIcon" />,
-    ],
+    children: (
+      <>
+        <Button.Text>Enviar</Button.Text>
+        <Button.Icon name="ChevronRightIcon" />
+      </>
+    ),
   },
 }

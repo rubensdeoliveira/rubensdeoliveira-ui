@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "start-storybook -p 6006",
+    "dev": "NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006",
     "deploy-storybook": "storybook-to-ghpages",
     "build": "build-storybook"
   },
@@ -18,12 +18,15 @@
     "@storybook/addon-essentials": "^6.5.12",
     "@storybook/addon-interactions": "^6.5.12",
     "@storybook/addon-links": "^6.5.12",
+    "@storybook/addon-styling": "^1.0.6",
     "@storybook/builder-vite": "^0.2.3",
     "@storybook/react": "^6.5.12",
     "@storybook/storybook-deployer": "^2.8.12",
     "@storybook/testing-library": "^0.0.13",
     "@vitejs/plugin-react": "^2.1.0",
+    "autoprefixer": "^10.4.14",
     "babel-loader": "^8.2.5",
+    "postcss": "^8.4.23",
     "storybook-tailwind-dark-mode": "^1.0.15",
     "vite": "^3.1.4"
   },
@@ -31,8 +34,8 @@
     "@heroicons/react": "2.0.14",
     "@rubensdeoliveira-ui/eslint-config": "*",
     "@rubensdeoliveira-ui/react": "*",
-    "@rubensdeoliveira-ui/ts-config": "*",
     "@rubensdeoliveira-ui/tokens": "*",
+    "@rubensdeoliveira-ui/ts-config": "*",
     "polished": "^4.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

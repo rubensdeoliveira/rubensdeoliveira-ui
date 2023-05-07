@@ -20,6 +20,11 @@ type NavbarBarProps = {
   py?: number | number[]
 }
 
+type ButtonProps = {
+  w?: number | number[] | 'full'
+  h?: number | number[]
+}
+
 const transformInRem = (value: number): string => {
   return `${value / 16}rem`
 }
@@ -335,6 +340,82 @@ const getLineHeightValue = (value?: number): FlattenSimpleInterpolation => {
   return css``
 }
 
+const getWidth = (value?: number | number[]): FlattenSimpleInterpolation => {
+  if (Array.isArray(value)) {
+    if (value.length === 1) {
+      return css`
+        max-width: ${transformInPx(value[0])};
+      `
+    }
+    if (value.length === 2) {
+      return css`
+        max-width: ${transformInPx(value[0])};
+
+        @media (min-width: 768px) {
+          max-width: ${transformInPx(value[1])};
+        }
+      `
+    }
+    if (value.length === 3) {
+      return css`
+        max-width: ${transformInPx(value[0])};
+
+        @media (min-width: 768px) {
+          max-width: ${transformInPx(value[1])};
+        }
+
+        @media (min-width: 1024px) {
+          max-width: ${transformInPx(value[2])};
+        }
+      `
+    }
+  }
+  if (typeof value === 'number') {
+    return css`
+      max-width: ${transformInPx(value)};
+    `
+  }
+  return css``
+}
+
+const getHeight = (value?: number | number[]): FlattenSimpleInterpolation => {
+  if (Array.isArray(value)) {
+    if (value.length === 1) {
+      return css`
+        height: ${transformInPx(value[0])};
+      `
+    }
+    if (value.length === 2) {
+      return css`
+        height: ${transformInPx(value[0])};
+
+        @media (min-width: 768px) {
+          height: ${transformInPx(value[1])};
+        }
+      `
+    }
+    if (value.length === 3) {
+      return css`
+        height: ${transformInPx(value[0])};
+
+        @media (min-width: 768px) {
+          height: ${transformInPx(value[1])};
+        }
+
+        @media (min-width: 1024px) {
+          height: ${transformInPx(value[2])};
+        }
+      `
+    }
+  }
+  if (typeof value === 'number') {
+    return css`
+      height: ${transformInPx(value)};
+    `
+  }
+  return css``
+}
+
 export const h1 = styled.h1<TextProps>`
   ${(props) => getFontSizeValue(props.size)}
   ${(props) => getFontWeightValue(props.weight)}
@@ -407,4 +488,54 @@ export const card = styled.div<CardProps>`
 
 export const navbarBar = styled.div<NavbarBarProps>`
   ${(props) => getPyValue(props.py)}
+`
+
+export const button = styled.button<ButtonProps>`
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 0.5rem;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.2s;
+
+  .lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 24px;
+    height: 24px;
+  }
+  .lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #fff transparent transparent transparent;
+  }
+  .lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+  }
+  .lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+  }
+  .lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+  }
+  @keyframes lds-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+
+  ${(props) => props.w !== 'full' && getWidth(props.w)}
+  ${(props) => getHeight(props.h)}
+  ${(props) => props.disabled && css`opacity: 0.6`}
 `
