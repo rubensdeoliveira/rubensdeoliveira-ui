@@ -1,177 +1,97 @@
-import { cva } from 'class-variance-authority'
-import { ReactElement, ReactNode } from 'react'
-import * as S from '../styles'
+import { ReactNode, useEffect } from 'react'
+import { Modal, Ripple, initTE } from 'tw-elements'
 
-function renderNavigationItems(children: ReactElement | ReactElement[]) {
-  if (Array.isArray(children)) {
-    return children.map((navigationItem, index) => (
-      <li key={index} className="text-16px">
-        {navigationItem}
-      </li>
-    ))
-  }
-  return <li>{children}</li>
-}
-
-export type NavbarRootProps = {
+export type NavbarProps = {
   children: ReactNode
 }
 
-function NavbarRoot({ children }: NavbarRootProps) {
-  return <div className="drawer">{children}</div>
-}
+export function Navbar({ children }: NavbarProps) {
+  useEffect(() => {
+    initTE({ Modal, Ripple })
+  }, [])
 
-NavbarRoot.displayName = 'Navbar.Root'
-
-export type NavbarMainProps = {
-  children: ReactNode
-}
-
-function NavbarMain({ children }: NavbarMainProps) {
   return (
     <>
-      <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content flex flex-col">{children}</div>
+      <button
+        type="button"
+        className="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
+        data-te-toggle="modal"
+        data-te-target="#exampleModal"
+        data-te-ripple-init
+        data-te-ripple-color="light"
+      >
+        Launch demo modal
+      </button>
+
+      <div
+        data-te-modal-init
+        className="fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
+        id="exampleModal"
+        tabIndex={-1}
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div
+          data-te-modal-dialog-ref
+          className="pointer-events-none relative w-auto translate-y-[-50px] opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:max-w-[500px]"
+        >
+          <div className="min-[576px]:shadow-[0_0.5rem_1rem_rgba(#000, 0.15)] pointer-events-auto relative flex w-full flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none dark:bg-neutral-600">
+            <div className="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4 dark:border-opacity-50">
+              <h5
+                className="text-xl font-medium leading-normal text-neutral-800 dark:text-neutral-200"
+                id="exampleModalLabel"
+              >
+                Modal title
+              </h5>
+              <button
+                type="button"
+                className="box-content rounded-none border-none hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
+                data-te-modal-dismiss
+                aria-label="Close"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  className="h-6 w-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <div className="relative flex-auto p-4" data-te-modal-body-ref>
+              Modal body text goes here.
+            </div>
+
+            <div className="flex flex-shrink-0 flex-wrap items-center justify-end rounded-b-md border-t-2 border-neutral-100 border-opacity-100 p-4 dark:border-opacity-50">
+              <button
+                type="button"
+                className="inline-block rounded bg-primary-100 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-primary-700 transition duration-150 ease-in-out hover:bg-primary-accent-100 focus:bg-primary-accent-100 focus:outline-none focus:ring-0 active:bg-primary-accent-200"
+                data-te-modal-dismiss
+                data-te-ripple-init
+                data-te-ripple-color="light"
+              >
+                Close
+              </button>
+              <button
+                type="button"
+                className="ml-1 inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
+                data-te-ripple-init
+                data-te-ripple-color="light"
+              >
+                Save changes
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   )
-}
-
-NavbarMain.displayName = 'Navbar.Main'
-
-export type NavbarAsideProps = {
-  children: ReactNode
-}
-
-function NavbarAside({ children }: NavbarAsideProps) {
-  return (
-    <div className="drawer-side">
-      <label htmlFor="my-drawer-3" className="drawer-overlay"></label>
-      {children}
-    </div>
-  )
-}
-
-NavbarAside.displayName = 'Navbar.Aside'
-
-const navbarAsideStyles = cva('menu w-[320px] p-16px')
-
-export type NavbarAsideMenuItemsProps = {
-  children: ReactElement | ReactElement[]
-  className?: string
-}
-
-function NavbarAsideMenuItems({
-  children,
-  className
-}: NavbarAsideMenuItemsProps) {
-  return (
-    <ul className={navbarAsideStyles({ className })}>
-      {renderNavigationItems(children)}
-    </ul>
-  )
-}
-
-NavbarAsideMenuItems.displayName = 'Navbar.AsideMenuItems'
-
-export type NavbarBarProps = {
-  children: ReactNode
-  className?: string
-  py?: number | number[]
-}
-
-function NavbarBar({ py, className, children }: NavbarBarProps) {
-  return (
-    <header className="navbar min-h-[unset] w-full p-0px">
-      <S.navbarBar
-        className={`${className} mx-[auto] flex w-full max-w-[1200px] justify-between px-20px xl:px-0px`}
-        py={py}
-      >
-        {children}
-      </S.navbarBar>
-    </header>
-  )
-}
-
-NavbarBar.displayName = 'Navbar.Bar'
-
-export type NavbarContentProps = {
-  children: ReactNode
-}
-
-function NavbarContent({ children }: NavbarContentProps) {
-  return <>{children}</>
-}
-
-NavbarContent.displayName = 'Navbar.Content'
-
-export type NavbarBarLogoProps = {
-  children: ReactElement | ReactElement[]
-}
-
-function NavbarBarLogo({ children }: NavbarBarLogoProps) {
-  return (
-    <div className="flex items-center gap-16px">
-      <div className="flex-none md:hidden">
-        <label
-          htmlFor="my-drawer-3"
-          className="btn-ghost btn w-24px pl-0px pr-0px hover:bg-transparent"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            className="h-6 w-6 inline-block stroke-current"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            ></path>
-          </svg>
-        </label>
-      </div>
-      <div className="hidden items-center gap-16px md:flex">{children}</div>
-    </div>
-  )
-}
-
-NavbarBarLogo.displayName = 'Navbar.BarLogo'
-
-export type NavbarBarMenuItemsProps = {
-  children: ReactElement | ReactElement[]
-}
-
-function NavbarBarMenuItems({ children }: NavbarBarMenuItemsProps) {
-  return (
-    <div className="hidden flex-none md:block">
-      <ul className="menu menu-horizontal flex items-center gap-72px">
-        {renderNavigationItems(children)}
-      </ul>
-    </div>
-  )
-}
-
-NavbarBarMenuItems.displayName = 'Navbar.BarMenuItems'
-
-export type NavbarBarActionProps = {
-  children: ReactElement | ReactElement[]
-}
-
-function NavbarBarAction({ children }: NavbarBarActionProps) {
-  return <div className="flex items-center gap-16px">{children}</div>
-}
-
-NavbarBarAction.displayName = 'Navbar.BarAction'
-
-export const Navbar = {
-  Root: NavbarRoot,
-  Main: NavbarMain,
-  Aside: NavbarAside,
-  AsideMenuItems: NavbarAsideMenuItems,
-  Bar: NavbarBar,
-  Content: NavbarContent,
-  BarLogo: NavbarBarLogo,
-  BarMenuItems: NavbarBarMenuItems,
-  BarAction: NavbarBarAction
 }

@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.58.0
+
+### Minor Changes
+
+- Test new integration
+
 ## 1.57.0
 
 ### Minor Changes
