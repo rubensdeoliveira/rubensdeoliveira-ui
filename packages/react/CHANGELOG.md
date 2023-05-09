@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.57.0
+
+### Minor Changes
+
+- Add lp navbar
+
 ## 1.56.0
 
 ### Minor Changes

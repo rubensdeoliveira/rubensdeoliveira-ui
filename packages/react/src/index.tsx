@@ -10,7 +10,7 @@ interface DSProviderProps {
 }
 
 export const DSProvider: React.FC<DSProviderProps> = ({
-  children,
+  children
 }: DSProviderProps) => {
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -24,6 +24,7 @@ export * from './components/card'
 export * from './components/form-row'
 export * from './components/form'
 export * from './components/icon'
+export * from './components/lp-navbar'
 export * from './components/navbar'
 export * from './components/table'
 export * from './components/text-input'
