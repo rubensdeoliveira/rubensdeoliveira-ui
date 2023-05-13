@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.60.0
+
+### Minor Changes
+
+- Add line height to text
+
 ## 1.59.0
 
 ### Minor Changes

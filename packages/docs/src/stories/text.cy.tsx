@@ -112,4 +112,9 @@ describe('Text', () => {
     cy.mount(<Text as="p">hello world!</Text>)
     cy.get('p').should('have.text', 'hello world!')
   })
+
+  it('LineHeight', () => {
+    cy.mount(<Text lineHeight="2">hello world!</Text>)
+    cy.get('span').should('have.class', 'leading-[2]')
+  })
 })

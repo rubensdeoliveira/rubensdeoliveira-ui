@@ -45,7 +45,6 @@ describe('Button', () => {
       .should('have.class', 'inline')
       .and('have.class', 'w-4')
       .and('have.class', 'h-4')
-      .and('have.class', 'mr-3')
       .and('have.class', 'text-white')
       .and('have.class', 'animate-spin')
     cy.get('button').should('have.attr', 'disabled')

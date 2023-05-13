@@ -921,6 +921,39 @@ const textStyles = cva('', {
       '94': 'lg:mb-[5.875rem]',
       '95': 'lg:mb-[5.9375rem]',
       '96': 'lg:mb-[6rem]'
+    },
+    lineHeight: {
+      '0': 'leading-[0]',
+      '1': 'leading-[1]',
+      '2': 'leading-[2]',
+      '3': 'leading-[3]',
+      '0.1': 'leading-[0.1]',
+      '0.2': 'leading-[0.2]',
+      '0.3': 'leading-[0.3]',
+      '0.4': 'leading-[0.4]',
+      '0.5': 'leading-[0.5]',
+      '0.6': 'leading-[0.6]',
+      '0.7': 'leading-[0.7]',
+      '0.8': 'leading-[0.8]',
+      '0.9': 'leading-[0.9]',
+      '1.1': 'leading-[1.1]',
+      '1.2': 'leading-[1.2]',
+      '1.3': 'leading-[1.3]',
+      '1.4': 'leading-[1.4]',
+      '1.5': 'leading-[1.5]',
+      '1.6': 'leading-[1.6]',
+      '1.7': 'leading-[1.7]',
+      '1.8': 'leading-[1.8]',
+      '1.9': 'leading-[1.9]',
+      '2.1': 'leading-[2.1]',
+      '2.2': 'leading-[2.2]',
+      '2.3': 'leading-[2.3]',
+      '2.4': 'leading-[2.4]',
+      '2.5': 'leading-[2.5]',
+      '2.6': 'leading-[2.6]',
+      '2.7': 'leading-[2.7]',
+      '2.8': 'leading-[2.8]',
+      '2.9': 'leading-[2.9]'
     }
   }
 })
@@ -941,6 +974,7 @@ export type TextProps = {
   marginBottom?:
     | VariantProps<typeof textStyles>['marginBottom']
     | VariantProps<typeof textStyles>['marginBottom'][]
+  lineHeight?: VariantProps<typeof textStyles>['lineHeight']
 }
 
 export function Text({
@@ -950,7 +984,8 @@ export function Text({
   className,
   children,
   marginBottom,
-  marginTop
+  marginTop,
+  lineHeight
 }: TextProps) {
   switch (as) {
     case 'h1':
@@ -969,6 +1004,7 @@ export function Text({
             marginBottom: renderResponsizeProp(marginBottom, 'sm'),
             marginBottomMd: renderResponsizeProp(marginBottom, 'md'),
             marginBottomLg: renderResponsizeProp(marginBottom, 'lg'),
+            lineHeight,
             className
           })}
         >
@@ -991,6 +1027,7 @@ export function Text({
             marginBottom: renderResponsizeProp(marginBottom, 'sm'),
             marginBottomMd: renderResponsizeProp(marginBottom, 'md'),
             marginBottomLg: renderResponsizeProp(marginBottom, 'lg'),
+            lineHeight,
             className
           })}
         >
@@ -1013,6 +1050,7 @@ export function Text({
             marginBottom: renderResponsizeProp(marginBottom, 'sm'),
             marginBottomMd: renderResponsizeProp(marginBottom, 'md'),
             marginBottomLg: renderResponsizeProp(marginBottom, 'lg'),
+            lineHeight,
             className
           })}
         >
@@ -1035,6 +1073,7 @@ export function Text({
             marginBottom: renderResponsizeProp(marginBottom, 'sm'),
             marginBottomMd: renderResponsizeProp(marginBottom, 'md'),
             marginBottomLg: renderResponsizeProp(marginBottom, 'lg'),
+            lineHeight,
             className
           })}
         >
@@ -1057,6 +1096,7 @@ export function Text({
             marginBottom: renderResponsizeProp(marginBottom, 'sm'),
             marginBottomMd: renderResponsizeProp(marginBottom, 'md'),
             marginBottomLg: renderResponsizeProp(marginBottom, 'lg'),
+            lineHeight,
             className
           })}
         >
@@ -1079,6 +1119,7 @@ export function Text({
             marginBottom: renderResponsizeProp(marginBottom, 'sm'),
             marginBottomMd: renderResponsizeProp(marginBottom, 'md'),
             marginBottomLg: renderResponsizeProp(marginBottom, 'lg'),
+            lineHeight,
             className
           })}
         >
@@ -1101,6 +1142,7 @@ export function Text({
             marginBottom: renderResponsizeProp(marginBottom, 'sm'),
             marginBottomMd: renderResponsizeProp(marginBottom, 'md'),
             marginBottomLg: renderResponsizeProp(marginBottom, 'lg'),
+            lineHeight,
             className
           })}
         >
@@ -1123,6 +1165,7 @@ export function Text({
             marginBottom: renderResponsizeProp(marginBottom, 'sm'),
             marginBottomMd: renderResponsizeProp(marginBottom, 'md'),
             marginBottomLg: renderResponsizeProp(marginBottom, 'lg'),
+            lineHeight,
             className
           })}
         >

@@ -5,70 +5,74 @@ export default {
   title: 'Components/Text',
   component: Text,
   args: {
-    children: 'Hello World!',
-  },
+    children: 'Hello World!'
+  }
 } as Meta<TextProps>
 
 export const Default: StoryObj<TextProps> = {}
 
 export const ClassName: StoryObj<TextProps> = {
   args: {
-    className: 'text-red-500',
-  },
+    className: 'text-red-500'
+  }
 }
 
 export const FontSize: StoryObj<TextProps> = {
   args: {
-    fontSize: '16',
-  },
+    fontSize: '16'
+  }
 }
 
 export const FontSizeResponsive: StoryObj<TextProps> = {
   args: {
-    fontSize: ['16', '32', '48'],
-  },
+    fontSize: ['16', '32', '48']
+  }
 }
 
 export const FontWeight: StoryObj<TextProps> = {
   args: {
-    fontWeight: '600',
-  },
+    fontWeight: '600'
+  }
 }
 
 export const FontWeightResponsive: StoryObj<TextProps> = {
   args: {
-    fontWeight: ['400','500','600'],
-  },
+    fontWeight: ['400', '500', '600']
+  }
 }
 
 export const MarginTop: StoryObj<TextProps> = {
   args: {
-    marginTop: '16',
-  },
+    marginTop: '16'
+  }
 }
 
 export const MarginTopResponsive: StoryObj<TextProps> = {
   args: {
-    marginTop: ['16', '32', '48'],
-  },
+    marginTop: ['16', '32', '48']
+  }
 }
 
 export const MarginBottom: StoryObj<TextProps> = {
   args: {
-    marginBottom: '16',
-  },
+    marginBottom: '16'
+  }
 }
 
 export const MarginBottomResponsive: StoryObj<TextProps> = {
   args: {
-    marginBottom: ['16', '32', '48'],
-  },
+    marginBottom: ['16', '32', '48']
+  }
 }
 
-// export const Heading: StoryObj<TextProps> = {
-//   args: {
-//     as: 'h1',
-//   },
-// }
+export const Heading: StoryObj<TextProps> = {
+  args: {
+    as: 'h1'
+  }
+}
 
-
+export const LineHeight: StoryObj<TextProps> = {
+  args: {
+    lineHeight: '2'
+  }
+}
