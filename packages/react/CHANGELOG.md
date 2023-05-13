@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.61.0
+
+### Minor Changes
+
+- remove navbar max width
+
 ## 1.60.0
 
 ### Minor Changes

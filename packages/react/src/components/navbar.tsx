@@ -17,9 +17,7 @@ export function Navbar({
   const [open, setOpen] = useState(false)
 
   return (
-    <div
-      className={`${wrapperClassName} w-full mx-auto bg-white border-b 2xl:max-w-7xl`}
-    >
+    <div className={`${wrapperClassName} w-full mx-auto bg-white border-b`}>
       <div className="relative flex flex-col w-full mx-auto bg-white md:items-center md:justify-between md:flex-row">
         <div className="flex flex-row items-center justify-between lg:justify-start">
           {logo}
