@@ -1,4 +1,9 @@
 {
   "extends": "@rubensdeoliveira-ui/ts-config/react.json",
-  "include": ["src"]
+  "include": ["src", "**/*.ts"],
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["es5", "dom"],
+    "types": ["cypress", "node"]
+  }
 }

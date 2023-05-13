@@ -20,6 +20,10 @@ export function Icon({
   const { ...outlineIcons } = OutlineIcon
   const TheIcon = type === 'solid' ? solidIcons[name] : outlineIcons[name]
   return TheIcon ? (
-    <TheIcon style={{ width: size, height: size }} className={className} />
+    <TheIcon
+      data-cy={`icon-${name}`}
+      style={{ width: size, height: size }}
+      className={className}
+    />
   ) : null
 }

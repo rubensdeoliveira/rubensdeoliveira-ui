@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.59.0
+
+### Minor Changes
+
+- Add new structure
+
 ## 1.58.0
 
 ### Minor Changes
