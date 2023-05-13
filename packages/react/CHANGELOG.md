@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.62.0
+
+### Minor Changes
+
+- remove border bottom of navbar
+
 ## 1.61.0
 
 ### Minor Changes
