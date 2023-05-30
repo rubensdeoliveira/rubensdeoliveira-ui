@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.65.0
+
+### Minor Changes
+
+- take off navbar bg
+
 ## 1.64.0
 
 ### Minor Changes
