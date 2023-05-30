@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.66.0
+
+### Minor Changes
+
+- Add button class name to navbar
+
 ## 1.65.0
 
 ### Minor Changes

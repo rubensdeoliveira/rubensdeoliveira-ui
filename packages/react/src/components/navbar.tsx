@@ -6,13 +6,15 @@ export type NavbarProps = {
   navigationItems?: ReactNode
   cta?: ReactNode
   wrapperClassName?: string
+  mobileButtonClassName?: string
 }
 
 export function Navbar({
   logo,
   navigationItems,
   cta,
-  wrapperClassName
+  wrapperClassName,
+  mobileButtonClassName
 }: NavbarProps) {
   const [open, setOpen] = useState(false)
 
@@ -23,7 +25,7 @@ export function Navbar({
           {logo}
           <button
             onClick={() => setOpen(!open)}
-            className="inline-flex items-center justify-center text-gray-400 hover:text-black focus:outline-none focus:text-black md:hidden"
+            className={`${mobileButtonClassName} inline-flex items-center justify-center focus:outline-none md:hidden`}
           >
             <svg
               className="w-6 h-6"
