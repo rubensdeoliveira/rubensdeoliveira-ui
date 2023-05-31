@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.67.0
+
+### Minor Changes
+
+- remove button width full
+
 ## 1.66.0
 
 ### Minor Changes

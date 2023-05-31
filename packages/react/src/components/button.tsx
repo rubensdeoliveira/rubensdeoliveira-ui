@@ -5,7 +5,7 @@ import { VariantProps, cva } from 'class-variance-authority'
 import { renderResponsizeProp } from '../helpers/render-responsive-prop'
 
 const buttonStyles = cva(
-  'w-full flex items-center justify-center border-none transition-colors duration-200 disabled:opacity-60',
+  'flex items-center justify-center border-none transition-colors duration-200 disabled:opacity-60',
   {
     variants: {
       paddingHorizontal: {
