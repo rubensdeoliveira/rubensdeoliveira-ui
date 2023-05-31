@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.68.0
+
+### Minor Changes
+
+- Add important to ds
+
 ## 1.67.0
 
 ### Minor Changes
