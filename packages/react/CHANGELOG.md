@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.70.0
+
+### Minor Changes
+
+- add important
+
 ## 1.69.0
 
 ### Minor Changes
