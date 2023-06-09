@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.71.0
+
+### Minor Changes
+
+- add tw prefix to classes
+
 ## 1.70.0
 
 ### Minor Changes
