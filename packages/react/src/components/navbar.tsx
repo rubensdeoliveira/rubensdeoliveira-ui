@@ -52,7 +52,7 @@ export function Navbar({
         </div>
         <nav
           className={`${
-            open ? 'flex' : 'hidden'
+            open ? 'max-[767px]:flex' : 'max-[767px]:hidden'
           } flex-col items-center flex-grow md:pb-0 md:flex md:flex-row`}
         >
           {navigationItems}

@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.73.0
+
+### Minor Changes
+
+- add media query to navbar
+
 ## 1.72.0
 
 ### Minor Changes
