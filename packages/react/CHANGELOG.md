@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.72.0
+
+### Minor Changes
+
+- remove tw prefix
+
 ## 1.71.0
 
 ### Minor Changes
