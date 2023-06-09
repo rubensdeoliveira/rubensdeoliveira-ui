@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/tokens
 
+## 1.10.0
+
+### Minor Changes
+
+- add important to tailwind
+
 ## 1.9.0
 
 ### Minor Changes
