@@ -1,13 +1,8 @@
-/** @type {import('tailwindcss').Config} */
+const path = require("path");
+
+const sourcePath = path.join(__dirname, "src");
+
 module.exports = {
-  content: [
-    './src/**/*.tsx',
-    '../../node_modules/flowbite/**/*.js',
-    '../../node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}'
-  ],
-  theme: {
-    extend: {}
-  },
-  darkMode: 'class',
+  content: [`${sourcePath}${path.sep}**${path.sep}*.{js,ts,jsx,tsx,mdx}`],
   plugins: [require('flowbite/plugin')]
-}
+};
