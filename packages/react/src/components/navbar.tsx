@@ -25,10 +25,10 @@ export function Navbar({
           {logo}
           <button
             onClick={() => setOpen(!open)}
-            className={`${mobileButtonClassName} rdoui-inline-flex rdoui-items-center rdoui-justify-center rdoui-focus:outline-none md:rdoui-hidden`}
+            className={`${mobileButtonClassName} rdoui-inline-flex rdoui-items-center rdoui-justify-center focus:rdoui-outline-none md:rdoui-hidden`}
           >
             <svg
-              className="w-6 h-6"
+              className="rdoui-w-6 rdoui-h-6"
               stroke="currentColor"
               fill="none"
               viewBox="0 0 24 24"

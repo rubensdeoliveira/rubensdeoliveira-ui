@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.78.0
+
+### Minor Changes
+
+- Add new sized prefixes
+
 ## 1.77.0
 
 ### Minor Changes
