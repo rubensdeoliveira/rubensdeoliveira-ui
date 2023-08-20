@@ -6,7 +6,12 @@ module.exports = {
     '../../node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}'
   ],
   theme: {
-    extend: {}
+    extend: {
+      screens: {
+        'tablet': '768px',
+        'laptop': '1024px',
+      }
+    }
   },
   darkMode: 'class',
   plugins: [require('flowbite/plugin')]

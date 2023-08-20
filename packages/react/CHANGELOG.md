@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.74.0
+
+### Minor Changes
+
+- Add new values to avoid conflit
+
 ## 1.73.0
 
 ### Minor Changes

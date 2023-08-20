@@ -71,7 +71,7 @@ export type LpNavbarDrawerContentItemsProps = {
 export function LpNavbarDrawerContentNavbarItems({
   children
 }: LpNavbarDrawerContentItemsProps) {
-  return <div className="flex-none hidden md:block">{children}</div>
+  return <div className="flex-none hidden tablet:block">{children}</div>
 }
 
 LpNavbarDrawerContentNavbarItems.displayName =
@@ -97,7 +97,7 @@ LpNavbarDrawerContentNavbarLogo.displayName = 'LpNavbar.DrawerContentNavbarLogo'
 
 export function LpNavbarDrawerContentNavbarOpenIcon() {
   return (
-    <div className="flex-none md:hidden">
+    <div className="flex-none tablet:hidden">
       <label htmlFor="my-drawer-3" className="cursor-pointer w-[24px] h-[24px]">
         <Icon name="Bars3Icon" />
       </label>
