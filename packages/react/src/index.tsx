@@ -1,5 +1,5 @@
-// import './styles/global.css'
-// import 'flowbite'
+import './styles/global.css'
+import 'flowbite'
 export * from './components/button'
 export * from './components/card'
 export * from './components/form-row'

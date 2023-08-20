@@ -1,13 +1,13 @@
 {
   "name": "@rubensdeoliveira-ui/react",
-  "version": "1.74.0",
+  "version": "1.73.0",
   "description": "",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "tsup tailwind.config.js --format esm,cjs --dts --external react react-hook-form",
-    "dev": "tsup tailwind.config.js --format esm,cjs --dts --external react react-hook-form --watch",
+    "build": "tsup src/index.tsx --format esm,cjs --dts --external react react-hook-form",
+    "dev": "tsup src/index.tsx --format esm,cjs --dts --external react react-hook-form --watch",
     "lint": "eslint src/**/*.ts* --fix"
   },
   "files": [
