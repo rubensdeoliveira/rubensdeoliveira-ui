@@ -19,13 +19,13 @@ export function Navbar({
   const [open, setOpen] = useState(false)
 
   return (
-    <div className={`${wrapperClassName} w-full mx-auto`}>
-      <div className="relative flex flex-col w-full mx-auto tablet:items-center tablet:justify-between tablet:flex-row">
-        <div className="flex flex-row items-center justify-between laptop:justify-start w-full">
+    <div className={`${wrapperClassName} rdoui-w-full rdoui-mx-auto`}>
+      <div className="rdoui-relative rdoui-flex rdoui-flex-col rdoui-w-full rdoui-mx-auto rdoui-md:items-center rdoui-md:justify-between rdoui-md:flex-row">
+        <div className="rdoui-flex rdoui-flex-row rdoui-items-center rdoui-justify-between rdoui-lg:justify-start rdoui-w-full">
           {logo}
           <button
             onClick={() => setOpen(!open)}
-            className={`${mobileButtonClassName} inline-flex items-center justify-center focus:outline-none tablet:hidden`}
+            className={`${mobileButtonClassName} rdoui-inline-flex rdoui-items-center rdoui-justify-center rdoui-focus:outline-none rdoui-md:hidden`}
           >
             <svg
               className="w-6 h-6"
@@ -34,14 +34,14 @@ export function Navbar({
               viewBox="0 0 24 24"
             >
               <path
-                className={`${open ? 'hidden' : 'inline-flex'}`}
+                className={`${open ? 'rdoui-hidden' : 'rdoui-inline-flex'}`}
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
                 d="M4 6h16M4 12h16M4 18h16"
               ></path>
               <path
-                className={`${open ? 'inline-flex' : 'hidden'}`}
+                className={`${open ? 'rdoui-inline-flex' : 'rdoui-hidden'}`}
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
@@ -52,8 +52,8 @@ export function Navbar({
         </div>
         <nav
           className={`${
-            open ? 'max-[767px]:flex' : 'max-[767px]:hidden'
-          } flex-col items-center flex-grow tablet:pb-0 tablet:flex tablet:flex-row`}
+            open ? 'rdoui-max-[767px]:flex' : 'rdoui-max-[767px]:hidden'
+          } rdoui-flex-col rdoui-items-center rdoui-flex-grow rdoui-md:pb-0 rdoui-md:flex rdoui-md:flex-row`}
         >
           {navigationItems}
 

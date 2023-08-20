@@ -17,7 +17,7 @@ export const Default: StoryObj<CardProps> = {}
 
 export const Rounded: StoryObj<CardProps> = {
   args: {
-    borderRadius: '50%',
+    borderRadius: 2,
   },
 }
 

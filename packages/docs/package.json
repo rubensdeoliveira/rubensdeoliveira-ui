@@ -29,6 +29,7 @@
     "babel-loader": "^8.2.5",
     "cypress": "^12.12.0",
     "postcss": "^8.4.23",
+    "tailwindcss": "3.2.4",
     "storybook-tailwind-dark-mode": "^1.0.15",
     "vite": "^3.1.4",
     "@typescript-eslint/eslint-plugin": "^5.1.0",

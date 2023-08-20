@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.75.0
+
+### Minor Changes
+
+- Add customized prefix
+
 ## 1.74.0
 
 ### Minor Changes

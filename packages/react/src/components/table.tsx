@@ -235,9 +235,9 @@ export function Table({ header, page, data, setPage }: TableProps) {
         id="editUserModal"
         tabIndex={-1}
         aria-hidden="true"
-        className="h-modal p-4 fixed top-0px left-0px right-0px z-50 hidden w-full items-center justify-center overflow-y-auto overflow-x-hidden tablet:inset-0px tablet:h-full"
+        className="h-modal p-4 fixed top-0px left-0px right-0px z-50 hidden w-full items-center justify-center overflow-y-auto overflow-x-hidden md:inset-0px md:h-full"
       >
-        <div className="relative h-full w-full max-w-2xl tablet:h-auto">
+        <div className="relative h-full w-full max-w-2xl md:h-auto">
           <form
             action="#"
             className="relative rounded-lg bg-white shadow dark:bg-gray-700"

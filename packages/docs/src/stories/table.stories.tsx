@@ -5,7 +5,7 @@ export default {
   title: 'Components/Table',
   component: Table,
   args: {
-    setPage: () => {},
+    setPage: () => {console.log('')},
     page: 1,
     data: {
       data: [{ name: 'arthur' }, { name: 'jose' }],
