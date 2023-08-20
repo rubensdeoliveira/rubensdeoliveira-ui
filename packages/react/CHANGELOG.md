@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.76.0
+
+### Minor Changes
+
+- fix breakpoint prefixed
+
 ## 1.75.0
 
 ### Minor Changes

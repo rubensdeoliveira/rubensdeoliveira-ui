@@ -20,12 +20,12 @@ export function Navbar({
 
   return (
     <div className={`${wrapperClassName} rdoui-w-full rdoui-mx-auto`}>
-      <div className="rdoui-relative rdoui-flex rdoui-flex-col rdoui-w-full rdoui-mx-auto rdoui-md:items-center rdoui-md:justify-between rdoui-md:flex-row">
-        <div className="rdoui-flex rdoui-flex-row rdoui-items-center rdoui-justify-between rdoui-lg:justify-start rdoui-w-full">
+      <div className="rdoui-relative rdoui-flex rdoui-flex-col rdoui-w-full rdoui-mx-auto md:rdoui-items-center md:rdoui-justify-between md:rdoui-flex-row">
+        <div className="rdoui-flex rdoui-flex-row rdoui-items-center rdoui-justify-between lg:rdoui-justify-start rdoui-w-full">
           {logo}
           <button
             onClick={() => setOpen(!open)}
-            className={`${mobileButtonClassName} rdoui-inline-flex rdoui-items-center rdoui-justify-center rdoui-focus:outline-none rdoui-md:hidden`}
+            className={`${mobileButtonClassName} rdoui-inline-flex rdoui-items-center rdoui-justify-center rdoui-focus:outline-none md:rdoui-hidden`}
           >
             <svg
               className="w-6 h-6"
@@ -53,7 +53,7 @@ export function Navbar({
         <nav
           className={`${
             open ? 'rdoui-max-[767px]:flex' : 'rdoui-max-[767px]:hidden'
-          } rdoui-flex-col rdoui-items-center rdoui-flex-grow rdoui-md:pb-0 rdoui-md:flex rdoui-md:flex-row`}
+          } rdoui-flex-col rdoui-items-center rdoui-flex-grow md:rdoui-pb-0 md:rdoui-flex md:rdoui-flex-row`}
         >
           {navigationItems}
 
