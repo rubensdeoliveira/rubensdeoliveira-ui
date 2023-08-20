@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.77.0
+
+### Minor Changes
+
+- Add alternative breakpoint
+
 ## 1.76.0
 
 ### Minor Changes

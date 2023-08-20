@@ -52,7 +52,7 @@ export function Navbar({
         </div>
         <nav
           className={`${
-            open ? 'rdoui-max-[767px]:flex' : 'rdoui-max-[767px]:hidden'
+            open ? 'max-[767px]:rdoui-flex' : 'max-[767px]:rdoui-hidden'
           } rdoui-flex-col rdoui-items-center rdoui-flex-grow md:rdoui-pb-0 md:rdoui-flex md:rdoui-flex-row`}
         >
           {navigationItems}
