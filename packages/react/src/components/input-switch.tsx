@@ -1,54 +1,48 @@
-import { InputHTMLAttributes, ReactNode } from 'react'
-import { Icon, IconName } from './icon'
-import { UseFormRegister } from 'react-hook-form'
+import { InputHTMLAttributes, ReactElement, useState } from 'react'
+import { Switch } from '@headlessui/react'
+import { Control, Controller } from 'react-hook-form'
+import { IconProps } from './icon'
 
-export type InputSwitchRootProps = {
-  children: ReactNode
-}
-
-function InputSwitchRoot({ children }: InputSwitchRootProps) {
-  return (
-    <div className="flex w-full items-center gap-12px rounded bg-gray-900 py-16px px-12px ring-gray-900 focus-within:ring-2">
-      {children}
-    </div>
-  )
-}
-
-InputSwitchRoot.displayName = 'InputSwitch.Root'
-
-export type InputSwitchIconProps = {
-  name: IconName
-}
-
-function InputSwitchIcon({ name }: InputSwitchIconProps) {
-  return <Icon name={name} />
-}
-
-InputSwitchIcon.displayName = 'InputSwitch.Icon'
-
-export type InputSwitchInputProps = InputHTMLAttributes<HTMLInputElement> & {
+export type InputSwitchProps = Omit<
+  InputHTMLAttributes<HTMLInputElement>,
+  'className'
+> & {
   name: string
-  register: UseFormRegister<any>
+  control: Control<any>
+  icon?: IconProps
+  password?: boolean
+  label?: string
+  containerClassName?: string
+  inputClassName?: string
 }
 
-function InputSwitchInput({
-  name,
-  register,
-  ...inputProps
-}: InputSwitchInputProps) {
+export function InputSwitch({ control, name }: InputSwitchProps) {
+  const [enabled, setEnabled] = useState(false)
+
   return (
-    <input
-      {...inputProps}
-      {...register(name)}
-      className="flex-1 bg-transparent text-16px text-gray-100 outline-none placeholder:text-gray-400"
+    <Controller
+      name={name}
+      control={control}
+      render={({ field }) => (
+        <Switch
+          checked={field.value}
+          onChange={(checked) => {
+            setEnabled(checked)
+            field.onChange(checked)
+          }}
+          className={`${enabled ? 'rdoui-bg-teal-900' : 'rdoui-bg-teal-700'}
+          rdoui-relative rdoui-inline-flex rdoui-h-[38px] rdoui-w-[74px] rdoui-shrink-0 rdoui-cursor-pointer rdoui-rounded-full rdoui-border-2 rdoui-border-transparent rdoui-transition-colors rdoui-duration-200 rdoui-ease-in-out focus:rdoui-outline-none focus-visible:rdoui-ring-2 focus-visible:rdoui-ring-white focus-visible:rdoui-ring-opacity-75`}
+        >
+          <span className="rdoui-sr-only">Use setting</span>
+          <span
+            aria-hidden="true"
+            className={`${
+              enabled ? 'rdoui-translate-x-9' : 'rdoui-translate-x-0'
+            }
+            rdoui-pointer-events-none rdoui-inline-block rdoui-h-[34px] rdoui-w-[34px] rdoui-transform rdoui-rounded-full rdoui-bg-white rdoui-shadow-lg rdoui-ring-0 rdoui-transition rdoui-duration-200 rdoui-ease-in-out`}
+          />
+        </Switch>
+      )}
     />
   )
-}
-
-InputSwitchInput.displayName = 'InputSwitch.Input'
-
-export const InputSwitch = {
-  Root: InputSwitchRoot,
-  Input: InputSwitchInput,
-  Icon: InputSwitchIcon,
 }

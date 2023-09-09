@@ -1,54 +1,87 @@
-import { InputHTMLAttributes, ReactNode } from 'react'
-import { Icon, IconName } from './icon'
-import { UseFormRegister } from 'react-hook-form'
+import { InputHTMLAttributes, ReactElement, useState } from 'react'
+import { RadioGroup } from '@headlessui/react'
+import { Control, Controller } from 'react-hook-form'
+import { IconProps } from './icon'
 
-export type InputRadioRootProps = {
-  children: ReactNode
+type OptionProps = {
+  value: string
+  label: string
 }
 
-function InputRadioRoot({ children }: InputRadioRootProps) {
-  return (
-    <div className="flex w-full items-center gap-12px rounded bg-gray-900 py-16px px-12px ring-gray-900 focus-within:ring-2">
-      {children}
-    </div>
-  )
+type RadioItemBodyProps = {
+  checked: boolean
+  active: boolean
 }
 
-InputRadioRoot.displayName = 'InputRadio.Root'
-
-export type InputRadioIconProps = {
-  name: IconName
-}
-
-function InputRadioIcon({ name }: InputRadioIconProps) {
-  return <Icon name={name} />
-}
-
-InputRadioIcon.displayName = 'InputRadio.Icon'
-
-export type InputRadioInputProps = InputHTMLAttributes<HTMLInputElement> & {
+export type InputRadioProps = Omit<
+  InputHTMLAttributes<HTMLInputElement>,
+  'className'
+> & {
   name: string
-  register: UseFormRegister<any>
+  options: OptionProps[]
+  renderRadioItemBody: (
+    item: RadioItemBodyProps,
+    option: OptionProps,
+  ) => ReactElement
+  control: Control<any>
+  icon?: IconProps
+  password?: boolean
+  label?: string
+  containerClassName?: string
+  inputClassName?: string
 }
 
-function InputRadioInput({
+export function InputRadio({
+  options,
+  control,
   name,
-  register,
-  ...inputProps
-}: InputRadioInputProps) {
+  renderRadioItemBody,
+}: InputRadioProps) {
+  const [selected, setSelected] = useState<OptionProps>({} as OptionProps)
+
+  console.log(selected)
+
   return (
-    <input
-      {...inputProps}
-      {...register(name)}
-      className="flex-1 bg-transparent text-16px text-gray-100 outline-none placeholder:text-gray-400"
+    <Controller
+      name={name}
+      control={control}
+      render={({ field }) => (
+        <div className="rdoui-w-full">
+          <div className="rdoui-w-full rdoui-max-w-md">
+            <RadioGroup
+              value={field.value}
+              onChange={(option: OptionProps) => {
+                field.onChange(option.value)
+                setSelected(option)
+              }}
+            >
+              <RadioGroup.Label className="rdoui-sr-only">
+                Server size
+              </RadioGroup.Label>
+              <div className="rdoui-space-y-2">
+                {options.map((option) => (
+                  <RadioGroup.Option
+                    key={option.value}
+                    value={option}
+                    className="rdoui-cursor-pointer"
+                  >
+                    {(item) =>
+                      renderRadioItemBody(
+                        {
+                          active: item.active,
+                          checked:
+                            item.active || selected.value === option.value,
+                        },
+                        option,
+                      )
+                    }
+                  </RadioGroup.Option>
+                ))}
+              </div>
+            </RadioGroup>
+          </div>
+        </div>
+      )}
     />
   )
-}
-
-InputRadioInput.displayName = 'InputRadio.Input'
-
-export const InputRadio = {
-  Root: InputRadioRoot,
-  Input: InputRadioInput,
-  Icon: InputRadioIcon,
 }

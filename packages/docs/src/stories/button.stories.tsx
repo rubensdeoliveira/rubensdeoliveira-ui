@@ -1,66 +1,67 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { Button, ButtonRootProps } from '@rubensdeoliveira-ui/react'
+import { Button, ButtonProps } from '@rubensdeoliveira-ui/react'
 
 export default {
   title: 'Components/Button',
-  component: Button.Root,
+  component: Button,
   args: {
-    children: <Button.Text>Enviar</Button.Text>,
-    className: 'bg-[#29BFC0] text-white rounded-full'
-  }
-} as Meta<ButtonRootProps>
+    label: 'Entrar',
+    paddingHorizontal: '16',
+    paddingVertical: '8',
+    labelProps: { fontSize: '14' },
+  },
+} as Meta<ButtonProps>
 
-export const Default: StoryObj<ButtonRootProps> = {}
-
-export const ClassName: StoryObj<ButtonRootProps> = {
+export const Filled: StoryObj<ButtonProps> = {
   args: {
-    className: 'bg-[#c029b6] text-white rounded-[6px]'
-  }
+    className: 'bg-[#c029b6] text-white rounded-full',
+    buttonType: 'filled',
+  },
 }
 
-export const IsLoading: StoryObj<ButtonRootProps> = {
+export const Ghosted: StoryObj<ButtonProps> = {
   args: {
-    isLoading: true
-  }
+    className: 'bg-[#c029b6] text-white',
+    buttonType: 'ghosted',
+  },
 }
 
-export const Disabled: StoryObj<ButtonRootProps> = {
+export const Bordered: StoryObj<ButtonProps> = {
   args: {
-    disabled: true
-  }
+    className: 'border-[#c029b6] text-white rounded-full',
+    buttonType: 'bordered',
+  },
 }
 
-export const WithIcon: StoryObj<ButtonRootProps> = {
+export const Loading: StoryObj<ButtonProps> = {
   args: {
-    children: (
-      <>
-        <Button.Text>Enviar</Button.Text>
-        <Button.Icon name="ChevronRightIcon" />
-      </>
-    )
-  }
+    isLoading: true,
+    className: 'bg-[#c029b6] text-white rounded-full',
+  },
 }
 
-export const PaddingHorizontal: StoryObj<ButtonRootProps> = {
+export const Disabled: StoryObj<ButtonProps> = {
   args: {
-    paddingHorizontal: '16'
-  }
+    disabled: true,
+    className: 'bg-[#c029b6] text-white rounded-full',
+  },
 }
 
-export const PaddingHorizontalResponsive: StoryObj<ButtonRootProps> = {
+export const Text_With_Icon: StoryObj<ButtonProps> = {
   args: {
-    paddingHorizontal: ['16', '32', '48']
-  }
+    iconLeft: { name: 'AcademicCapIcon' },
+    iconRight: undefined,
+    buttonType: 'filled',
+    className: 'bg-[#c029b6] text-white rounded-full',
+  },
 }
 
-export const PaddingVertical: StoryObj<ButtonRootProps> = {
+export const Icon: StoryObj<ButtonProps> = {
   args: {
-    paddingVertical: '16'
-  }
-}
-
-export const PaddingVerticalResponsive: StoryObj<ButtonRootProps> = {
-  args: {
-    paddingVertical: ['16', '32', '48']
-  }
+    label: undefined,
+    iconLeft: { name: 'AcademicCapIcon' },
+    iconRight: undefined,
+    buttonType: 'ghosted',
+    className: 'text-white',
+  },
 }

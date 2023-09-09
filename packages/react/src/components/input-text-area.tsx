@@ -1,11 +1,10 @@
-import { InputHTMLAttributes, useState } from 'react'
-import { Icon, IconProps } from './icon'
+import { TextareaHTMLAttributes } from 'react'
+import { IconProps } from './icon'
 import { Control, Controller } from 'react-hook-form'
 import { cva } from 'class-variance-authority'
-import { Button } from './button'
 
 export type InputTextAreaProps = Omit<
-  InputHTMLAttributes<HTMLInputElement>,
+  TextareaHTMLAttributes<HTMLTextAreaElement>,
   'className'
 > & {
   name: string
@@ -647,31 +646,20 @@ export function InputTextArea({
   inputClassName,
   ...rest
 }: InputTextAreaProps) {
-  const [showPassword, setShowPassword] = useState<boolean>(!password)
   return (
     <Controller
       name={name}
       control={control}
       render={({ field }) => (
-        <div className={containerStyles({ className: containerClassName })}>
-          <input
+        <>
+          <label htmlFor={name}>{label}</label>
+          <textarea
             {...rest}
             {...field}
-            className={inputStyles({ className: inputClassName })}
-            type={password && !showPassword ? 'password' : 'text'}
-          />
-          {icon && !password && <Icon {...icon} />}
-          {password && (
-            <Button
-              type="button"
-              buttonType="ghosted"
-              iconLeft={{
-                name: password && !showPassword ? 'EyeIcon' : 'EyeSlashIcon',
-              }}
-              onClick={() => setShowPassword((oldValue) => !oldValue)}
-            />
-          )}
-        </div>
+            id={name}
+            className="rdoui-w-full"
+          ></textarea>
+        </>
       )}
     />
   )

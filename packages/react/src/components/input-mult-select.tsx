@@ -639,19 +639,9 @@ export function InputMultSelect({
   options,
   containerClassName,
 }: InputMultSelectProps) {
-  const [selectedOptions, setSelectedOptions] = useState<OptionProps[]>([])
+  const optionsWithoutLabel = options.map((optionItem) => optionItem.value)
 
-  function removeDuplicatedElements(arr: OptionProps[]) {
-    const seen = new Set()
-    return arr.filter((item) => {
-      const chave = JSON.stringify(item)
-      if (!seen.has(chave)) {
-        seen.add(chave)
-        return true
-      }
-      return false
-    })
-  }
+  const [selectedOptions, setSelectedOptions] = useState<string[]>([])
 
   return (
     <Controller
@@ -661,15 +651,9 @@ export function InputMultSelect({
         <div className="rdoui-w-full">
           <Listbox
             value={field.value}
-            onChange={(option: OptionProps[]) => {
-              const teste = option.filter(
-                (optionItem) =>
-                  option.filter((opt) => opt.value === optionItem.value)
-                    .length === 1,
-              )
-
-              field.onChange([...teste])
-              setSelectedOptions([...teste])
+            onChange={(option: string[]) => {
+              field.onChange(option)
+              setSelectedOptions(option)
             }}
             multiple
           >
@@ -678,7 +662,14 @@ export function InputMultSelect({
                 className={containerStyles({ className: containerClassName })}
               >
                 <span className="rdoui-block rdoui-truncate flex-1">
-                  {selectedOptions.map((option) => option.label).join(', ')}
+                  {selectedOptions
+                    .map(
+                      (selectedOption) =>
+                        options.find(
+                          (optionItem) => optionItem.value === selectedOption,
+                        )?.label,
+                    )
+                    .join(', ')}
                 </span>
                 <span className="rdoui-pointer-events-none rdoui-flex rdoui-items-center">
                   <ChevronUpDownIcon
@@ -694,9 +685,9 @@ export function InputMultSelect({
                 leaveTo="opacity-0"
               >
                 <Listbox.Options className="rdoui-absolute rdoui-mt-1 rdoui-max-h-60 rdoui-w-full rdoui-overflow-auto rdoui-rounded-md rdoui-bg-white rdoui-py-1 rdoui-text-base rdoui-shadow-lg rdoui-ring-1 rdoui-ring-black rdoui-ring-opacity-5 focus:rdoui-outline-none sm:rdoui-text-sm">
-                  {options.map((option) => (
+                  {optionsWithoutLabel.map((option) => (
                     <Listbox.Option
-                      key={option.value}
+                      key={option}
                       value={option}
                       className={({ active }) =>
                         `rdoui-relative rdoui-cursor-default rdoui-select-none rdoui-py-2 rdoui-pl-10 rdoui-pr-4 ${
@@ -715,11 +706,13 @@ export function InputMultSelect({
                                 : 'rdoui-font-normal'
                             }`}
                           >
-                            {option.label}
+                            {
+                              options.find(
+                                (optionItem) => optionItem.value === option,
+                              )?.label
+                            }
                           </span>
-                          {selectedOptions
-                            .map((selected) => selected.value)
-                            .includes(option.value) ? (
+                          {selectedOptions.includes(option) ? (
                             <span className="rdoui-absolute rdoui-inset-y-0 rdoui-left-0 rdoui-flex rdoui-items-center rdoui-pl-3 rdoui-text-amber-600">
                               <CheckIcon
                                 className="rdoui-h-5 rdoui-w-5"
