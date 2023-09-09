@@ -101,7 +101,7 @@ const textStyles = cva('', {
       '93': 'rdoui-text-[5.8125rem]',
       '94': 'rdoui-text-[5.875rem]',
       '95': 'rdoui-text-[5.9375rem]',
-      '96': 'rdoui-text-[6rem]'
+      '96': 'rdoui-text-[6rem]',
     },
     fontSizeMd: {
       '0': 'md:rdoui-text-[0rem]',
@@ -200,7 +200,7 @@ const textStyles = cva('', {
       '93': 'md:rdoui-text-[5.8125rem]',
       '94': 'md:rdoui-text-[5.875rem]',
       '95': 'md:rdoui-text-[5.9375rem]',
-      '96': 'md:rdoui-text-[6rem]'
+      '96': 'md:rdoui-text-[6rem]',
     },
     fontSizeLg: {
       '0': 'lg:rdoui-text-[0rem]',
@@ -299,7 +299,7 @@ const textStyles = cva('', {
       '93': 'lg:rdoui-text-[5.8125rem]',
       '94': 'lg:rdoui-text-[5.875rem]',
       '95': 'lg:rdoui-text-[5.9375rem]',
-      '96': 'lg:rdoui-text-[6rem]'
+      '96': 'lg:rdoui-text-[6rem]',
     },
     fontWeight: {
       '300': 'rdoui-font-[300]',
@@ -308,7 +308,7 @@ const textStyles = cva('', {
       '600': 'rdoui-font-[600]',
       '700': 'rdoui-font-[700]',
       '800': 'rdoui-font-[800]',
-      '900': 'rdoui-font-[900]'
+      '900': 'rdoui-font-[900]',
     },
     fontWeightMd: {
       '300': 'md:rdoui-font-[300]',
@@ -317,7 +317,7 @@ const textStyles = cva('', {
       '600': 'md:rdoui-font-[600]',
       '700': 'md:rdoui-font-[700]',
       '800': 'md:rdoui-font-[800]',
-      '900': 'md:rdoui-font-[900]'
+      '900': 'md:rdoui-font-[900]',
     },
     fontWeightLg: {
       '300': 'lg:rdoui-font-[300]',
@@ -326,7 +326,7 @@ const textStyles = cva('', {
       '600': 'lg:rdoui-font-[600]',
       '700': 'lg:rdoui-font-[700]',
       '800': 'lg:rdoui-font-[800]',
-      '900': 'lg:rdoui-font-[900]'
+      '900': 'lg:rdoui-font-[900]',
     },
     marginTop: {
       '0': 'rdoui-mt-[0rem]',
@@ -425,7 +425,7 @@ const textStyles = cva('', {
       '93': 'rdoui-mt-[5.8125rem]',
       '94': 'rdoui-mt-[5.875rem]',
       '95': 'rdoui-mt-[5.9375rem]',
-      '96': 'rdoui-mt-[6rem]'
+      '96': 'rdoui-mt-[6rem]',
     },
     marginTopMd: {
       '0': 'md:rdoui-mt-[0rem]',
@@ -524,7 +524,7 @@ const textStyles = cva('', {
       '93': 'md:rdoui-mt-[5.8125rem]',
       '94': 'md:rdoui-mt-[5.875rem]',
       '95': 'md:rdoui-mt-[5.9375rem]',
-      '96': 'md:rdoui-mt-[6rem]'
+      '96': 'md:rdoui-mt-[6rem]',
     },
     marginTopLg: {
       '0': 'lg:rdoui-mt-[0rem]',
@@ -623,7 +623,7 @@ const textStyles = cva('', {
       '93': 'lg:rdoui-mt-[5.8125rem]',
       '94': 'lg:rdoui-mt-[5.875rem]',
       '95': 'lg:rdoui-mt-[5.9375rem]',
-      '96': 'lg:rdoui-mt-[6rem]'
+      '96': 'lg:rdoui-mt-[6rem]',
     },
     marginBottom: {
       '0': 'rdoui-mb-[0rem]',
@@ -722,7 +722,7 @@ const textStyles = cva('', {
       '93': 'rdoui-mb-[5.8125rem]',
       '94': 'rdoui-mb-[5.875rem]',
       '95': 'rdoui-mb-[5.9375rem]',
-      '96': 'rdoui-mb-[6rem]'
+      '96': 'rdoui-mb-[6rem]',
     },
     marginBottomMd: {
       '0': 'md:rdoui-mb-[0rem]',
@@ -821,7 +821,7 @@ const textStyles = cva('', {
       '93': 'md:rdoui-mb-[5.8125rem]',
       '94': 'md:rdoui-mb-[5.875rem]',
       '95': 'md:rdoui-mb-[5.9375rem]',
-      '96': 'md:rdoui-mb-[6rem]'
+      '96': 'md:rdoui-mb-[6rem]',
     },
     marginBottomLg: {
       '0': 'lg:rdoui-mb-[0rem]',
@@ -920,7 +920,7 @@ const textStyles = cva('', {
       '93': 'lg:rdoui-mb-[5.8125rem]',
       '94': 'lg:rdoui-mb-[5.875rem]',
       '95': 'lg:rdoui-mb-[5.9375rem]',
-      '96': 'lg:rdoui-mb-[6rem]'
+      '96': 'lg:rdoui-mb-[6rem]',
     },
     lineHeight: {
       '0': 'rdoui-leading-[0]',
@@ -953,9 +953,9 @@ const textStyles = cva('', {
       '2.6': 'rdoui-leading-[2.6]',
       '2.7': 'rdoui-leading-[2.7]',
       '2.8': 'rdoui-leading-[2.8]',
-      '2.9': 'rdoui-leading-[2.9]'
-    }
-  }
+      '2.9': 'rdoui-leading-[2.9]',
+    },
+  },
 })
 
 export type TextProps = {
@@ -985,7 +985,7 @@ export function Text({
   children,
   marginBottom,
   marginTop,
-  lineHeight
+  lineHeight,
 }: TextProps) {
   switch (as) {
     case 'h1':
@@ -1005,7 +1005,7 @@ export function Text({
             marginBottomMd: renderResponsizeProp(marginBottom, 'md'),
             marginBottomLg: renderResponsizeProp(marginBottom, 'lg'),
             lineHeight,
-            className
+            className,
           })}
         >
           {children}
@@ -1028,7 +1028,7 @@ export function Text({
             marginBottomMd: renderResponsizeProp(marginBottom, 'md'),
             marginBottomLg: renderResponsizeProp(marginBottom, 'lg'),
             lineHeight,
-            className
+            className,
           })}
         >
           {children}
@@ -1051,7 +1051,7 @@ export function Text({
             marginBottomMd: renderResponsizeProp(marginBottom, 'md'),
             marginBottomLg: renderResponsizeProp(marginBottom, 'lg'),
             lineHeight,
-            className
+            className,
           })}
         >
           {children}
@@ -1074,7 +1074,7 @@ export function Text({
             marginBottomMd: renderResponsizeProp(marginBottom, 'md'),
             marginBottomLg: renderResponsizeProp(marginBottom, 'lg'),
             lineHeight,
-            className
+            className,
           })}
         >
           {children}
@@ -1097,7 +1097,7 @@ export function Text({
             marginBottomMd: renderResponsizeProp(marginBottom, 'md'),
             marginBottomLg: renderResponsizeProp(marginBottom, 'lg'),
             lineHeight,
-            className
+            className,
           })}
         >
           {children}
@@ -1120,7 +1120,7 @@ export function Text({
             marginBottomMd: renderResponsizeProp(marginBottom, 'md'),
             marginBottomLg: renderResponsizeProp(marginBottom, 'lg'),
             lineHeight,
-            className
+            className,
           })}
         >
           {children}
@@ -1143,7 +1143,7 @@ export function Text({
             marginBottomMd: renderResponsizeProp(marginBottom, 'md'),
             marginBottomLg: renderResponsizeProp(marginBottom, 'lg'),
             lineHeight,
-            className
+            className,
           })}
         >
           {children}
@@ -1166,7 +1166,7 @@ export function Text({
             marginBottomMd: renderResponsizeProp(marginBottom, 'md'),
             marginBottomLg: renderResponsizeProp(marginBottom, 'lg'),
             lineHeight,
-            className
+            className,
           })}
         >
           {children}

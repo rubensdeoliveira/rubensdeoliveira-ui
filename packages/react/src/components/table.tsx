@@ -127,7 +127,7 @@ export function Table({ header, page, data, setPage }: TableProps) {
       data && page < data.last_page
         ? generatePagesArray(
             page,
-            Math.min(page + siblingsCount, data.last_page)
+            Math.min(page + siblingsCount, data.last_page),
           )
         : []
     return (

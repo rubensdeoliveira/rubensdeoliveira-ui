@@ -14,7 +14,7 @@ export function Icon({
   name,
   size = 24,
   type = 'solid',
-  className
+  className,
 }: IconProps) {
   const { ...solidIcons } = SolidIcon
   const { ...outlineIcons } = OutlineIcon

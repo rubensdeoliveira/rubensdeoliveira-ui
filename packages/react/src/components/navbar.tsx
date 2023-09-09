@@ -1,5 +1,4 @@
 import { ReactNode, useState } from 'react'
-import 'flowbite'
 
 export type NavbarProps = {
   logo?: ReactNode
@@ -14,7 +13,7 @@ export function Navbar({
   navigationItems,
   cta,
   wrapperClassName,
-  mobileButtonClassName
+  mobileButtonClassName,
 }: NavbarProps) {
   const [open, setOpen] = useState(false)
 

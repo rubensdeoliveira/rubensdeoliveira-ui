@@ -2,11 +2,11 @@ import { InputHTMLAttributes, ReactNode } from 'react'
 import { Icon, IconName } from './icon'
 import { UseFormRegister } from 'react-hook-form'
 
-export type TextInputRootProps = {
+export type InputRadioRootProps = {
   children: ReactNode
 }
 
-function TextInputRoot({ children }: TextInputRootProps) {
+function InputRadioRoot({ children }: InputRadioRootProps) {
   return (
     <div className="flex w-full items-center gap-12px rounded bg-gray-900 py-16px px-12px ring-gray-900 focus-within:ring-2">
       {children}
@@ -14,28 +14,28 @@ function TextInputRoot({ children }: TextInputRootProps) {
   )
 }
 
-TextInputRoot.displayName = 'TextInput.Root'
+InputRadioRoot.displayName = 'InputRadio.Root'
 
-export type TextInputIconProps = {
+export type InputRadioIconProps = {
   name: IconName
 }
 
-function TextInputIcon({ name }: TextInputIconProps) {
+function InputRadioIcon({ name }: InputRadioIconProps) {
   return <Icon name={name} />
 }
 
-TextInputIcon.displayName = 'TextInput.Icon'
+InputRadioIcon.displayName = 'InputRadio.Icon'
 
-export type TextInputInputProps = InputHTMLAttributes<HTMLInputElement> & {
+export type InputRadioInputProps = InputHTMLAttributes<HTMLInputElement> & {
   name: string
   register: UseFormRegister<any>
 }
 
-function TextInputInput({
+function InputRadioInput({
   name,
   register,
   ...inputProps
-}: TextInputInputProps) {
+}: InputRadioInputProps) {
   return (
     <input
       {...inputProps}
@@ -45,10 +45,10 @@ function TextInputInput({
   )
 }
 
-TextInputInput.displayName = 'TextInput.Input'
+InputRadioInput.displayName = 'InputRadio.Input'
 
-export const TextInput = {
-  Root: TextInputRoot,
-  Input: TextInputInput,
-  Icon: TextInputIcon
+export const InputRadio = {
+  Root: InputRadioRoot,
+  Input: InputRadioInput,
+  Icon: InputRadioIcon,
 }
