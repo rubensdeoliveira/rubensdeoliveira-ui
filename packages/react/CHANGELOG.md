@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.0
+
+### Minor Changes
+
+- b3045c1: Add new components
+
 ## 1.78.0
 
 ### Minor Changes
