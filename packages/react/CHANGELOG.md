@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.3
+
+### Patch Changes
+
+- Update react hook form
+
 ## 1.79.2
 
 ### Patch Changes
