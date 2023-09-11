@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.1
+
+### Patch Changes
+
+- Add react datepicker css
+
 ## 1.79.0
 
 ### Minor Changes
