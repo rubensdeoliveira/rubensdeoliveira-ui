@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.2
+
+### Patch Changes
+
+- Add config to global css
+
 ## 1.79.1
 
 ### Patch Changes
