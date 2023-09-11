@@ -18,7 +18,7 @@ export type InputTextProps = Omit<
 }
 
 const containerStyles = cva(
-  'rdoui-flex rdoui-gap-3 rdoui-items-center rdoui-w-full rdoui-bg-white',
+  'rdoui-flex rdoui-gap-3 rdoui-items-center rdoui-w-full',
   {
     variants: {
       paddingHorizontal: {
@@ -328,7 +328,7 @@ const containerStyles = cva(
 )
 
 const inputStyles = cva(
-  'rdoui-flex-1 rdoui-bg-[transparent] rdoui-outline-none',
+  'rdoui-flex-1 !rdoui-bg-[transparent] rdoui-outline-none',
   {
     variants: {
       paddingVertical: {
@@ -654,9 +654,11 @@ export function InputText({
       control={control}
       render={({ field }) => (
         <div className={containerStyles({ className: containerClassName })}>
+          <label htmlFor={name}>{label}</label>
           <input
             {...rest}
             {...field}
+            id={name}
             className={inputStyles({ className: inputClassName })}
             type={password && !showPassword ? 'password' : 'text'}
           />

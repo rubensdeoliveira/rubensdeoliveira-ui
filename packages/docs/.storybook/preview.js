@@ -9,10 +9,19 @@ export const parameters = {
     matchers: {
       color: /(background|color)$/i,
       date: /Date$/
-    }
+    },
   },
   docs: {
     theme: themes.dark,
+    story: {
+      inline: false
+   }
+  },
+  backgrounds: {
+    default: 'dark',
+  },
+  options: {
+    showToolbar: false,
   },
 }
 

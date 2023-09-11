@@ -1,10 +1,14 @@
 {
-	"extends": ["next/core-web-vitals", "@rocketseat/eslint-config/react"],
-	"rules": {
-		"no-useless-constructor": "off",
-		"no-unused-vars": "off",
-		"no-redeclare": "off",
-		"no-use-before-define": "off",
-		"camelcase": "off"
-	}
+ "extends": [
+  "next/core-web-vitals",
+  "@rocketseat/eslint-config/react",
+  "plugin:storybook/recommended"
+ ],
+ "rules": {
+  "no-useless-constructor": "off",
+  "no-unused-vars": "off",
+  "no-redeclare": "off",
+  "no-use-before-define": "off",
+  "camelcase": "off"
+ }
 }
