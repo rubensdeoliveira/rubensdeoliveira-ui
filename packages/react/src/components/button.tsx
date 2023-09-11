@@ -642,7 +642,7 @@ export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
     isLoading?: boolean
     className?: string
     label?: string
-    labelProps?: TextProps
+    labelProps?: Omit<TextProps, 'children'>
     iconLeft?: IconProps
     iconRight?: IconProps
   }

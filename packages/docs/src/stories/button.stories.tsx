@@ -10,6 +10,15 @@ export default {
     paddingVertical: '8',
     labelProps: { fontSize: '14' },
   },
+  parameters: {
+    previewTabs: {
+      canvas: { hidden: true },
+    },
+    viewMode: 'docs',
+    options: {
+      showToolbar: false,
+    },
+  },
 } as Meta<ButtonProps>
 
 export const Filled: StoryObj<ButtonProps> = {

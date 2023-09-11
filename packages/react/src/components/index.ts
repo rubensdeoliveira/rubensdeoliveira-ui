@@ -1,5 +1,6 @@
 export * from './avatar'
 export * from './button'
+export * from './code-view'
 export * from './dialog'
 export * from './dropdown-menu'
 export * from './form-row'
