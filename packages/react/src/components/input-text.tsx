@@ -11,11 +11,11 @@ export type InputTextProps = Omit<
   name: string
   control: Control<any>
   icon?: IconProps
-  password?: boolean
   label?: string
   containerClassName?: string
   inputClassName?: string
   defaultValue?: string
+  type?: 'password' | 'text'
 }
 
 const containerStyles = cva(
@@ -642,13 +642,14 @@ export function InputText({
   name,
   icon,
   control,
-  password = false,
   label,
   containerClassName,
   inputClassName,
   defaultValue = '',
+  type = 'text',
   ...rest
 }: InputTextProps) {
+  const password = type === 'password'
   const [showPassword, setShowPassword] = useState<boolean>(!password)
   return (
     <Controller

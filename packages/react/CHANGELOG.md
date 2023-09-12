@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.5
+
+### Patch Changes
+
+- Change password logic on input text
+
 ## 1.79.4
 
 ### Patch Changes
