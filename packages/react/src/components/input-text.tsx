@@ -15,6 +15,7 @@ export type InputTextProps = Omit<
   label?: string
   containerClassName?: string
   inputClassName?: string
+  defaultValue?: string
 }
 
 const containerStyles = cva(
@@ -645,19 +646,26 @@ export function InputText({
   label,
   containerClassName,
   inputClassName,
+  defaultValue = '',
   ...rest
 }: InputTextProps) {
   const [showPassword, setShowPassword] = useState<boolean>(!password)
   return (
     <Controller
       name={name}
+      defaultValue={defaultValue}
       control={control}
       render={({ field }) => (
         <div className={containerStyles({ className: containerClassName })}>
           <label htmlFor={name}>{label}</label>
           <input
             {...rest}
-            {...field}
+            value={field.value}
+            onChange={(value) => {
+              if (value) {
+                field.onChange(value)
+              }
+            }}
             id={name}
             className={inputStyles({ className: inputClassName })}
             type={password && !showPassword ? 'password' : 'text'}
