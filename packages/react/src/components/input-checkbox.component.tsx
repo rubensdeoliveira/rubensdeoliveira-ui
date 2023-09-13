@@ -1,6 +1,6 @@
 import { InputHTMLAttributes } from 'react'
 import { Control, Controller } from 'react-hook-form'
-import { IconProps } from './icon'
+import { IconProps } from './icon.component'
 import { cva } from 'class-variance-authority'
 
 export type InputCheckboxProps = Omit<

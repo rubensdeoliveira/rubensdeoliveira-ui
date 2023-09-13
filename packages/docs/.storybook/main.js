@@ -1,6 +1,8 @@
 import { dirname, join } from "path";
 module.exports = {
   stories: [
+    "../src/pages/introduction.stories.mdx",
+    "../src/pages/get-started.stories.mdx",
     "../src/**/*.mdx",
     "../src/pages/**/*.stories.mdx",
     "../src/stories/**/*.stories.@(js|jsx|ts|tsx)",

@@ -1,16 +1,16 @@
 import { Fragment, InputHTMLAttributes, useState } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
-import { Control, Controller } from 'react-hook-form'
-import { IconProps } from './icon'
+import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
 import { cva } from 'class-variance-authority'
-import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/24/solid'
+import { Control, Controller } from 'react-hook-form'
+import { IconProps } from './icon.component'
 
 type OptionProps = {
   value: string
   label: string
 }
 
-export type InputMultSelectProps = Omit<
+export type InputSelectProps = Omit<
   InputHTMLAttributes<HTMLSelectElement>,
   'className'
 > & {
@@ -633,15 +633,13 @@ const containerStyles = cva(
   },
 )
 
-export function InputMultSelect({
-  control,
-  name,
-  options,
+export function InputSelect({
   containerClassName,
-}: InputMultSelectProps) {
-  const optionsWithoutLabel = options.map((optionItem) => optionItem.value)
-
-  const [selectedOptions, setSelectedOptions] = useState<string[]>([])
+  name,
+  control,
+  options,
+}: InputSelectProps) {
+  const [selectedOption, setSelectedOption] = useState(options[0])
 
   return (
     <Controller
@@ -651,25 +649,17 @@ export function InputMultSelect({
         <div className="rdoui-w-full">
           <Listbox
             value={field.value}
-            onChange={(option: string[]) => {
-              field.onChange(option)
-              setSelectedOptions(option)
+            onChange={(option: OptionProps) => {
+              field.onChange(option.value)
+              setSelectedOption(option)
             }}
-            multiple
           >
             <div className="rdoui-relative">
               <Listbox.Button
                 className={containerStyles({ className: containerClassName })}
               >
                 <span className="rdoui-block rdoui-truncate flex-1">
-                  {selectedOptions
-                    .map(
-                      (selectedOption) =>
-                        options.find(
-                          (optionItem) => optionItem.value === selectedOption,
-                        )?.label,
-                    )
-                    .join(', ')}
+                  {selectedOption.label}
                 </span>
                 <span className="rdoui-pointer-events-none rdoui-flex rdoui-items-center">
                   <ChevronUpDownIcon
@@ -685,34 +675,30 @@ export function InputMultSelect({
                 leaveTo="opacity-0"
               >
                 <Listbox.Options className="rdoui-absolute rdoui-mt-1 rdoui-max-h-60 rdoui-w-full rdoui-overflow-auto rdoui-rounded-md rdoui-bg-white rdoui-py-1 rdoui-text-base rdoui-shadow-lg rdoui-ring-1 rdoui-ring-black rdoui-ring-opacity-5 focus:rdoui-outline-none sm:rdoui-text-sm">
-                  {optionsWithoutLabel.map((option) => (
+                  {options.map((option, optionIdx) => (
                     <Listbox.Option
-                      key={option}
-                      value={option}
+                      key={optionIdx}
                       className={({ active }) =>
                         `rdoui-relative rdoui-cursor-default rdoui-select-none rdoui-py-2 rdoui-pl-10 rdoui-pr-4 ${
-                          active || selectedOptions.includes(option)
+                          active || selectedOption.value === option.value
                             ? 'rdoui-bg-amber-100 rdoui-text-amber-900'
                             : 'rdoui-text-gray-900'
                         }`
                       }
+                      value={option}
                     >
                       {({ selected }) => (
                         <>
                           <span
                             className={`rdoui-block rdoui-truncate ${
-                              selectedOptions.includes(option)
+                              selectedOption.value === option.value
                                 ? 'rdoui-font-medium'
                                 : 'rdoui-font-normal'
                             }`}
                           >
-                            {
-                              options.find(
-                                (optionItem) => optionItem.value === option,
-                              )?.label
-                            }
+                            {option.label}
                           </span>
-                          {selectedOptions.includes(option) ? (
+                          {selectedOption.value === option.value ? (
                             <span className="rdoui-absolute rdoui-inset-y-0 rdoui-left-0 rdoui-flex rdoui-items-center rdoui-pl-3 rdoui-text-amber-600">
                               <CheckIcon
                                 className="rdoui-h-5 rdoui-w-5"

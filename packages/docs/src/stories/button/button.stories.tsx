@@ -1,73 +1,85 @@
-import { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react'
 import { Button, ButtonProps } from '@rubensdeoliveira-ui/react'
 
-export default {
+const meta: Meta<typeof Button> = {
   title: 'Components/Button',
   component: Button,
-  args: {
-    label: 'Entrar',
-    paddingHorizontal: '16',
-    paddingVertical: '8',
-    labelProps: { fontSize: '14' },
-  },
   argTypes: {
-    label: {
-      control: false,
-      description: 'string',
+    label: { name: 'label' },
+    iconLeft: {
+      name: 'iconLeft',
+      type: { name: 'object' },
+    },
+    iconRight: { name: 'iconRight', type: { name: 'object' } },
+    isLoading: { name: 'isLoading', type: 'boolean' },
+    containerClassName: { name: 'containerClassName', type: 'string' },
+    textClassName: { name: 'textClassName', type: 'string' },
+    buttonType: {
+      name: 'buttonType',
+      type: { name: 'enum', value: ['filled', 'ghosted', 'bordered'] },
     },
   },
 } as Meta<ButtonProps>
 
-export const Sample: StoryObj<ButtonProps> = {
+export default meta
+type Story = StoryObj<typeof Button>
+
+export const Filled: Story = {
   args: {
-    className: 'bg-[#c029b6] text-white rounded-full',
+    label: 'Entrar',
+    containerClassName: 'bg-[#c029b6] text-white rounded-full',
     buttonType: 'filled',
   },
 }
 
-// export const Ghosted: StoryObj<ButtonProps> = {
-//   args: {
-//     className: 'bg-[#c029b6] text-white',
-//     buttonType: 'ghosted',
-//   },
-// }
+export const Ghosted: Story = {
+  args: {
+    label: 'Entrar',
+    containerClassName: 'bg-[#c029b6] text-white',
+    buttonType: 'ghosted',
+  },
+}
 
-// export const Bordered: StoryObj<ButtonProps> = {
-//   args: {
-//     className: 'border-[#c029b6] text-white rounded-full',
-//     buttonType: 'bordered',
-//   },
-// }
+export const Bordered: Story = {
+  args: {
+    label: 'Entrar',
+    containerClassName: 'border-[#c029b6] text-white rounded-full',
+    buttonType: 'bordered',
+  },
+}
 
-// export const Loading: StoryObj<ButtonProps> = {
-//   args: {
-//     isLoading: true,
-//     className: 'bg-[#c029b6] text-white rounded-full',
-//   },
-// }
+export const Loading: Story = {
+  args: {
+    label: 'Entrar',
+    isLoading: true,
+    containerClassName: 'bg-[#c029b6] text-white rounded-full',
+  },
+}
 
-// export const Disabled: StoryObj<ButtonProps> = {
-//   args: {
-//     disabled: true,
-//     className: 'bg-[#c029b6] text-white rounded-full',
-//   },
-// }
+export const Disabled: Story = {
+  args: {
+    label: 'Entrar',
+    disabled: true,
+    containerClassName: 'bg-[#c029b6] text-white rounded-full',
+  },
+}
 
-// export const Text_With_Icon: StoryObj<ButtonProps> = {
-//   args: {
-//     iconLeft: { name: 'AcademicCapIcon' },
-//     iconRight: undefined,
-//     buttonType: 'filled',
-//     className: 'bg-[#c029b6] text-white rounded-full',
-//   },
-// }
+export const Text_With_Icon: Story = {
+  args: {
+    label: 'Entrar',
+    iconLeft: { name: 'AcademicCapIcon' },
+    iconRight: undefined,
+    buttonType: 'filled',
+    containerClassName: 'bg-[#c029b6] text-white rounded-full',
+  },
+}
 
-// export const Icon: StoryObj<ButtonProps> = {
-//   args: {
-//     label: undefined,
-//     iconLeft: { name: 'AcademicCapIcon' },
-//     iconRight: undefined,
-//     buttonType: 'ghosted',
-//     className: 'text-white',
-//   },
-// }
+export const Icon: Story = {
+  args: {
+    label: undefined,
+    iconLeft: { name: 'AcademicCapIcon' },
+    iconRight: undefined,
+    buttonType: 'ghosted',
+    containerClassName: 'text-white',
+  },
+}

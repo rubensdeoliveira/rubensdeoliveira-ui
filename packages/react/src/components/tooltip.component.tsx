@@ -1,12 +1,12 @@
 import { InputHTMLAttributes, ReactNode } from 'react'
-import { Icon, IconName } from './icon'
+import { Icon, IconName } from './icon.component'
 import { UseFormRegister } from 'react-hook-form'
 
-export type DialogRootProps = {
+export type TooltipRootProps = {
   children: ReactNode
 }
 
-function DialogRoot({ children }: DialogRootProps) {
+function TooltipRoot({ children }: TooltipRootProps) {
   return (
     <div className="flex w-full items-center gap-12px rounded bg-gray-900 py-16px px-12px ring-gray-900 focus-within:ring-2">
       {children}
@@ -14,24 +14,24 @@ function DialogRoot({ children }: DialogRootProps) {
   )
 }
 
-DialogRoot.displayName = 'Dialog.Root'
+TooltipRoot.displayName = 'Tooltip.Root'
 
-export type DialogIconProps = {
+export type TooltipIconProps = {
   name: IconName
 }
 
-function DialogIcon({ name }: DialogIconProps) {
+function TooltipIcon({ name }: TooltipIconProps) {
   return <Icon name={name} />
 }
 
-DialogIcon.displayName = 'Dialog.Icon'
+TooltipIcon.displayName = 'Tooltip.Icon'
 
-export type DialogInputProps = InputHTMLAttributes<HTMLInputElement> & {
+export type TooltipInputProps = InputHTMLAttributes<HTMLInputElement> & {
   name: string
   register: UseFormRegister<any>
 }
 
-function DialogInput({ name, register, ...inputProps }: DialogInputProps) {
+function TooltipInput({ name, register, ...inputProps }: TooltipInputProps) {
   return (
     <input
       {...inputProps}
@@ -41,10 +41,10 @@ function DialogInput({ name, register, ...inputProps }: DialogInputProps) {
   )
 }
 
-DialogInput.displayName = 'Dialog.Input'
+TooltipInput.displayName = 'Tooltip.Input'
 
-export const Dialog = {
-  Root: DialogRoot,
-  Input: DialogInput,
-  Icon: DialogIcon,
+export const Tooltip = {
+  Root: TooltipRoot,
+  Input: TooltipInput,
+  Icon: TooltipIcon,
 }

@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { InputTextProps } from '@rubensdeoliveira-ui/react'
-import { InputTextHelper } from './input-text.component.helper'
+import { InputTextHelper } from './input-text.component.wrapper'
 
 export default {
   title: 'Components/InputText',

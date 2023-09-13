@@ -2,7 +2,7 @@ import * as SolidIcon from '@heroicons/react/24/solid'
 import * as OutlineIcon from '@heroicons/react/24/outline'
 import { IconName } from '@rubensdeoliveira-ui/react'
 
-import '../../styles/all-icons.css'
+import '../styles/all-icons.css'
 
 export function AllIcons() {
   const { ...solidIcons } = SolidIcon

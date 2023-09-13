@@ -12,4 +12,4 @@ export default {
   },
 } as Meta<IconProps>
 
-export const Primary: StoryObj<IconProps> = {}
+export const Sample: StoryObj<IconProps> = {}

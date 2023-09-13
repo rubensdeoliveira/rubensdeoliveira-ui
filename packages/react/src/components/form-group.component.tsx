@@ -1,9 +1,9 @@
 import { ReactNode } from 'react'
 
-export type FormRowProps = {
+export type FormGroupProps = {
   children: ReactNode
 }
 
-export function FormRow({ children }: FormRowProps) {
+export function FormGroup({ children }: FormGroupProps) {
   return <div>{children}</div>
 }

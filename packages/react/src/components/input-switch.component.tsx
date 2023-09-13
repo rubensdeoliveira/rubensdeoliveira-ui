@@ -1,7 +1,7 @@
 import { InputHTMLAttributes, ReactElement, useState } from 'react'
 import { Switch } from '@headlessui/react'
 import { Control, Controller } from 'react-hook-form'
-import { IconProps } from './icon'
+import { IconProps } from './icon.component'
 
 export type InputSwitchProps = Omit<
   InputHTMLAttributes<HTMLInputElement>,

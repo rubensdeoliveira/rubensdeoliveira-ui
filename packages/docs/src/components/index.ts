@@ -1,2 +1,5 @@
-export * from './avatar.sample'
-export * from './helpers'
+export * from './all-icons'
+export * from './colors-grid'
+export * from './form-example'
+export * from './playground'
+export * from './tokens-grid'

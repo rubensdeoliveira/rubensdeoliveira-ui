@@ -13,7 +13,6 @@ import {
   InputRadio,
   InputSwitch,
   InputTextArea,
-  Avatar,
 } from '@rubensdeoliveira-ui/react'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
@@ -34,7 +33,7 @@ type FormData = {
   about: string
 }
 
-export function FormExample() {
+export function FormWrapper() {
   const { handleSubmit, control } = useForm<FormData>()
   const [data, setData] = useState<FormData>({} as FormData)
 

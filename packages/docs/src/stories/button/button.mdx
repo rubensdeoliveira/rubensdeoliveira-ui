@@ -5,18 +5,36 @@ import * as ButtonStories from './button.stories';
 
 # Button
 
-A button is ...
+The Button component is intended to render different types of button.
 
 <Primary />
 
 ## Examples
 
-### Primary
+### Filled
 
-A button can be of primary importance.
+Rendered button with background filled.
 
 <Canvas>
-  <Story of={ButtonStories.Sample} />
+  <Story of={ButtonStories.Filled} />
+</Canvas>
+
+### Bordered
+
+Rendered button with border and no background.
+
+> When name is bigger than two words rendered first and last names initials, and when name has only one name rendered name initial.
+
+<Canvas>
+  <Story of={ButtonStories.Bordered} />
+</Canvas>
+
+### Ghosted
+
+Rendered button with only content without border or background.
+
+<Canvas>
+  <Story of={ButtonStories.Ghosted} />
 </Canvas>
 
 ## Propriedades

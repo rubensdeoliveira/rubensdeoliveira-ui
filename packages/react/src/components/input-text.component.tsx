@@ -1,30 +1,25 @@
-import { Fragment, InputHTMLAttributes, useState } from 'react'
-import { Listbox, Transition } from '@headlessui/react'
-import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
-import { cva } from 'class-variance-authority'
+import { InputHTMLAttributes, useState } from 'react'
+import { Icon, IconProps } from './icon.component'
 import { Control, Controller } from 'react-hook-form'
-import { IconProps } from './icon'
+import { cva } from 'class-variance-authority'
+import { Button } from './button.component'
 
-type OptionProps = {
-  value: string
-  label: string
-}
-
-export type InputSelectProps = Omit<
-  InputHTMLAttributes<HTMLSelectElement>,
+export type InputTextProps = Omit<
+  InputHTMLAttributes<HTMLInputElement>,
   'className'
 > & {
   name: string
   control: Control<any>
-  options: OptionProps[]
   icon?: IconProps
   label?: string
   containerClassName?: string
   inputClassName?: string
+  defaultValue?: string
+  type?: 'password' | 'text'
 }
 
 const containerStyles = cva(
-  'rdoui-flex rdoui-gap-3 rdoui-items-center rdoui-w-full rdoui-cursor-default rdoui-bg-white rdoui-py-[1.125rem] rdoui-pl-3 rdoui-pr-10 rdoui-text-left focus:rdoui-outline-none sm:rdoui-text-sm',
+  'rdoui-flex rdoui-gap-3 rdoui-items-center rdoui-w-full',
   {
     variants: {
       paddingHorizontal: {
@@ -324,6 +319,19 @@ const containerStyles = cva(
         '95': 'lg:rdoui-px-[5.9375rem]',
         '96': 'lg:rdoui-px-[6rem]',
       },
+    },
+    defaultVariants: {
+      paddingHorizontal: '24',
+      paddingHorizontalMd: '24',
+      paddingHorizontalLg: '24',
+    },
+  },
+)
+
+const inputStyles = cva(
+  'rdoui-flex-1 !rdoui-bg-[transparent] rdoui-outline-none',
+  {
+    variants: {
       paddingVertical: {
         '0': 'rdoui-py-[0rem]',
         '1': 'rdoui-py-[0.0625rem]',
@@ -623,9 +631,6 @@ const containerStyles = cva(
       },
     },
     defaultVariants: {
-      paddingHorizontal: '24',
-      paddingHorizontalMd: '24',
-      paddingHorizontalLg: '24',
       paddingVertical: '18',
       paddingVerticalMd: '18',
       paddingVerticalLg: '18',
@@ -633,87 +638,50 @@ const containerStyles = cva(
   },
 )
 
-export function InputSelect({
-  containerClassName,
+export function InputText({
   name,
+  icon,
   control,
-  options,
-}: InputSelectProps) {
-  const [selectedOption, setSelectedOption] = useState(options[0])
-
+  label,
+  containerClassName,
+  inputClassName,
+  defaultValue = '',
+  type = 'text',
+  ...rest
+}: InputTextProps) {
+  const password = type === 'password'
+  const [showPassword, setShowPassword] = useState<boolean>(!password)
   return (
     <Controller
       name={name}
+      defaultValue={defaultValue}
       control={control}
       render={({ field }) => (
-        <div className="rdoui-w-full">
-          <Listbox
+        <div className={containerStyles({ className: containerClassName })}>
+          <label htmlFor={name}>{label}</label>
+          <input
+            {...rest}
             value={field.value}
-            onChange={(option: OptionProps) => {
-              field.onChange(option.value)
-              setSelectedOption(option)
+            onChange={(value) => {
+              if (value) {
+                field.onChange(value)
+              }
             }}
-          >
-            <div className="rdoui-relative">
-              <Listbox.Button
-                className={containerStyles({ className: containerClassName })}
-              >
-                <span className="rdoui-block rdoui-truncate flex-1">
-                  {selectedOption.label}
-                </span>
-                <span className="rdoui-pointer-events-none rdoui-flex rdoui-items-center">
-                  <ChevronUpDownIcon
-                    className="rdoui-h-5 rdoui-w-5 rdoui-text-gray-400"
-                    aria-hidden="true"
-                  />
-                </span>
-              </Listbox.Button>
-              <Transition
-                as={Fragment}
-                leave="transition ease-in duration-100"
-                leaveFrom="opacity-100"
-                leaveTo="opacity-0"
-              >
-                <Listbox.Options className="rdoui-absolute rdoui-mt-1 rdoui-max-h-60 rdoui-w-full rdoui-overflow-auto rdoui-rounded-md rdoui-bg-white rdoui-py-1 rdoui-text-base rdoui-shadow-lg rdoui-ring-1 rdoui-ring-black rdoui-ring-opacity-5 focus:rdoui-outline-none sm:rdoui-text-sm">
-                  {options.map((option, optionIdx) => (
-                    <Listbox.Option
-                      key={optionIdx}
-                      className={({ active }) =>
-                        `rdoui-relative rdoui-cursor-default rdoui-select-none rdoui-py-2 rdoui-pl-10 rdoui-pr-4 ${
-                          active || selectedOption.value === option.value
-                            ? 'rdoui-bg-amber-100 rdoui-text-amber-900'
-                            : 'rdoui-text-gray-900'
-                        }`
-                      }
-                      value={option}
-                    >
-                      {({ selected }) => (
-                        <>
-                          <span
-                            className={`rdoui-block rdoui-truncate ${
-                              selectedOption.value === option.value
-                                ? 'rdoui-font-medium'
-                                : 'rdoui-font-normal'
-                            }`}
-                          >
-                            {option.label}
-                          </span>
-                          {selectedOption.value === option.value ? (
-                            <span className="rdoui-absolute rdoui-inset-y-0 rdoui-left-0 rdoui-flex rdoui-items-center rdoui-pl-3 rdoui-text-amber-600">
-                              <CheckIcon
-                                className="rdoui-h-5 rdoui-w-5"
-                                aria-hidden="true"
-                              />
-                            </span>
-                          ) : null}
-                        </>
-                      )}
-                    </Listbox.Option>
-                  ))}
-                </Listbox.Options>
-              </Transition>
-            </div>
-          </Listbox>
+            id={name}
+            className={inputStyles({ className: inputClassName })}
+            type={password && !showPassword ? 'password' : 'text'}
+          />
+          {icon && !password && <Icon {...icon} />}
+          {password && (
+            <Button
+              type="button"
+              buttonType="ghosted"
+              iconLeft={{
+                name: password && !showPassword ? 'EyeIcon' : 'EyeSlashIcon',
+              }}
+              onClick={() => setShowPassword((oldValue) => !oldValue)}
+            />
+          )}
         </div>
       )}
     />

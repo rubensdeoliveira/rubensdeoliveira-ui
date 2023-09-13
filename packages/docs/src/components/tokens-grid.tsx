@@ -1,4 +1,4 @@
-import '../../styles/tokens-grid.css'
+import '../styles/tokens-grid.css'
 
 type TokenGridProps = {
   tokens: Record<string, string>

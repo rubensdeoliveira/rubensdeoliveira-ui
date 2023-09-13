@@ -1,7 +1,7 @@
 import { InputHTMLAttributes } from 'react'
 import { Control, Controller } from 'react-hook-form'
 import InputMask from 'react-input-mask'
-import { IconProps } from './icon'
+import { IconProps } from './icon.component'
 import { cva } from 'class-variance-authority'
 
 export type InputMaskedTextProps = Omit<
