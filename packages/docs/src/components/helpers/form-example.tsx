@@ -13,6 +13,7 @@ import {
   InputRadio,
   InputSwitch,
   InputTextArea,
+  Avatar,
 } from '@rubensdeoliveira-ui/react'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
@@ -49,7 +50,7 @@ export function FormExample() {
         </FormRow>
         <FormRow>
           <InputText name="email" control={control} containerClassName="px-0" />
-          <InputText name="password" control={control} password />
+          <InputText name="password" control={control} type="password" />
         </FormRow>
         <FormRow>
           <InputSelect

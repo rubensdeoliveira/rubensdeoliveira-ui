@@ -16,11 +16,6 @@ export default {
       description: 'string',
     },
   },
-  // parameters: {
-  //   options: {
-  //     showToolbar: false,
-  //   },
-  // },
 } as Meta<ButtonProps>
 
 export const Sample: StoryObj<ButtonProps> = {

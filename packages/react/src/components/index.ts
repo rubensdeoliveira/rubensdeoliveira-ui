@@ -1,4 +1,4 @@
-export * from './avatar'
+export * from './avatar.component'
 export * from './button'
 export * from './code-view'
 export * from './dialog'

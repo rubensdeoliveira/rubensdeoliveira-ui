@@ -1,10 +1,10 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { InputTextProps } from '@rubensdeoliveira-ui/react'
-import { InputTextWithForm } from './input-text-with-form.component'
+import { InputTextHelper } from './input-text.component.helper'
 
 export default {
   title: 'Components/InputText',
-  component: InputTextWithForm,
+  component: InputTextHelper,
   args: {
     name: 'password',
     containerClassName: 'bg-white',

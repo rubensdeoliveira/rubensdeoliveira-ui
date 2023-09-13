@@ -1,32 +1,31 @@
-// Button.stories.ts|tsx
-
-import { Button } from '@rubensdeoliveira-ui/react'
+import { Avatar } from '@rubensdeoliveira-ui/react'
 import type { Meta, StoryObj } from '@storybook/react'
 
-const meta: Meta<typeof Button> = {
-  component: Button,
+const meta: Meta<typeof Avatar> = {
+  component: Avatar,
   title: 'Components/Avatar',
 }
 
 export default meta
-type Story = StoryObj<typeof Button>
+type Story = StoryObj<typeof Avatar>
 
-export const Primary: Story = {
+export const Photo: Story = {
   args: {
-    label: 'Button',
+    imageUrl: 'https://github.com/rubensdeoliveira.png',
+    name: 'Rubens de Oliveira',
   },
 }
 
-export const Secondary: Story = {
+export const Name: Story = {
   args: {
-    ...Primary.args,
-    label: '😄👍😍💯',
+    name: 'rubens de oliveira',
   },
 }
 
-export const Tertiary: Story = {
-  args: {
-    ...Primary.args,
-    label: '📚📕📈🤓',
-  },
+export const Empty: Story = {
+  args: {},
+}
+
+export const Size: Story = {
+  args: { size: '96', name: 'Luana' },
 }

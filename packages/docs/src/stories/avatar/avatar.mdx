@@ -1,0 +1,42 @@
+import { Meta, Primary, Controls, Story, Canvas } from '@storybook/blocks';
+import * as AvatarStories from './avatar.stories';
+
+<Meta of={AvatarStories} />
+
+# Avatar
+
+The Avatar component is intended to show the user's photo or initials. And if none of the information is provided, render an illustration of a generic person.
+
+<Primary />
+
+## Examples
+
+### Photo
+
+Rendered when there a photo for show.
+
+<Canvas>
+  <Story of={AvatarStories.Photo} />
+</Canvas>
+
+### Name
+
+Rendered when there is not a photo but there is a name.
+
+> When name is bigger than two words rendered first and last names initials, and when name has only one name rendered name initial.
+
+<Canvas>
+  <Story of={AvatarStories.Name} />
+</Canvas>
+
+### Empty
+
+Rendered when there is not name or photo for show.
+
+<Canvas>
+  <Story of={AvatarStories.Empty} />
+</Canvas>
+
+## Propriedades
+
+<Controls />
