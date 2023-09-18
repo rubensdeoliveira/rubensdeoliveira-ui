@@ -49,7 +49,15 @@ export function Navbar({
         <div className="rdoui-flex rdoui-flex-row rdoui-items-center rdoui-justify-between lg:rdoui-justify-start">
           {logo}
           <div className="flex items-center gap-4">
-            {showCtaOnMobile && cta}
+            <div
+              className={`${
+                showCtaOnMobile
+                  ? 'max-[767px]:rdoui-flex min-[768px]:rdoui-hidden'
+                  : 'rdoui-hidden'
+              }`}
+            >
+              {cta}
+            </div>
             <button
               onClick={() => setOpen(!open)}
               className={`${mobileButtonClassName} rdoui-inline-flex rdoui-items-center rdoui-justify-center focus:rdoui-outline-none md:rdoui-hidden rdoui-transition-all rdoui-duration-300 rdoui-ease-in-out`}
@@ -68,7 +76,15 @@ export function Navbar({
         >
           {navigationItems}
 
-          {!showCtaOnMobile && cta}
+          <div
+            className={`${
+              showCtaOnMobile
+                ? 'max-[767px]:rdoui-hidden min-[768px]:rdoui-flex'
+                : 'max-[767px]:rdoui-flex'
+            }`}
+          >
+            {cta}
+          </div>
         </nav>
       </div>
     </div>

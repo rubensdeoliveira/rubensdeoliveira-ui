@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.7
+
+### Patch Changes
+
+- Fix navbar
+
 ## 1.79.6
 
 ### Patch Changes
