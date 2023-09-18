@@ -5,9 +5,10 @@ export default {
   title: 'Components/Toast',
   component: Toast,
   args: {
-    message: 'Essa é uma mensagem de um toast',
-    type: 'success',
+    title: 'Titulo do toast',
+    description: 'essa é a descricao do toast',
+    isOpen: false,
   },
 } as Meta<ToastProps>
 
-export const Primary: StoryObj<ToastProps> = {}
+export const Sample: StoryObj<ToastProps> = {}

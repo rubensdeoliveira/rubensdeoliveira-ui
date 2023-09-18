@@ -15,8 +15,8 @@ export default {
         action
       </button>
     ),
-    wrapperClassName: 'py-[2.5rem]'
-  }
+    wrapperClassName: 'py-[2.5rem]',
+  },
 } as Meta<NavbarProps>
 
 export const ElementsWithEqualSpace: StoryObj<NavbarProps> = {
@@ -26,8 +26,8 @@ export const ElementsWithEqualSpace: StoryObj<NavbarProps> = {
         <li>Item 1</li>
         <li>Item 2</li>
       </ul>
-    )
-  }
+    ),
+  },
 }
 
 export const ElementsEnd: StoryObj<NavbarProps> = {
@@ -37,6 +37,8 @@ export const ElementsEnd: StoryObj<NavbarProps> = {
         <li>Item 1</li>
         <li>Item 2</li>
       </ul>
-    )
-  }
+    ),
+    mobileButtonType: 'center-secondary',
+    showCtaOnMobile: true,
+  },
 }

@@ -11,8 +11,8 @@ export function AllIcons() {
     const TheIcon = solidIcons[iconName as IconName]
     return (
       <div key={iconName} className="icon-item">
-        <TheIcon style={{ width: 24, height: 24 }} />
-        <span>{iconName}</span>
+        <TheIcon style={{ width: 24, height: 24 }} className="text-white" />
+        <span className="text-white">{iconName}</span>
       </div>
     )
   })
@@ -20,8 +20,8 @@ export function AllIcons() {
     const TheIcon = outlineIcons[iconName as IconName]
     return (
       <div key={iconName} className="icon-item">
-        <TheIcon style={{ width: 24, height: 24 }} />
-        <span>{iconName}</span>
+        <TheIcon style={{ width: 24, height: 24 }} className="text-white" />
+        <span className="text-white">{iconName}</span>
       </div>
     )
   })

@@ -8,7 +8,7 @@ import {
   InputCurrency,
   InputDate,
   InputMaskedText,
-  FormRow,
+  FormGroup,
   InputMultSelect,
   InputRadio,
   InputSwitch,
@@ -45,14 +45,14 @@ export function FormExample() {
   return (
     <div className="flex flex-col gap-10 bg-red-300 p-10 rounded">
       <Form onSubmit={handleSubmit(handleSubmitForm)} className="gap-4">
-        <FormRow>
+        <FormGroup>
           <InputText name="name" control={control} />
-        </FormRow>
-        <FormRow>
+        </FormGroup>
+        <FormGroup>
           <InputText name="email" control={control} containerClassName="px-0" />
           <InputText name="password" control={control} type="password" />
-        </FormRow>
-        <FormRow>
+        </FormGroup>
+        <FormGroup>
           <InputSelect
             control={control}
             name="occupation"
@@ -62,8 +62,8 @@ export function FormExample() {
               { label: 'Dentista', value: 'dentista' },
             ]}
           />
-        </FormRow>
-        <FormRow>
+        </FormGroup>
+        <FormGroup>
           <InputAutoComplete
             control={control}
             name="sport"
@@ -73,24 +73,24 @@ export function FormExample() {
               { label: 'Atletismo', value: 'atletismo' },
             ]}
           />
-        </FormRow>
-        <FormRow>
+        </FormGroup>
+        <FormGroup>
           <InputCheckbox
             control={control}
             name="acceptTerms"
             label="Aceito os termos"
           />
-        </FormRow>
-        <FormRow>
+        </FormGroup>
+        <FormGroup>
           <InputCurrency control={control} name="salary" />
-        </FormRow>
-        <FormRow>
+        </FormGroup>
+        <FormGroup>
           <InputDate control={control} name="birthday" />
-        </FormRow>
-        <FormRow>
+        </FormGroup>
+        <FormGroup>
           <InputMaskedText control={control} name="phone" mask="telefone" />
-        </FormRow>
-        <FormRow>
+        </FormGroup>
+        <FormGroup>
           <InputMultSelect
             control={control}
             name="hobbies"
@@ -100,8 +100,8 @@ export function FormExample() {
               { label: 'Cantar', value: 'cantar' },
             ]}
           />
-        </FormRow>
-        <FormRow>
+        </FormGroup>
+        <FormGroup>
           <InputRadio
             control={control}
             name="gender"
@@ -115,13 +115,13 @@ export function FormExample() {
               </span>
             )}
           />
-        </FormRow>
-        <FormRow>
+        </FormGroup>
+        <FormGroup>
           <InputSwitch control={control} name="isOrganDonor" />
-        </FormRow>
-        <FormRow>
+        </FormGroup>
+        <FormGroup>
           <InputTextArea rows={10} control={control} name="about" />
-        </FormRow>
+        </FormGroup>
         <Button label="Enviar" containerClassName="bg-red-500" />
       </Form>
 

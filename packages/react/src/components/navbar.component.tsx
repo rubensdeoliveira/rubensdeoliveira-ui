@@ -1,4 +1,11 @@
 import { ReactNode, useState } from 'react'
+import {
+  RiMenu5Line,
+  RiMenuLine,
+  RiMenu2Line,
+  RiMenu3Line,
+} from 'react-icons/ri'
+import { AiOutlineClose } from 'react-icons/ai'
 
 export type NavbarProps = {
   logo?: ReactNode
@@ -6,6 +13,8 @@ export type NavbarProps = {
   cta?: ReactNode
   wrapperClassName?: string
   mobileButtonClassName?: string
+  mobileButtonType?: 'center' | 'left' | 'right' | 'center-secondary'
+  showCtaOnMobile?: boolean
 }
 
 export function Navbar({
@@ -14,40 +23,43 @@ export function Navbar({
   cta,
   wrapperClassName,
   mobileButtonClassName,
+  mobileButtonType,
+  showCtaOnMobile = false,
 }: NavbarProps) {
   const [open, setOpen] = useState(false)
+
+  function renderIcon() {
+    const iconClassName =
+      'rdoui-w-6 rdoui-h-6 rdoui-transition-all rdoui-duration-300 rdoui-ease-in-out`'
+    switch (mobileButtonType) {
+      case 'center-secondary':
+        return <RiMenu5Line className={iconClassName} />
+      case 'left':
+        return <RiMenu2Line className={iconClassName} />
+      case 'right':
+        return <RiMenu3Line className={iconClassName} />
+      default:
+        return <RiMenuLine className={iconClassName} />
+    }
+  }
 
   return (
     <div className={`${wrapperClassName} rdoui-w-full rdoui-mx-auto`}>
       <div className="rdoui-relative rdoui-flex rdoui-flex-col rdoui-w-full rdoui-mx-auto md:rdoui-items-center md:rdoui-justify-between md:rdoui-flex-row">
-        <div className="rdoui-flex rdoui-flex-row rdoui-items-center rdoui-justify-between lg:rdoui-justify-start rdoui-w-full">
+        <div className="rdoui-flex rdoui-flex-row rdoui-items-center rdoui-justify-between lg:rdoui-justify-start">
           {logo}
-          <button
-            onClick={() => setOpen(!open)}
-            className={`${mobileButtonClassName} rdoui-inline-flex rdoui-items-center rdoui-justify-center focus:rdoui-outline-none md:rdoui-hidden`}
-          >
-            <svg
-              className="rdoui-w-6 rdoui-h-6"
-              stroke="currentColor"
-              fill="none"
-              viewBox="0 0 24 24"
+          <div className="flex items-center gap-4">
+            {showCtaOnMobile && cta}
+            <button
+              onClick={() => setOpen(!open)}
+              className={`${mobileButtonClassName} rdoui-inline-flex rdoui-items-center rdoui-justify-center focus:rdoui-outline-none md:rdoui-hidden rdoui-transition-all rdoui-duration-300 rdoui-ease-in-out`}
             >
-              <path
-                className={`${open ? 'rdoui-hidden' : 'rdoui-inline-flex'}`}
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              ></path>
-              <path
-                className={`${open ? 'rdoui-inline-flex' : 'rdoui-hidden'}`}
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M6 18L18 6M6 6l12 12"
-              ></path>
-            </svg>
-          </button>
+              {!open && renderIcon()}
+              {open && (
+                <AiOutlineClose className="rdoui-w-6 rdoui-h-6 rdoui-transition-all rdoui-duration-300 rdoui-ease-in-out`" />
+              )}
+            </button>
+          </div>
         </div>
         <nav
           className={`${
@@ -56,7 +68,7 @@ export function Navbar({
         >
           {navigationItems}
 
-          {cta}
+          {!showCtaOnMobile && cta}
         </nav>
       </div>
     </div>

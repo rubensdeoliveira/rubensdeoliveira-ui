@@ -5,7 +5,9 @@ export default {
   title: 'Components/Table',
   component: Table,
   args: {
-    setPage: () => {console.log('')},
+    setPage: () => {
+      console.log('')
+    },
     page: 1,
     data: {
       data: [{ name: 'arthur' }, { name: 'jose' }],
@@ -19,4 +21,4 @@ export default {
   },
 } as Meta<TableProps>
 
-export const Primary: StoryObj<TableProps> = {}
+export const Sample: StoryObj<TableProps> = {}

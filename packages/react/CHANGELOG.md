@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.6
+
+### Patch Changes
+
+- Add navbar options
+
 ## 1.79.5
 
 ### Patch Changes

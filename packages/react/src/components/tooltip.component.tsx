@@ -1,50 +1,26 @@
-import { InputHTMLAttributes, ReactNode } from 'react'
-import { Icon, IconName } from './icon.component'
-import { UseFormRegister } from 'react-hook-form'
+import { ReactElement } from 'react'
+import * as HTooltip from '@radix-ui/react-tooltip'
 
-export type TooltipRootProps = {
-  children: ReactNode
+export type TooltipProps = {
+  trigger: ReactElement
+  message: string
 }
 
-function TooltipRoot({ children }: TooltipRootProps) {
+export function Tooltip({ trigger, message }: TooltipProps) {
   return (
-    <div className="flex w-full items-center gap-12px rounded bg-gray-900 py-16px px-12px ring-gray-900 focus-within:ring-2">
-      {children}
-    </div>
+    <HTooltip.Provider>
+      <HTooltip.Root>
+        <HTooltip.Trigger asChild>{trigger}</HTooltip.Trigger>
+        <HTooltip.Portal>
+          <HTooltip.Content
+            className="data-[state=delayed-open]:data-[side=top]:rdoui-animate-slideDownAndFade data-[state=delayed-open]:data-[side=right]:rdoui-animate-slideLeftAndFade data-[state=delayed-open]:data-[side=left]:rdoui-animate-slideRightAndFade data-[state=delayed-open]:data-[side=bottom]:rdoui-animate-slideUpAndFade rdoui-text-violet11 rdoui-select-none rdoui-rounded-[4px] rdoui-bg-white rdoui-px-[15px] rdoui-py-[10px] rdoui-text-[15px] rdoui-leading-none rdoui-shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] rdoui-will-change-[transform,opacity]"
+            sideOffset={5}
+          >
+            {message}
+            <HTooltip.Arrow className="rdoui-fill-white" />
+          </HTooltip.Content>
+        </HTooltip.Portal>
+      </HTooltip.Root>
+    </HTooltip.Provider>
   )
-}
-
-TooltipRoot.displayName = 'Tooltip.Root'
-
-export type TooltipIconProps = {
-  name: IconName
-}
-
-function TooltipIcon({ name }: TooltipIconProps) {
-  return <Icon name={name} />
-}
-
-TooltipIcon.displayName = 'Tooltip.Icon'
-
-export type TooltipInputProps = InputHTMLAttributes<HTMLInputElement> & {
-  name: string
-  register: UseFormRegister<any>
-}
-
-function TooltipInput({ name, register, ...inputProps }: TooltipInputProps) {
-  return (
-    <input
-      {...inputProps}
-      {...register(name)}
-      className="flex-1 bg-transparent text-16px text-gray-100 outline-none placeholder:text-gray-400"
-    />
-  )
-}
-
-TooltipInput.displayName = 'Tooltip.Input'
-
-export const Tooltip = {
-  Root: TooltipRoot,
-  Input: TooltipInput,
-  Icon: TooltipIcon,
 }
