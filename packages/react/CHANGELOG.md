@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.8
+
+### Patch Changes
+
+- Remove unecessary props for input text
+
 ## 1.79.7
 
 ### Patch Changes
