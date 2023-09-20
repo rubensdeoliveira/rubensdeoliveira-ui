@@ -7,7 +7,8 @@ export default {
   component: InputTextHelper,
   args: {
     name: 'password',
-    containerClassName: 'bg-white',
+    inputContainerClassName: 'bg-white px-4',
+    label: 'Nome',
   },
 } as Meta<InputTextProps>
 

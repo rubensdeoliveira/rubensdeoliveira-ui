@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.9
+
+### Patch Changes
+
+- Add label to input
+
 ## 1.79.8
 
 ### Patch Changes

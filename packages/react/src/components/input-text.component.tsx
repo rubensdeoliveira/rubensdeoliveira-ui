@@ -13,12 +13,18 @@ export type InputTextProps = Omit<
   icon?: IconProps
   label?: string
   containerClassName?: string
+  inputContainerClassName?: string
+  labelClassName?: string
   inputClassName?: string
   defaultValue?: string
   type?: 'password' | 'text'
 }
 
-const containerStyles = cva(
+const containerStyles = cva('')
+
+const labelStyles = cva('')
+
+const inputContainerStyles = cva(
   'rdoui-flex rdoui-gap-3 rdoui-items-center rdoui-w-full',
 )
 
@@ -32,6 +38,8 @@ export function InputText({
   control,
   label,
   containerClassName,
+  inputContainerClassName,
+  labelClassName,
   inputClassName,
   defaultValue = '',
   type = 'text',
@@ -46,30 +54,43 @@ export function InputText({
       control={control}
       render={({ field }) => (
         <div className={containerStyles({ className: containerClassName })}>
-          <label htmlFor={name}>{label}</label>
-          <input
-            {...rest}
-            value={field.value}
-            onChange={(value) => {
-              if (value) {
-                field.onChange(value)
-              }
-            }}
-            id={name}
-            className={inputStyles({ className: inputClassName })}
-            type={password && !showPassword ? 'password' : 'text'}
-          />
-          {icon && !password && <Icon {...icon} />}
-          {password && (
-            <Button
-              type="button"
-              buttonType="ghosted"
-              iconLeft={{
-                name: password && !showPassword ? 'EyeIcon' : 'EyeSlashIcon',
+          <label
+            htmlFor={name}
+            className={labelStyles({
+              className: labelClassName,
+            })}
+          >
+            {label}
+          </label>
+          <div
+            className={inputContainerStyles({
+              className: inputContainerClassName,
+            })}
+          >
+            <input
+              {...rest}
+              value={field.value}
+              onChange={(value) => {
+                if (value) {
+                  field.onChange(value)
+                }
               }}
-              onClick={() => setShowPassword((oldValue) => !oldValue)}
+              id={name}
+              className={inputStyles({ className: inputClassName })}
+              type={password && !showPassword ? 'password' : 'text'}
             />
-          )}
+            {icon && !password && <Icon {...icon} />}
+            {password && (
+              <Button
+                type="button"
+                buttonType="ghosted"
+                iconLeft={{
+                  name: password && !showPassword ? 'EyeIcon' : 'EyeSlashIcon',
+                }}
+                onClick={() => setShowPassword((oldValue) => !oldValue)}
+              />
+            )}
+          </div>
         </div>
       )}
     />
