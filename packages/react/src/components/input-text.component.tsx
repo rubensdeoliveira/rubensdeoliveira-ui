@@ -20,7 +20,7 @@ export type InputTextProps = Omit<
   type?: 'password' | 'text'
 }
 
-const containerStyles = cva('')
+const containerStyles = cva('rdoui-w-full rdoui-flex rdoui-flex-col')
 
 const labelStyles = cva('')
 

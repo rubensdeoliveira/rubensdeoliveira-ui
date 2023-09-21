@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.10
+
+### Patch Changes
+
+- Add styles to container classname input text
+
 ## 1.79.9
 
 ### Patch Changes
