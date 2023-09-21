@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.12
+
+### Patch Changes
+
+- Add container styles to separator
+
 ## 1.79.11
 
 ### Patch Changes

@@ -48,17 +48,19 @@ export type SeparatorProps = VariantProps<typeof lineStyles> &
     text: string
     textClassName?: string
     lineClassName?: string
+    containerClassName?: string
   }
 
 export function Separator({
   lineClassName,
   textClassName,
+  containerClassName,
   text,
   lineSize,
   space,
 }: SeparatorProps) {
   return (
-    <div className={containerStyles({ space })}>
+    <div className={containerStyles({ className: containerClassName, space })}>
       <div className={lineStyles({ className: lineClassName, lineSize })}></div>
       <span className={textStyles({ className: textClassName })}>{text}</span>
       <div className={lineStyles({ className: lineClassName, lineSize })}></div>
