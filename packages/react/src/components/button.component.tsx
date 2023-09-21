@@ -1,5 +1,5 @@
-import { ButtonHTMLAttributes } from 'react'
-import { Icon, IconProps } from './icon.component'
+import { ButtonHTMLAttributes, ComponentType } from 'react'
+import { IconBaseProps } from 'react-icons'
 import { VariantProps, cva } from 'class-variance-authority'
 
 const containerStyles = cva(
@@ -31,6 +31,8 @@ const containerStyles = cva(
 
 const labelStyles = cva('')
 
+const iconStyles = cva('')
+
 export type ButtonProps = Omit<
   ButtonHTMLAttributes<HTMLButtonElement>,
   'className'
@@ -38,9 +40,10 @@ export type ButtonProps = Omit<
   isLoading?: boolean
   containerClassName?: string
   label?: string
-  iconLeft?: IconProps
-  iconRight?: IconProps
+  iconLeft?: ComponentType<IconBaseProps>
+  iconRight?: ComponentType<IconBaseProps>
   labelClassName?: string
+  iconClassName?: string
   buttonType?: VariantProps<typeof containerStyles>['buttonType']
 }
 
@@ -48,11 +51,12 @@ export function Button({
   isLoading,
   disabled,
   label,
-  iconLeft,
-  iconRight,
+  iconLeft: IconLeft,
+  iconRight: IconRight,
   buttonType,
   containerClassName,
   labelClassName,
+  iconClassName,
   type = 'button',
   ...rest
 }: ButtonProps) {
@@ -83,13 +87,17 @@ export function Button({
   function ButtonContent() {
     return (
       <>
-        {iconLeft && <Icon {...iconLeft} />}
+        {IconLeft && (
+          <IconLeft className={iconStyles({ className: iconClassName })} />
+        )}
         {label && (
           <span className={labelStyles({ className: labelClassName })}>
             {label}
           </span>
         )}
-        {iconRight && <Icon {...iconRight} />}
+        {IconRight && (
+          <IconRight className={iconStyles({ className: iconClassName })} />
+        )}
       </>
     )
   }

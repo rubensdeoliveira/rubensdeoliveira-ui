@@ -1,16 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Button, ButtonProps } from '@rubensdeoliveira-ui/react'
+import { FiCalendar } from 'react-icons/fi'
 
 const meta: Meta<typeof Button> = {
   title: 'Components/Button',
   component: Button,
   argTypes: {
     label: { name: 'label' },
-    iconLeft: {
-      name: 'iconLeft',
-      type: { name: 'object' },
-    },
-    iconRight: { name: 'iconRight', type: { name: 'object' } },
     isLoading: { name: 'isLoading', type: 'boolean' },
     containerClassName: { name: 'containerClassName', type: 'string' },
     textClassName: { name: 'textClassName', type: 'string' },
@@ -67,7 +63,7 @@ export const Disabled: Story = {
 export const Text_With_Icon: Story = {
   args: {
     label: 'Entrar',
-    iconLeft: { name: 'AcademicCapIcon' },
+    iconLeft: FiCalendar,
     iconRight: undefined,
     buttonType: 'filled',
     containerClassName: 'bg-[#c029b6] text-white rounded-full',
@@ -77,7 +73,7 @@ export const Text_With_Icon: Story = {
 export const Icon: Story = {
   args: {
     label: undefined,
-    iconLeft: { name: 'AcademicCapIcon' },
+    iconLeft: FiCalendar,
     iconRight: undefined,
     buttonType: 'ghosted',
     containerClassName: 'text-white',

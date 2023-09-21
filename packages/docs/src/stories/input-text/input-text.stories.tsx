@@ -9,6 +9,7 @@ export default {
     name: 'password',
     inputContainerClassName: 'bg-white px-4',
     label: 'Nome',
+    type: 'password',
   },
 } as Meta<InputTextProps>
 

@@ -1,8 +1,9 @@
-import { InputHTMLAttributes, useState } from 'react'
-import { Icon, IconProps } from './icon.component'
+import { ComponentType, InputHTMLAttributes, useState } from 'react'
 import { Control, Controller } from 'react-hook-form'
 import { cva } from 'class-variance-authority'
 import { Button } from './button.component'
+import { IconBaseProps } from 'react-icons'
+import { FiEye, FiEyeOff } from 'react-icons/fi'
 
 export type InputTextProps = Omit<
   InputHTMLAttributes<HTMLInputElement>,
@@ -10,11 +11,12 @@ export type InputTextProps = Omit<
 > & {
   name: string
   control: Control<any>
-  icon?: IconProps
+  icon?: ComponentType<IconBaseProps>
   label?: string
   containerClassName?: string
   inputContainerClassName?: string
   labelClassName?: string
+  iconClassName?: string
   inputClassName?: string
   defaultValue?: string
   type?: 'password' | 'text'
@@ -32,9 +34,11 @@ const inputStyles = cva(
   'rdoui-flex-1 !rdoui-bg-[transparent] rdoui-outline-none',
 )
 
+const iconStyles = cva('')
+
 export function InputText({
   name,
-  icon,
+  icon: Icon,
   control,
   label,
   containerClassName,
@@ -43,6 +47,7 @@ export function InputText({
   inputClassName,
   defaultValue = '',
   type = 'text',
+  iconClassName,
   ...rest
 }: InputTextProps) {
   const password = type === 'password'
@@ -79,14 +84,13 @@ export function InputText({
               className={inputStyles({ className: inputClassName })}
               type={password && !showPassword ? 'password' : 'text'}
             />
-            {icon && !password && <Icon {...icon} />}
+            {Icon && !password && <Icon className={iconClassName} />}
             {password && (
               <Button
+                iconClassName={iconClassName}
                 type="button"
                 buttonType="ghosted"
-                iconLeft={{
-                  name: password && !showPassword ? 'EyeIcon' : 'EyeSlashIcon',
-                }}
+                iconLeft={password && !showPassword ? FiEye : FiEyeOff}
                 onClick={() => setShowPassword((oldValue) => !oldValue)}
               />
             )}
