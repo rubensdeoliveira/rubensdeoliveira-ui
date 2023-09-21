@@ -2,6 +2,7 @@
 
 import { cva, VariantProps } from 'class-variance-authority'
 import { Icon } from './icon.component'
+import { FaUser } from 'react-icons/fa'
 
 export type AvatarProps = {
   name?: string
@@ -121,7 +122,7 @@ export function Avatar({
             </div>
           ) : (
             <div className={iconStyles({ className: iconClassName })}>
-              <Icon name="UserIcon" size={Number(size) / 2} />
+              <Icon name={FaUser} size={Number(size) / 2} />
             </div>
           )}
         </>

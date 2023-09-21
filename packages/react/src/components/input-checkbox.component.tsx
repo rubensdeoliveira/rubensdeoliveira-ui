@@ -1,6 +1,5 @@
 import { InputHTMLAttributes } from 'react'
 import { Control, Controller } from 'react-hook-form'
-import { IconProps } from './icon.component'
 import { cva } from 'class-variance-authority'
 
 export type InputCheckboxProps = Omit<
@@ -10,7 +9,6 @@ export type InputCheckboxProps = Omit<
   name: string
   control: Control<any>
   label: string
-  icon?: IconProps
   labelClassName?: string
   inputClassName?: string
 }

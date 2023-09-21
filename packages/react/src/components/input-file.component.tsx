@@ -1,5 +1,4 @@
 import { InputHTMLAttributes } from 'react'
-import { IconProps } from './icon.component'
 import { Control, Controller } from 'react-hook-form'
 
 export type InputFileProps = Omit<
@@ -8,7 +7,6 @@ export type InputFileProps = Omit<
 > & {
   name: string
   control: Control<any>
-  icon?: IconProps
   label?: string
   containerClassName?: string
   inputClassName?: string
@@ -18,7 +16,6 @@ export type InputFileProps = Omit<
 
 export function InputFile({
   name,
-  icon,
   control,
   label,
   containerClassName,

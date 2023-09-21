@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.13
+
+### Patch Changes
+
+- remove hero icons
+
 ## 1.79.12
 
 ### Patch Changes

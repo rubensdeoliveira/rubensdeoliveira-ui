@@ -1,7 +1,6 @@
 import { InputHTMLAttributes, ReactElement, useState } from 'react'
 import { RadioGroup } from '@headlessui/react'
 import { Control, Controller } from 'react-hook-form'
-import { IconProps } from './icon.component'
 
 type OptionProps = {
   value: string
@@ -24,7 +23,6 @@ export type InputRadioProps = Omit<
     option: OptionProps,
   ) => ReactElement
   control: Control<any>
-  icon?: IconProps
   password?: boolean
   label?: string
   containerClassName?: string
