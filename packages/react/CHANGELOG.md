@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.11
+
+### Patch Changes
+
+- Add separator
+
 ## 1.79.10
 
 ### Patch Changes
