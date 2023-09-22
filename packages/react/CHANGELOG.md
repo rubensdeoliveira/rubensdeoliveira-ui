@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.16
+
+### Patch Changes
+
+- Add top right to toast
+
 ## 1.79.15
 
 ### Patch Changes

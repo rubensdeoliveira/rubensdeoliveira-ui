@@ -14,7 +14,7 @@ export type ToastProps = {
 }
 
 const containerStyles = cva(
-  "rdoui-flex rdoui-justify-between rdoui-max-w-xs rdoui-p-4 rdoui-rounded-md rdoui-shadow-md rdoui-[grid-template-areas:_'title_action'_'description_action'] rdoui-grid-cols-[auto_max-content] rdoui-gap-x-[15px] rdoui-items-center data-[state=open]:rdoui-animate-slideIn data-[state=closed]:rdoui-animate-hide data-[swipe=move]:rdoui-translate-x-[var(--radix-toast-swipe-move-x)] data-[swipe=cancel]:rdoui-translate-x-0 data-[swipe=cancel]:rdoui-transition-[transform_200ms_ease-out] data-[swipe=end]:rdoui-animate-swipeOut",
+  "rdoui-top-0 rdoui-flex rdoui-justify-between rdoui-max-w-xs rdoui-p-4 rdoui-rounded-md rdoui-shadow-md rdoui-[grid-template-areas:_'title_action'_'description_action'] rdoui-grid-cols-[auto_max-content] rdoui-gap-x-[15px] rdoui-items-center data-[state=open]:rdoui-animate-slideIn data-[state=closed]:rdoui-animate-hide data-[swipe=move]:rdoui-translate-x-[var(--radix-toast-swipe-move-x)] data-[swipe=cancel]:rdoui-translate-x-0 data-[swipe=cancel]:rdoui-transition-[transform_200ms_ease-out] data-[swipe=end]:rdoui-animate-swipeOut",
   {
     variants: {
       color: {
@@ -83,7 +83,7 @@ export function Toast({
           <Icon name={AiOutlineClose} size={18} />
         </RadixToast.Close>
       </RadixToast.Root>
-      <RadixToast.Viewport className="rdoui-[--viewport-padding:_25px] rdoui-fixed rdoui-bottom-0 rdoui-right-0 rdoui-flex rdoui-flex-col rdoui-p-[var(--viewport-padding)] rdoui-gap-[10px] rdoui-w-[390px] rdoui-max-w-[100vw] rdoui-m-0 rdoui-list-none rdoui-z-[2147483647] rdoui-outline-none" />
+      <RadixToast.Viewport className="rdoui-[--viewport-padding:_25px] rdoui-min-w-[320px] rdoui-fixed rdoui-top-7 rdoui-right-7 rdoui-flex rdoui-flex-col rdoui-p-[var(--viewport-padding)] rdoui-gap-[10px] rdoui-m-0 rdoui-list-none rdoui-z-[2147483647] rdoui-outline-none" />
     </RadixToast.Provider>
   )
 }
