@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.17
+
+### Patch Changes
+
+- Add sidebar
+
 ## 1.79.16
 
 ### Patch Changes
