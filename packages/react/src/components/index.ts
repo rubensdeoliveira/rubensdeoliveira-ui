@@ -1,5 +1,7 @@
 export * from './avatar.component'
 export * from './button.component'
+export * from './card-group.component'
+export * from './card.component'
 export * from './dialog.component'
 export * from './dropdown-menu.component'
 export * from './form-group.component'

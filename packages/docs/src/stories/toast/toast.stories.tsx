@@ -6,7 +6,6 @@ export default {
   component: Toast,
   args: {
     title: 'Titulo do toast',
-    description: 'essa é a descricao do toast',
     isOpen: false,
   },
 } as Meta<ToastProps>

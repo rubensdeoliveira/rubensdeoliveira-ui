@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.14
+
+### Patch Changes
+
+- Add toast colors
+
 ## 1.79.13
 
 ### Patch Changes
