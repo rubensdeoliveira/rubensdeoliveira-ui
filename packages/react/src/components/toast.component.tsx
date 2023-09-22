@@ -8,7 +8,7 @@ export type ToastProps = {
   title: string
   isOpen: boolean
   description?: string
-  time?: number
+  timerInSeconds?: number
   type?: 'warning' | 'error' | 'success'
   colorType?: 'solid' | 'light'
 }
@@ -38,27 +38,29 @@ const containerStyles = cva(
 export function Toast({
   title,
   description,
-  time = 100,
+  timerInSeconds = 3,
   isOpen,
   colorType = 'light',
   type = 'warning',
 }: ToastProps) {
-  const [open, setOpen] = useState(isOpen)
-  const timerRef = useRef(0)
+  const [open, setOpen] = useState(false)
+  const time = timerInSeconds * 1000
 
   useEffect(() => {
-    return () => clearTimeout(timerRef.current)
-  }, [])
+    setOpen(isOpen)
+  }, [isOpen])
 
   useEffect(() => {
-    if (isOpen) {
-      setOpen(false)
-      window.clearTimeout(timerRef.current)
-      timerRef.current = window.setTimeout(() => {
-        setOpen(true)
+    if (open) {
+      const timer = setTimeout(() => {
+        setOpen(false)
       }, time)
+
+      return () => {
+        clearTimeout(timer)
+      }
     }
-  }, [isOpen, time])
+  }, [open, time])
 
   return (
     <RadixToast.Provider swipeDirection="right">

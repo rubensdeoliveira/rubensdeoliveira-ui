@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.15
+
+### Patch Changes
+
+- Fix toast
+
 ## 1.79.14
 
 ### Patch Changes
