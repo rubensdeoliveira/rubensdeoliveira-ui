@@ -3,11 +3,14 @@
 import { cva, VariantProps } from 'class-variance-authority'
 import { Icon } from './icon.component'
 import { FaUser } from 'react-icons/fa'
+import { renderResponsizeProp } from '../helpers/render-responsive-prop'
 
 export type AvatarProps = {
   name?: string
   imageUrl?: string
-  size?: VariantProps<typeof containerStyles>['size']
+  size?:
+    | VariantProps<typeof containerStyles>['size']
+    | VariantProps<typeof containerStyles>['size'][]
   borderRadius?: VariantProps<typeof containerStyles>['borderRadius']
   containerClassName?: string
   imageClassName?: string
@@ -38,6 +41,26 @@ const containerStyles = cva(
         72: `rdoui-w-[6rem] rdoui-h-[6rem] rdoui-text-[1.75rem]`,
         96: `rdoui-w-24 rdoui-h-24 rdoui-text-[2rem]`,
         192: `rdoui-w-48 rdoui-h-48 rdoui-text-[4rem]`,
+      },
+      sizeMd: {
+        16: `md:rdoui-w-4 md:rdoui-h-4 md:rdoui-text-[0.375rem]`,
+        24: `md:rdoui-w-6 md:rdoui-h-6 md:rdoui-text-[0.5rem]`,
+        32: `md:rdoui-w-8 md:rdoui-h-8 md:rdoui-text-[0.75rem]`,
+        48: `md:rdoui-w-12 md:rdoui-h-12 md:rdoui-text-[1.125rem]`,
+        56: `md:rdoui-w-14 md:rdoui-h-14 md:rdoui-text-[1.25rem]`,
+        72: `md:rdoui-w-[6rem] md:rdoui-h-[6rem] md:rdoui-text-[1.75rem]`,
+        96: `md:rdoui-w-24 md:rdoui-h-24 md:rdoui-text-[2rem]`,
+        192: `md:rdoui-w-48 md:rdoui-h-48 md:rdoui-text-[4rem]`,
+      },
+      sizeLg: {
+        16: `lg:rdoui-w-4 lg:rdoui-h-4 lg:rdoui-text-[0.375rem]`,
+        24: `lg:rdoui-w-6 lg:rdoui-h-6 lg:rdoui-text-[0.5rem]`,
+        32: `lg:rdoui-w-8 lg:rdoui-h-8 lg:rdoui-text-[0.75rem]`,
+        48: `lg:rdoui-w-12 lg:rdoui-h-12 lg:rdoui-text-[1.125rem]`,
+        56: `lg:rdoui-w-14 lg:rdoui-h-14 lg:rdoui-text-[1.25rem]`,
+        72: `lg:rdoui-w-[6rem] lg:rdoui-h-[6rem] lg:rdoui-text-[1.75rem]`,
+        96: `lg:rdoui-w-24 lg:rdoui-h-24 lg:rdoui-text-[2rem]`,
+        192: `lg:rdoui-w-48 lg:rdoui-h-48 lg:rdoui-text-[4rem]`,
       },
       background: {
         A: 'rdoui-bg-red-200 rdoui-text-red-600',
@@ -117,9 +140,11 @@ export function Avatar({
     <div
       className={containerStyles({
         background: getFirstInitial(name),
-        size,
         className: containerClassName,
         borderRadius,
+        size: renderResponsizeProp(size, 'sm'),
+        sizeMd: renderResponsizeProp(size, 'md'),
+        sizeLg: renderResponsizeProp(size, 'lg'),
       })}
     >
       {imageUrl ? (

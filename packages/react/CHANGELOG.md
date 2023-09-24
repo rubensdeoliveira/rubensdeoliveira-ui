@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.22
+
+### Patch Changes
+
+- Add responsive support for avatar
+
 ## 1.79.21
 
 ### Patch Changes
