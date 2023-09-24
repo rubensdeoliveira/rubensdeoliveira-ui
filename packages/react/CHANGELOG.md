@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.20
+
+### Patch Changes
+
+- Remove margin props for text
+
 ## 1.79.19
 
 ### Patch Changes
