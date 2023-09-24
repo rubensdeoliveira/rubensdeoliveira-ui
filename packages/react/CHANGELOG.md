@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.21
+
+### Patch Changes
+
+- change props for text to number
+
 ## 1.79.20
 
 ### Patch Changes
