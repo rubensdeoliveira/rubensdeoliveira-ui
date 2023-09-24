@@ -8,6 +8,7 @@ export type AvatarProps = {
   name?: string
   imageUrl?: string
   size?: VariantProps<typeof containerStyles>['size']
+  borderRadius?: VariantProps<typeof containerStyles>['borderRadius']
   containerClassName?: string
   imageClassName?: string
   textClassName?: string
@@ -15,9 +16,19 @@ export type AvatarProps = {
 }
 
 const containerStyles = cva(
-  `rdoui-flex rdoui-items-center rdoui-justify-center rdoui-rounded-full`,
+  `rdoui-flex rdoui-items-center rdoui-justify-center`,
   {
     variants: {
+      borderRadius: {
+        4: `rdoui-rounded-[4px]`,
+        6: `rdoui-rounded-[6px]`,
+        8: `rdoui-rounded-[8px]`,
+        10: `rdoui-rounded-[10px]`,
+        12: `rdoui-rounded-[12px]`,
+        14: `rdoui-rounded-[14px]`,
+        16: `rdoui-rounded-[16px]`,
+        full: `rdoui-rounded-full`,
+      },
       size: {
         16: `rdoui-w-4 rdoui-h-4 rdoui-text-[0.375rem]`,
         24: `rdoui-w-6 rdoui-h-6 rdoui-text-[0.5rem]`,
@@ -60,6 +71,7 @@ const containerStyles = cva(
     },
     defaultVariants: {
       background: '',
+      borderRadius: 'full',
     },
   },
 )
@@ -78,6 +90,7 @@ export function Avatar({
   textClassName,
   iconClassName,
   imageClassName,
+  borderRadius,
 }: AvatarProps) {
   function getFirstInitial(
     name: string,
@@ -106,6 +119,7 @@ export function Avatar({
         background: getFirstInitial(name),
         size,
         className: containerClassName,
+        borderRadius,
       })}
     >
       {imageUrl ? (

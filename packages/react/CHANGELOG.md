@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.19
+
+### Patch Changes
+
+- Add border radius to avatar
+
 ## 1.79.18
 
 ### Patch Changes
