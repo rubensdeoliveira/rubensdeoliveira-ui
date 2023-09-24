@@ -1,6 +1,5 @@
 import { Menu, Transition } from '@headlessui/react'
 import { Fragment, ReactElement } from 'react'
-import { Button, ButtonProps } from './button.component'
 import { cva } from 'class-variance-authority'
 
 type ItemProps = {
@@ -9,7 +8,7 @@ type ItemProps = {
 }
 
 export type DropdownMenuProps = {
-  openButton: ButtonProps
+  openElement: ReactElement
   menuItems: Array<(item: ItemProps) => ReactElement>
   containerClassName?: string
   menuItemsContainerClassName?: string
@@ -21,7 +20,7 @@ const menuItemsContainerStyles = cva(
 )
 
 export function DropdownMenu({
-  openButton,
+  openElement,
   menuItems,
   containerClassName,
   menuItemsContainerClassName,
@@ -31,11 +30,7 @@ export function DropdownMenu({
       as="div"
       className={containerStyles({ className: containerClassName })}
     >
-      <div>
-        <Menu.Button>
-          <Button {...openButton} />
-        </Menu.Button>
-      </div>
+      <Menu.Button>{openElement}</Menu.Button>
       <Transition
         as={Fragment}
         enter="transition ease-out duration-100"

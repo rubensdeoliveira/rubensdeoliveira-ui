@@ -6,10 +6,7 @@ const meta: Meta<typeof DropdownMenu> = {
   component: DropdownMenu,
   args: {
     menuItems: [(item) => <p>teste</p>],
-    openButton: { label: 'teste' },
-  },
-  argTypes: {
-    openButton: { type: { name: 'object' } },
+    openElement: <p>text</p>,
   },
 } as Meta<DropdownMenuProps>
 

@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.18
+
+### Patch Changes
+
+- Change open element for dropdown menu
+
 ## 1.79.17
 
 ### Patch Changes
