@@ -1,5 +1,5 @@
 import { ComponentType, InputHTMLAttributes, useState } from 'react'
-import { Control, Controller } from 'react-hook-form'
+import { Control, Controller, FieldErrors } from 'react-hook-form'
 import { cva } from 'class-variance-authority'
 import { Button } from './button.component'
 import { IconBaseProps } from 'react-icons'
@@ -20,6 +20,7 @@ export type InputTextProps = Omit<
   inputClassName?: string
   defaultValue?: string
   type?: 'password' | 'text'
+  errors: FieldErrors<any>
 }
 
 const containerStyles = cva('rdoui-w-full rdoui-flex rdoui-flex-col')
@@ -48,6 +49,7 @@ export function InputText({
   defaultValue = '',
   type = 'text',
   iconClassName,
+  errors,
   ...rest
 }: InputTextProps) {
   const password = type === 'password'
@@ -95,6 +97,11 @@ export function InputText({
               />
             )}
           </div>
+          {errors && errors[name]?.message && (
+            <span className="text-red-500">
+              {errors[name]?.message?.toString()}
+            </span>
+          )}
         </div>
       )}
     />

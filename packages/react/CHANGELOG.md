@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.23
+
+### Patch Changes
+
+- Add errors to input text and input masked text
+
 ## 1.79.22
 
 ### Patch Changes

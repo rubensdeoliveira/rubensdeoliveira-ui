@@ -1,5 +1,5 @@
 import { InputHTMLAttributes } from 'react'
-import { Control, Controller } from 'react-hook-form'
+import { Control, Controller, FieldErrors } from 'react-hook-form'
 import InputMask from 'react-input-mask'
 import { cva } from 'class-variance-authority'
 
@@ -9,11 +9,12 @@ export type InputMaskedTextProps = Omit<
 > & {
   name: string
   control: Control<any>
-  password?: boolean
   label?: string
   containerClassName?: string
   inputClassName?: string
+  labelClassName?: string
   mask: 'telefone' | 'cpf' | 'cnpj' | 'cep'
+  errors: FieldErrors<any>
 }
 
 const containerStyles = cva(
@@ -24,12 +25,17 @@ const inputStyles = cva(
   'rdoui-flex-1 rdoui-bg-[transparent] rdoui-outline-none',
 )
 
+const labelStyles = cva('')
+
 export function InputMaskedText({
   control,
   name,
   containerClassName,
   inputClassName,
   mask,
+  labelClassName,
+  label,
+  errors,
   ...rest
 }: InputMaskedTextProps) {
   function renderMask() {
@@ -53,6 +59,14 @@ export function InputMaskedText({
       control={control}
       render={({ field }) => (
         <div className={containerStyles({ className: containerClassName })}>
+          <label
+            htmlFor={name}
+            className={labelStyles({
+              className: labelClassName,
+            })}
+          >
+            {label}
+          </label>
           <InputMask
             {...rest}
             {...field}
@@ -61,6 +75,11 @@ export function InputMaskedText({
             type="text"
             className={inputStyles({ className: inputClassName })}
           />
+          {errors && errors[name]?.message && (
+            <span className="text-red-500">
+              {errors[name]?.message?.toString()}
+            </span>
+          )}
         </div>
       )}
     />
