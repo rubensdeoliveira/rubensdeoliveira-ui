@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.26
+
+### Patch Changes
+
+- Update react input mask
+
 ## 1.79.25
 
 ### Patch Changes

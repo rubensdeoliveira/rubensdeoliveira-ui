@@ -1,6 +1,6 @@
 {
   "name": "@rubensdeoliveira-ui/react",
-  "version": "1.79.25",
+  "version": "1.79.26",
   "description": "",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -23,7 +23,7 @@
     "@types/react": "^18.0.27",
     "@types/react-datepicker": "^4.15.0",
     "@types/react-dom": "^18.0.10",
-    "@types/react-input-mask": "^3.0.2",
+    "@types/react-input-mask": "3.0.2",
     "autoprefixer": "10.4.13",
     "eslint": "8.44.0",
     "eslint-config-next": "13.4.8",
@@ -47,6 +47,6 @@
     "npm": "8.0.0",
     "react-currency-input-field": "^3.6.11",
     "react-datepicker": "^4.16.0",
-    "react-input-mask": "^2.0.4"
+    "react-input-mask": "3.0.0-alpha.2"
   }
 }
