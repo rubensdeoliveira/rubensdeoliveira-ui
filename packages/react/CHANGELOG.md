@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.25
+
+### Patch Changes
+
+- Remove errors required
+
 ## 1.79.24
 
 ### Patch Changes

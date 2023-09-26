@@ -14,7 +14,7 @@ export type InputMaskedTextProps = Omit<
   inputClassName?: string
   labelClassName?: string
   mask: 'telefone' | 'cpf' | 'cnpj' | 'cep'
-  errors: FieldErrors<any>
+  errors?: FieldErrors<any>
 }
 
 const containerStyles = cva('rdoui-flex rdoui-gap-3 rdoui-w-full')

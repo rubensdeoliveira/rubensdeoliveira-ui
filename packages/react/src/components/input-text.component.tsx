@@ -20,7 +20,7 @@ export type InputTextProps = Omit<
   inputClassName?: string
   defaultValue?: string
   type?: 'password' | 'text'
-  errors: FieldErrors<any>
+  errors?: FieldErrors<any>
 }
 
 const containerStyles = cva('rdoui-w-full rdoui-flex rdoui-flex-col')
