@@ -22,7 +22,7 @@ export type InputAutoCompleteProps = Omit<
 }
 
 const containerStyles = cva(
-  'rdoui-flex rdoui-items-center rdoui-gap-3 rdoui-w-full rdoui-cursor-default rdoui-overflow-hidden rdoui-bg-white rdoui-text-left rdoui-shadow-md focus:rdoui-outline-none sm:rdoui-text-sm',
+  'rdoui-flex rdoui-items-center rdoui-gap-3 rdoui-w-full rdoui-cursor-default rdoui-overflow-hidden rdoui-text-left rdoui-shadow-md focus:rdoui-outline-none sm:rdoui-text-sm',
 )
 
 const inputStyles = cva(
@@ -85,7 +85,7 @@ export function InputAutoComplete({
                 leaveTo="opacity-0"
                 afterLeave={() => setQuery('')}
               >
-                <Combobox.Options className="rdoui-absolute rdoui-mt-1 rdoui-max-h-60 rdoui-w-full rdoui-overflow-auto rdoui-rounded-md rdoui-bg-white rdoui-py-1 rdoui-text-base rdoui-shadow-lg focus:rdoui-outline-none sm:rdoui-text-sm">
+                <Combobox.Options className="rdoui-absolute rdoui-mt-1 rdoui-max-h-60 rdoui-w-full rdoui-overflow-auto rdoui-rounded-md rdoui-py-1 rdoui-text-base rdoui-shadow-lg focus:rdoui-outline-none sm:rdoui-text-sm">
                   {filteredPeople.length === 0 && query !== '' ? (
                     <div className="rdoui-relative rdoui-cursor-default rdoui-select-none rdoui-py-2 rdoui-px-4 rdoui-text-gray-700">
                       Nenhum resultado encontrado para a pesquisa.

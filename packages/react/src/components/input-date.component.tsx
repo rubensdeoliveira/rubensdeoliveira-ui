@@ -5,7 +5,7 @@ import { Control, Controller } from 'react-hook-form'
 import { FiCalendar } from 'react-icons/fi'
 
 const containerStyles = cva(
-  'rdoui-flex rdoui-gap-3 rdoui-items-center rdoui-w-full rdoui-bg-white [&>div]:rdoui-w-full',
+  'rdoui-flex rdoui-gap-3 rdoui-items-center rdoui-w-full  [&>div]:rdoui-w-full',
 )
 
 const inputStyles = cva(

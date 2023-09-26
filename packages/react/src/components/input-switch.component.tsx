@@ -37,7 +37,7 @@ export function InputSwitch({ control, name }: InputSwitchProps) {
             className={`${
               enabled ? 'rdoui-translate-x-9' : 'rdoui-translate-x-0'
             }
-            rdoui-pointer-events-none rdoui-inline-block rdoui-h-[34px] rdoui-w-[34px] rdoui-transform rdoui-rounded-full rdoui-bg-white rdoui-shadow-lg rdoui-ring-0 rdoui-transition rdoui-duration-200 rdoui-ease-in-out`}
+            rdoui-pointer-events-none rdoui-inline-block rdoui-h-[34px] rdoui-w-[34px] rdoui-transform rdoui-rounded-full  rdoui-shadow-lg rdoui-ring-0 rdoui-transition rdoui-duration-200 rdoui-ease-in-out`}
           />
         </Switch>
       )}

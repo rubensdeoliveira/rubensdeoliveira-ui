@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.24
+
+### Patch Changes
+
+- Fix input masked
+
 ## 1.79.23
 
 ### Patch Changes

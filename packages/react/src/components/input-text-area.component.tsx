@@ -15,7 +15,7 @@ export type InputTextAreaProps = Omit<
 }
 
 const containerStyles = cva(
-  'rdoui-flex rdoui-gap-3 rdoui-items-center rdoui-w-full rdoui-bg-white',
+  'rdoui-flex rdoui-gap-3 rdoui-items-center rdoui-w-full ',
 )
 
 const inputStyles = cva(

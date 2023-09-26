@@ -22,7 +22,7 @@ export type InputMultSelectProps = Omit<
 }
 
 const containerStyles = cva(
-  'rdoui-flex rdoui-gap-3 rdoui-items-center rdoui-w-full rdoui-cursor-default rdoui-bg-white rdoui-py-[1.125rem] rdoui-pl-3 rdoui-pr-10 rdoui-text-left focus:rdoui-outline-none sm:rdoui-text-sm',
+  'rdoui-flex rdoui-gap-3 rdoui-items-center rdoui-w-full rdoui-cursor-default  rdoui-py-[1.125rem] rdoui-pl-3 rdoui-pr-10 rdoui-text-left focus:rdoui-outline-none sm:rdoui-text-sm',
 )
 
 export function InputMultSelect({
@@ -76,7 +76,7 @@ export function InputMultSelect({
                 leaveFrom="opacity-100"
                 leaveTo="opacity-0"
               >
-                <Listbox.Options className="rdoui-absolute rdoui-mt-1 rdoui-max-h-60 rdoui-w-full rdoui-overflow-auto rdoui-rounded-md rdoui-bg-white rdoui-py-1 rdoui-text-base rdoui-shadow-lg rdoui-ring-1 rdoui-ring-black rdoui-ring-opacity-5 focus:rdoui-outline-none sm:rdoui-text-sm">
+                <Listbox.Options className="rdoui-absolute rdoui-mt-1 rdoui-max-h-60 rdoui-w-full rdoui-overflow-auto rdoui-rounded-md  rdoui-py-1 rdoui-text-base rdoui-shadow-lg rdoui-ring-1 rdoui-ring-black rdoui-ring-opacity-5 focus:rdoui-outline-none sm:rdoui-text-sm">
                   {optionsWithoutLabel.map((option) => (
                     <Listbox.Option
                       key={option}

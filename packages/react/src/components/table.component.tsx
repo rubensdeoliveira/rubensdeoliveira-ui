@@ -45,7 +45,7 @@ export function Table({
   return (
     <div className="rdoui-relative rdoui-overflow-x-auto rdoui-shadow-md sm:rdoui-rounded-lg">
       {searchInput && (
-        <div className="rdoui-pb-4 rdoui-bg-white">
+        <div className="rdoui-pb-4 ">
           <InputText {...searchInput} />
         </div>
       )}
@@ -70,7 +70,7 @@ export function Table({
           </tr>
         </thead>
         <tbody>
-          <tr className="rdoui-bg-white rdoui-border-b hover:rdoui-bg-gray-50">
+          <tr className=" rdoui-border-b hover:rdoui-bg-gray-50">
             <td className="rdoui-w-4 rdoui-p-4">
               <div className="rdoui-flex rdoui-items-center">
                 <input
@@ -131,12 +131,12 @@ export function Table({
               <>
                 <button
                   onClick={() => setPage(1)}
-                  className="rdoui-border rdoui-border-gray-300 rdoui-bg-white rdoui-px-12px rdoui-py-8px rdoui-leading-tight rdoui-text-gray-500 hover:rdoui-bg-gray-100 hover:rdoui-text-gray-700"
+                  className="rdoui-border rdoui-border-gray-300  rdoui-px-12px rdoui-py-8px rdoui-leading-tight rdoui-text-gray-500 hover:rdoui-bg-gray-100 hover:rdoui-text-gray-700"
                 >
                   1
                 </button>
                 {page > 2 + siblingsCount && (
-                  <button className="rdoui-border rdoui-border-gray-300 rdoui-bg-white rdoui-px-12px rdoui-py-8px rdoui-leading-tight rdoui-text-gray-500 hover:rdoui-bg-gray-100 hover:rdoui-text-gray-700">
+                  <button className="rdoui-border rdoui-border-gray-300  rdoui-px-12px rdoui-py-8px rdoui-leading-tight rdoui-text-gray-500 hover:rdoui-bg-gray-100 hover:rdoui-text-gray-700">
                     ...
                   </button>
                 )}
@@ -146,7 +146,7 @@ export function Table({
             {previousPages.map((previousPage) => (
               <button
                 key={previousPage}
-                className="rdoui-border rdoui-border-gray-300 rdoui-bg-white rdoui-px-12px rdoui-py-8px rdoui-leading-tight rdoui-text-gray-500 hover:rdoui-bg-gray-100 hover:rdoui-text-gray-700"
+                className="rdoui-border rdoui-border-gray-300  rdoui-px-12px rdoui-py-8px rdoui-leading-tight rdoui-text-gray-500 hover:rdoui-bg-gray-100 hover:rdoui-text-gray-700"
                 onClick={() => setPage(previousPage)}
               >
                 {previousPage}
@@ -164,7 +164,7 @@ export function Table({
             {nextPages.map((nextPage) => (
               <button
                 key={nextPage}
-                className="rdoui-border rdoui-border-gray-300 rdoui-bg-white rdoui-px-12px rdoui-py-8px rdoui-leading-tight rdoui-text-gray-500 hover:rdoui-bg-gray-100 hover:rdoui-text-gray-700"
+                className="rdoui-border rdoui-border-gray-300  rdoui-px-12px rdoui-py-8px rdoui-leading-tight rdoui-text-gray-500 hover:rdoui-bg-gray-100 hover:rdoui-text-gray-700"
                 onClick={() => setPage(nextPage)}
               >
                 {nextPage}
@@ -174,12 +174,12 @@ export function Table({
             {data && page + siblingsCount < data.last_page && (
               <>
                 {page + 1 + siblingsCount < data.last_page && (
-                  <button className="rdoui-border rdoui-border-gray-300 rdoui-bg-white rdoui-px-12px rdoui-py-8px rdoui-leading-tight rdoui-text-gray-500 hover:rdoui-bg-gray-100 hover:rdoui-text-gray-700">
+                  <button className="rdoui-border rdoui-border-gray-300  rdoui-px-12px rdoui-py-8px rdoui-leading-tight rdoui-text-gray-500 hover:rdoui-bg-gray-100 hover:rdoui-text-gray-700">
                     ...
                   </button>
                 )}
                 <button
-                  className=" rdoui-border rdoui-border-gray-300 rdoui-bg-white rdoui-px-12px rdoui-py-8px rdoui-leading-tight rdoui-text-gray-500 hover:rdoui-bg-gray-100 hover:rdoui-text-gray-700"
+                  className=" rdoui-border rdoui-border-gray-300  rdoui-px-12px rdoui-py-8px rdoui-leading-tight rdoui-text-gray-500 hover:rdoui-bg-gray-100 hover:rdoui-text-gray-700"
                   onClick={() => setPage(data.last_page)}
                 >
                   {data.last_page}

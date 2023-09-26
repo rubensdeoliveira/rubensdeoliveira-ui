@@ -17,12 +17,10 @@ export type InputMaskedTextProps = Omit<
   errors: FieldErrors<any>
 }
 
-const containerStyles = cva(
-  'rdoui-flex rdoui-gap-3 rdoui-items-center rdoui-w-full rdoui-bg-white',
-)
+const containerStyles = cva('rdoui-flex rdoui-gap-3 rdoui-w-full')
 
 const inputStyles = cva(
-  'rdoui-flex-1 rdoui-bg-[transparent] rdoui-outline-none',
+  'rdoui-flex-1 rdoui-bg-[transparent] rdoui-outline-none rdoui-w-full',
 )
 
 const labelStyles = cva('')
@@ -36,6 +34,7 @@ export function InputMaskedText({
   labelClassName,
   label,
   errors,
+  defaultValue = '',
   ...rest
 }: InputMaskedTextProps) {
   function renderMask() {
@@ -57,6 +56,7 @@ export function InputMaskedText({
     <Controller
       name={name}
       control={control}
+      defaultValue={defaultValue}
       render={({ field }) => (
         <div className={containerStyles({ className: containerClassName })}>
           <label

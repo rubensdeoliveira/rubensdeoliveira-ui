@@ -14,7 +14,7 @@ export type InputCurrencyProps = Omit<
 }
 
 const containerStyles = cva(
-  'rdoui-flex rdoui-gap-3 rdoui-items-center rdoui-w-full rdoui-cursor-default rdoui-bg-white rdoui-py-[1.125rem] rdoui-pl-3 rdoui-pr-10 rdoui-text-left focus:rdoui-outline-none sm:rdoui-text-sm',
+  'rdoui-flex rdoui-gap-3 rdoui-items-center rdoui-w-full rdoui-cursor-default  rdoui-py-[1.125rem] rdoui-pl-3 rdoui-pr-10 rdoui-text-left focus:rdoui-outline-none sm:rdoui-text-sm',
   {
     variants: {
       paddingHorizontal: {
