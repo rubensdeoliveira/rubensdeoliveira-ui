@@ -8,6 +8,7 @@ export default {
   args: {
     name: 'name',
     label: 'Nome',
+    mask: 'cep',
   },
 } as Meta<InputMaskedTextProps>
 

@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.27
+
+### Patch Changes
+
+- change maskchar prop
+
 ## 1.79.26
 
 ### Patch Changes

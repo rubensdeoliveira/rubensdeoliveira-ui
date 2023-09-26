@@ -71,7 +71,7 @@ export function InputMaskedText({
             {...rest}
             {...field}
             mask={renderMask()}
-            maskChar=" "
+            maskPlaceholder={' '}
             type="text"
             className={inputStyles({ className: inputClassName })}
           />
