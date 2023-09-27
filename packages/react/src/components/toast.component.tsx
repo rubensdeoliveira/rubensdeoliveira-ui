@@ -41,7 +41,7 @@ export function Toast({
   timerInSeconds = 3,
   isOpen,
   colorType = 'light',
-  type = 'warning',
+  type = 'error',
 }: ToastProps) {
   const [open, setOpen] = useState(false)
   const time = timerInSeconds * 1000

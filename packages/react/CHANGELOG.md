@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.28
+
+### Patch Changes
+
+- Change default toast type
+
 ## 1.79.27
 
 ### Patch Changes
