@@ -15,6 +15,7 @@ export type InputMaskedTextProps = Omit<
   labelClassName?: string
   mask: 'telefone' | 'cpf' | 'cnpj' | 'cep'
   errors?: FieldErrors<any>
+  errorSpanClassName?: string
 }
 
 const containerStyles = cva('rdoui-flex rdoui-gap-3 rdoui-w-full')
@@ -24,6 +25,8 @@ const inputStyles = cva(
 )
 
 const labelStyles = cva('')
+
+const errorSpanStyles = cva('')
 
 export function InputMaskedText({
   control,
@@ -35,6 +38,7 @@ export function InputMaskedText({
   label,
   errors,
   defaultValue = '',
+  errorSpanClassName,
   ...rest
 }: InputMaskedTextProps) {
   function renderMask() {
@@ -70,13 +74,16 @@ export function InputMaskedText({
           <InputMask
             {...rest}
             {...field}
+            id={name}
             mask={renderMask()}
             maskPlaceholder={' '}
             type="text"
             className={inputStyles({ className: inputClassName })}
           />
           {errors && errors[name]?.message && (
-            <span className="text-red-500">
+            <span
+              className={errorSpanStyles({ className: errorSpanClassName })}
+            >
               {errors[name]?.message?.toString()}
             </span>
           )}

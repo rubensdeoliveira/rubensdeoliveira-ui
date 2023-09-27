@@ -1,5 +1,5 @@
 import { TextareaHTMLAttributes } from 'react'
-import { Control, Controller } from 'react-hook-form'
+import { Control, Controller, FieldErrors } from 'react-hook-form'
 import { cva } from 'class-variance-authority'
 
 export type InputTextAreaProps = Omit<
@@ -12,6 +12,9 @@ export type InputTextAreaProps = Omit<
   label?: string
   containerClassName?: string
   inputClassName?: string
+  errors?: FieldErrors<any>
+  labelClassName?: string
+  errorSpanClassName?: string
 }
 
 const containerStyles = cva(
@@ -22,6 +25,12 @@ const inputStyles = cva(
   'rdoui-flex-1 rdoui-bg-[transparent] rdoui-outline-none',
 )
 
+const labelStyles = cva(
+  'rdoui-flex-1 rdoui-bg-[transparent] rdoui-outline-none',
+)
+
+const errorSpanStyles = cva('')
+
 export function InputTextArea({
   name,
   control,
@@ -29,6 +38,9 @@ export function InputTextArea({
   label,
   containerClassName,
   inputClassName,
+  labelClassName,
+  errorSpanClassName,
+  errors,
   ...rest
 }: InputTextAreaProps) {
   return (
@@ -36,15 +48,27 @@ export function InputTextArea({
       name={name}
       control={control}
       render={({ field }) => (
-        <>
-          <label htmlFor={name}>{label}</label>
+        <div className={containerStyles({ className: containerClassName })}>
+          <label
+            htmlFor={name}
+            className={labelStyles({ className: labelClassName })}
+          >
+            {label}
+          </label>
           <textarea
             {...rest}
             {...field}
             id={name}
-            className="rdoui-w-full"
+            className={inputStyles({ className: inputClassName })}
           ></textarea>
-        </>
+          {errors && errors[name]?.message && (
+            <span
+              className={errorSpanStyles({ className: errorSpanClassName })}
+            >
+              {errors[name]?.message?.toString()}
+            </span>
+          )}
+        </div>
       )}
     />
   )

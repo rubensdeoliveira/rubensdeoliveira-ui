@@ -19,6 +19,7 @@ export type InputTextProps = Omit<
   iconClassName?: string
   inputClassName?: string
   defaultValue?: string
+  errorSpanClassName?: string
   type?: 'password' | 'text'
   errors?: FieldErrors<any>
 }
@@ -37,6 +38,8 @@ const inputStyles = cva(
 
 const iconStyles = cva('')
 
+const errorSpanStyles = cva('')
+
 export function InputText({
   name,
   icon: Icon,
@@ -49,6 +52,7 @@ export function InputText({
   defaultValue = '',
   type = 'text',
   iconClassName,
+  errorSpanClassName,
   errors,
   ...rest
 }: InputTextProps) {
@@ -86,7 +90,9 @@ export function InputText({
               className={inputStyles({ className: inputClassName })}
               type={password && !showPassword ? 'password' : 'text'}
             />
-            {Icon && !password && <Icon className={iconClassName} />}
+            {Icon && !password && (
+              <Icon className={iconStyles({ className: iconClassName })} />
+            )}
             {password && (
               <Button
                 iconClassName={iconClassName}
@@ -98,7 +104,9 @@ export function InputText({
             )}
           </div>
           {errors && errors[name]?.message && (
-            <span className="text-red-500">
+            <span
+              className={errorSpanStyles({ className: errorSpanClassName })}
+            >
               {errors[name]?.message?.toString()}
             </span>
           )}

@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.29
+
+### Patch Changes
+
+- add input error style customization
+
 ## 1.79.28
 
 ### Patch Changes
