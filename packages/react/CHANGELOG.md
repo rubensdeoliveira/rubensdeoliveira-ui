@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.30
+
+### Patch Changes
+
+- Add styles to input autocomplete
+
 ## 1.79.29
 
 ### Patch Changes
