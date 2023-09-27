@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.32
+
+### Patch Changes
+
+- Input autocomplete change
+
 ## 1.79.31
 
 ### Patch Changes
