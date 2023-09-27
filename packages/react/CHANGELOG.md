@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.31
+
+### Patch Changes
+
+- Change inputs styles
+
 ## 1.79.30
 
 ### Patch Changes

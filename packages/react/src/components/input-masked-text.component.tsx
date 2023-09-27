@@ -18,11 +18,9 @@ export type InputMaskedTextProps = Omit<
   errorSpanClassName?: string
 }
 
-const containerStyles = cva('rdoui-flex rdoui-gap-3 rdoui-w-full')
+const containerStyles = cva('rdoui-w-full rdoui-flex rdoui-flex-col')
 
-const inputStyles = cva(
-  'rdoui-flex-1 rdoui-bg-[transparent] rdoui-outline-none rdoui-w-full',
-)
+const inputStyles = cva('')
 
 const labelStyles = cva('')
 

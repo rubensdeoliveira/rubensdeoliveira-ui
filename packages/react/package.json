@@ -1,6 +1,6 @@
 {
   "name": "@rubensdeoliveira-ui/react",
-  "version": "1.79.30",
+  "version": "1.79.31",
   "description": "",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",

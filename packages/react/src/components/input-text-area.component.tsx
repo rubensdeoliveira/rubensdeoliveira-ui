@@ -17,17 +17,11 @@ export type InputTextAreaProps = Omit<
   errorSpanClassName?: string
 }
 
-const containerStyles = cva(
-  'rdoui-flex rdoui-gap-3 rdoui-items-center rdoui-w-full ',
-)
+const containerStyles = cva('rdoui-w-full rdoui-flex rdoui-flex-col')
 
-const inputStyles = cva(
-  'rdoui-flex-1 rdoui-bg-[transparent] rdoui-outline-none',
-)
+const inputStyles = cva('')
 
-const labelStyles = cva(
-  'rdoui-flex-1 rdoui-bg-[transparent] rdoui-outline-none',
-)
+const labelStyles = cva('')
 
 const errorSpanStyles = cva('')
 
