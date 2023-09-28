@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.33
+
+### Patch Changes
+
+- Add default value to input text area
+
 ## 1.79.32
 
 ### Patch Changes

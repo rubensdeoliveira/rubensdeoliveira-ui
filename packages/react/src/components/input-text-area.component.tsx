@@ -34,6 +34,7 @@ export function InputTextArea({
   inputClassName,
   labelClassName,
   errorSpanClassName,
+  defaultValue = '',
   errors,
   ...rest
 }: InputTextAreaProps) {
@@ -41,6 +42,7 @@ export function InputTextArea({
     <Controller
       name={name}
       control={control}
+      defaultValue={defaultValue}
       render={({ field }) => (
         <div className={containerStyles({ className: containerClassName })}>
           <label
