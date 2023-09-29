@@ -86,9 +86,6 @@ export function InputText({
                 if (value) {
                   field.onChange(value)
                 }
-                if (onChange) {
-                  onChange(value)
-                }
               }}
               id={name}
               className={inputStyles({ className: inputClassName })}

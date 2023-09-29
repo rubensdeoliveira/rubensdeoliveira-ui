@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.36
+
+### Patch Changes
+
+- Add uncontrolled input text
+
 ## 1.79.35
 
 ### Patch Changes
