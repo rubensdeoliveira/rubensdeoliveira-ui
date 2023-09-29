@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.35
+
+### Patch Changes
+
+- Add onchange to input text
+
 ## 1.79.34
 
 ### Patch Changes
