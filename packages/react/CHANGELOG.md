@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.34
+
+### Patch Changes
+
+- Add input mult select props
+
 ## 1.79.33
 
 ### Patch Changes

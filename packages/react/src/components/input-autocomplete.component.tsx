@@ -26,7 +26,7 @@ export type InputAutoCompleteProps = Omit<
   optionContainerClassName?: string
 }
 
-const containerStyles = cva('rdoui-flex rdoui-gap-3 rdoui-w-full')
+const containerStyles = cva('rdoui-w-full rdoui-flex rdoui-flex-col')
 
 const inputContainerStyles = cva(
   'rdoui-flex rdoui-items-center rdoui-gap-3 rdoui-w-full rdoui-cursor-default rdoui-overflow-hidden rdoui-text-left focus:rdoui-outline-none',
