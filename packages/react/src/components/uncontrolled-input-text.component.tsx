@@ -1,5 +1,4 @@
 import { ComponentType, InputHTMLAttributes, useState } from 'react'
-import { FieldErrors } from 'react-hook-form'
 import { cva } from 'class-variance-authority'
 import { Button } from './button.component'
 import { IconBaseProps } from 'react-icons'
@@ -17,10 +16,7 @@ export type UncontrolledInputTextProps = Omit<
   labelClassName?: string
   iconClassName?: string
   inputClassName?: string
-  defaultValue?: string
-  errorSpanClassName?: string
   type?: 'password' | 'text'
-  errors?: FieldErrors<any>
 }
 
 const containerStyles = cva('rdoui-w-full rdoui-flex rdoui-flex-col')
@@ -37,8 +33,6 @@ const inputStyles = cva(
 
 const iconStyles = cva('')
 
-const errorSpanStyles = cva('')
-
 export function UncontrolledInputText({
   name,
   icon: Icon,
@@ -47,12 +41,8 @@ export function UncontrolledInputText({
   inputContainerClassName,
   labelClassName,
   inputClassName,
-  defaultValue = '',
   type = 'text',
   iconClassName,
-  errorSpanClassName,
-  errors,
-  onChange,
   ...rest
 }: UncontrolledInputTextProps) {
   const password = type === 'password'
@@ -91,11 +81,6 @@ export function UncontrolledInputText({
           />
         )}
       </div>
-      {errors && errors[name]?.message && (
-        <span className={errorSpanStyles({ className: errorSpanClassName })}>
-          {errors[name]?.message?.toString()}
-        </span>
-      )}
     </div>
   )
 }
