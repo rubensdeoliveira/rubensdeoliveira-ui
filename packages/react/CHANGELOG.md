@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.45
+
+### Patch Changes
+
+- Fix input checkbox
+
 ## 1.79.44
 
 ### Patch Changes

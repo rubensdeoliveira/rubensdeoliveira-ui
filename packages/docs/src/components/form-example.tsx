@@ -122,7 +122,7 @@ export function FormExample() {
         <FormGroup>
           <InputTextArea rows={10} control={control} name="about" />
         </FormGroup>
-        <Button label="Enviar" containerClassName="bg-red-500" />
+        <Button label="Enviar" containerClassName="bg-red-500" type="submit" />
       </Form>
 
       <div className="bg-white p-4 shadow-md rounded-lg">

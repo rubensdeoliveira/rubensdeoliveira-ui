@@ -45,7 +45,7 @@ export function InputCheckbox({
             <Checkbox.Root
               {...rest}
               checked={field.value}
-              onChange={field.onChange}
+              onCheckedChange={field.onChange}
               className={inputStyles({ className: inputClassName })}
               id={name}
             >
