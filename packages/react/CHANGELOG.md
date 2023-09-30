@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.46
+
+### Patch Changes
+
+- Add text left to input select
+
 ## 1.79.45
 
 ### Patch Changes
