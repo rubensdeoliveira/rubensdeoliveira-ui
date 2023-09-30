@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.38
+
+### Patch Changes
+
+- Add props to input select
+
 ## 1.79.37
 
 ### Patch Changes
