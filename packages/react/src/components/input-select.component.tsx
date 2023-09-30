@@ -48,6 +48,8 @@ export function InputSelect({
   errorSpanClassName,
   optionClassName,
   optionsContainerClassName,
+  defaultValue,
+  ...rest
 }: InputSelectProps) {
   const [selectedOption, setSelectedOption] = useState(options[0])
 
@@ -67,12 +69,13 @@ export function InputSelect({
           </label>
           <div className="rdoui-w-full">
             <Listbox
+              {...rest}
               value={field.value}
               onChange={(option: OptionProps) => {
                 field.onChange(option.value)
                 setSelectedOption(option)
               }}
-              defaultValue={options[0].value}
+              defaultValue={defaultValue ?? options[0].value}
             >
               <div className="rdoui-relative">
                 <Listbox.Button
