@@ -18,7 +18,6 @@ export type InputMultSelectProps = Omit<
   options: OptionProps[]
   label?: string
   containerClassName?: string
-  inputClassName?: string
   errorSpanClassName?: string
   errors?: FieldErrors<any>
   labelClassName?: string

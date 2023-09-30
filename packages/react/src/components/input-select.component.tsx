@@ -68,6 +68,7 @@ export function InputSelect({
                 field.onChange(option.value)
                 setSelectedOption(option)
               }}
+              defaultValue={options[0].value}
             >
               <div className="rdoui-relative">
                 <Listbox.Button
