@@ -19,11 +19,8 @@ export type InputMaskedTextProps = Omit<
 }
 
 const containerStyles = cva('rdoui-w-full rdoui-flex rdoui-flex-col')
-
 const inputStyles = cva('')
-
 const labelStyles = cva('')
-
 const errorSpanStyles = cva('')
 
 export function InputMaskedText({

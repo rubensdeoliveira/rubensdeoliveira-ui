@@ -4,7 +4,7 @@ import { Button } from './button.component'
 import { IconBaseProps } from 'react-icons'
 import { FiEye, FiEyeOff } from 'react-icons/fi'
 
-export type UncontrolledInputTextProps = Omit<
+export type InputTextUncontrolledProps = Omit<
   InputHTMLAttributes<HTMLInputElement>,
   'className'
 > & {
@@ -33,7 +33,7 @@ const inputStyles = cva(
 
 const iconStyles = cva('')
 
-export function UncontrolledInputText({
+export function InputTextUncontrolled({
   name,
   icon: Icon,
   label,
@@ -44,7 +44,7 @@ export function UncontrolledInputText({
   type = 'text',
   iconClassName,
   ...rest
-}: UncontrolledInputTextProps) {
+}: InputTextUncontrolledProps) {
   const password = type === 'password'
   const [showPassword, setShowPassword] = useState<boolean>(!password)
   return (

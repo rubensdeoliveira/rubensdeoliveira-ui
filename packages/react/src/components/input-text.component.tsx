@@ -25,19 +25,14 @@ export type InputTextProps = Omit<
 }
 
 const containerStyles = cva('rdoui-w-full rdoui-flex rdoui-flex-col')
-
-const labelStyles = cva('')
-
 const inputContainerStyles = cva(
   'rdoui-flex rdoui-gap-3 rdoui-items-center rdoui-w-full',
 )
-
+const labelStyles = cva('')
 const inputStyles = cva(
   'rdoui-flex-1 !rdoui-bg-[transparent] rdoui-outline-none',
 )
-
 const iconStyles = cva('')
-
 const errorSpanStyles = cva('')
 
 export function InputText({

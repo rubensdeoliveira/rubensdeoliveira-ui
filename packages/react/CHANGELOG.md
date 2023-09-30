@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.42
+
+### Patch Changes
+
+- Add new props to inputs
+
 ## 1.79.41
 
 ### Patch Changes

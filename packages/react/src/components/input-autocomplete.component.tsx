@@ -23,24 +23,20 @@ export type InputAutoCompleteProps = Omit<
   errors?: FieldErrors<any>
   errorSpanClassName?: string
   labelClassName?: string
-  optionContainerClassName?: string
+  optionsContainerClassName?: string
+  optionClassName?: ({ active }: { active: boolean }) => string
 }
 
 const containerStyles = cva('rdoui-w-full rdoui-flex rdoui-flex-col')
-
 const inputContainerStyles = cva(
-  'rdoui-flex rdoui-items-center rdoui-gap-3 rdoui-w-full rdoui-cursor-default rdoui-overflow-hidden rdoui-text-left focus:rdoui-outline-none',
+  'rdoui-flex rdoui-gap-3 rdoui-items-center rdoui-w-full',
 )
-
-const inputStyles = cva(
-  'rdoui-w-full rdoui-border-none rdoui-outline-none rdoui-text-sm rdoui-text-gray-900',
-)
-
-const errorSpanStyles = cva('')
-
 const labelStyles = cva('')
-
-const optionContainerStyles = cva(
+const inputStyles = cva(
+  'rdoui-flex-1 !rdoui-bg-[transparent] rdoui-outline-none',
+)
+const errorSpanStyles = cva('')
+const optionsContainerStyles = cva(
   'rdoui-absolute rdoui-mt-1 rdoui-max-h-60 rdoui-w-full rdoui-overflow-auto rdoui-py-1 focus:rdoui-outline-none',
 )
 
@@ -54,7 +50,8 @@ export function InputAutoComplete({
   errorSpanClassName,
   labelClassName,
   inputContainerClassName,
-  optionContainerClassName,
+  optionsContainerClassName,
+  optionClassName,
   label,
 }: InputAutoCompleteProps) {
   const [selectedOption, setSelectedOption] = useState(options[0])
@@ -119,8 +116,8 @@ export function InputAutoComplete({
                   afterLeave={() => setQuery('')}
                 >
                   <Combobox.Options
-                    className={optionContainerStyles({
-                      className: optionContainerClassName,
+                    className={optionsContainerStyles({
+                      className: optionsContainerClassName,
                     })}
                   >
                     {filteredPeople.length === 0 && query !== '' ? (
@@ -133,9 +130,7 @@ export function InputAutoComplete({
                           key={option.value}
                           className={({ active }) =>
                             `rdoui-relative rdoui-cursor-default rdoui-select-none rdoui-py-2 rdoui-pl-10 rdoui-pr-4 ${
-                              active
-                                ? 'rdoui-bg-teal-600 rdoui-text-white'
-                                : 'rdoui-text-gray-900'
+                              optionClassName && optionClassName({ active })
                             }`
                           }
                           value={option}
@@ -153,11 +148,9 @@ export function InputAutoComplete({
                               </span>
                               {selectedOption.value === option.value ? (
                                 <span
-                                  className={`rdoui-absolute rdoui-inset-y-0 rdoui-left-0 rdoui-flex rdoui-items-center rdoui-pl-3 ${
-                                    active
-                                      ? 'rdoui-text-white'
-                                      : 'rdoui-text-teal-600'
-                                  }`}
+                                  className={
+                                    'rdoui-absolute rdoui-inset-y-0 rdoui-left-0 rdoui-flex rdoui-items-center rdoui-pl-3'
+                                  }
                                 >
                                   <HiCheck
                                     className="rdoui-h-5 rdoui-w-5"

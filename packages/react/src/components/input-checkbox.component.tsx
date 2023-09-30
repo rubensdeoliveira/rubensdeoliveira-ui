@@ -1,26 +1,27 @@
-import { InputHTMLAttributes } from 'react'
-import { Control, Controller } from 'react-hook-form'
+import { Control, Controller, FieldErrors } from 'react-hook-form'
 import { cva } from 'class-variance-authority'
+import * as Checkbox from '@radix-ui/react-checkbox'
+import { FaCheck } from 'react-icons/fa'
 
-export type InputCheckboxProps = Omit<
-  InputHTMLAttributes<HTMLInputElement>,
-  'className'
-> & {
+export type InputCheckboxProps = Omit<Checkbox.CheckboxProps, 'className'> & {
   name: string
   control: Control<any>
   label: string
   labelClassName?: string
   inputClassName?: string
   containerClassName?: string
+  errorSpanClassName?: string
+  iconClassName?: string
+  errors?: FieldErrors<any>
 }
 
-const labelStyles = cva('rdoui-ml-2')
-
+const containerStyles = cva('rdoui-flex rdoui-items-center rdoui-gap-2')
+const labelStyles = cva('')
 const inputStyles = cva(
-  'rdoui-w-4 rdoui-h-4 rdoui-text-red-600 rdoui-bg-gray-100 rdoui-border-gray-300 rdoui-rounded focus:rdoui-ring-red-500 focus:rdoui-ring-2',
+  'rdoui-flex rdoui-appearance-none rdoui-items-center rdoui-justify-center rdoui-rounded-[4px] rdoui-outline-none',
 )
-
-const containerStyles = cva('rdoui-flex rdoui-items-center rdoui-mr-4')
+const iconStyles = cva('')
+const errorSpanStyles = cva('')
 
 export function InputCheckbox({
   control,
@@ -29,6 +30,9 @@ export function InputCheckbox({
   inputClassName,
   labelClassName,
   containerClassName,
+  errorSpanClassName,
+  iconClassName,
+  errors,
   ...rest
 }: InputCheckboxProps) {
   return (
@@ -37,20 +41,34 @@ export function InputCheckbox({
       control={control}
       render={({ field }) => (
         <div className={containerStyles({ className: containerClassName })}>
-          <input
-            {...rest}
-            checked={field.value}
-            onChange={field.onChange}
-            id={name}
-            type="checkbox"
-            className={inputStyles({ className: inputClassName })}
-          />
-          <label
-            htmlFor={name}
-            className={labelStyles({ className: labelClassName })}
-          >
-            {label}
-          </label>
+          <div className="rdoui-flex rdoui-items-center rdoui-gap-2">
+            <Checkbox.Root
+              {...rest}
+              checked={field.value}
+              onChange={field.onChange}
+              className={inputStyles({ className: inputClassName })}
+              id={name}
+            >
+              <Checkbox.Indicator
+                className={iconStyles({ className: iconClassName })}
+              >
+                <FaCheck />
+              </Checkbox.Indicator>
+            </Checkbox.Root>
+            <label
+              className={labelStyles({ className: labelClassName })}
+              htmlFor={name}
+            >
+              {label}
+            </label>
+          </div>
+          {errors && errors[name]?.message && (
+            <span
+              className={errorSpanStyles({ className: errorSpanClassName })}
+            >
+              {errors[name]?.message?.toString()}
+            </span>
+          )}
         </div>
       )}
     />
