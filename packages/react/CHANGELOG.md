@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.43
+
+### Patch Changes
+
+- Update npm
+
 ## 1.79.42
 
 ### Patch Changes

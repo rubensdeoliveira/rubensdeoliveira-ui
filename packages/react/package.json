@@ -1,6 +1,6 @@
 {
   "name": "@rubensdeoliveira-ui/react",
-  "version": "1.79.42",
+  "version": "1.79.43",
   "description": "",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -47,6 +47,7 @@
     "npm": "8.0.0",
     "react-currency-input-field": "^3.6.11",
     "react-datepicker": "^4.16.0",
+    "react-icons": "^4.11.0",
     "react-input-mask": "3.0.0-alpha.2"
   }
 }
