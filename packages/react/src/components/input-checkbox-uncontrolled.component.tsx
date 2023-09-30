@@ -6,7 +6,7 @@ export type InputCheckboxUncontrolledProps = Omit<
   Checkbox.CheckboxProps,
   'className'
 > & {
-  label: string
+  label?: string
   labelClassName?: string
   inputClassName?: string
   containerClassName?: string
@@ -43,12 +43,14 @@ export function InputCheckboxUncontrolled({
             <FaCheck />
           </Checkbox.Indicator>
         </Checkbox.Root>
-        <label
-          className={labelStyles({ className: labelClassName })}
-          htmlFor={id}
-        >
-          {label}
-        </label>
+        {label && (
+          <label
+            className={labelStyles({ className: labelClassName })}
+            htmlFor={id}
+          >
+            {label}
+          </label>
+        )}
       </div>
     </div>
   )

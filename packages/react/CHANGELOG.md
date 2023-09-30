@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.44
+
+### Patch Changes
+
+- remove label for required props to checkbox
+
 ## 1.79.43
 
 ### Patch Changes

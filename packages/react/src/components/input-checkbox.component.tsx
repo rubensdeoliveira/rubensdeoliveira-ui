@@ -6,7 +6,7 @@ import { FaCheck } from 'react-icons/fa'
 export type InputCheckboxProps = Omit<Checkbox.CheckboxProps, 'className'> & {
   name: string
   control: Control<any>
-  label: string
+  label?: string
   labelClassName?: string
   inputClassName?: string
   containerClassName?: string
@@ -55,12 +55,14 @@ export function InputCheckbox({
                 <FaCheck />
               </Checkbox.Indicator>
             </Checkbox.Root>
-            <label
-              className={labelStyles({ className: labelClassName })}
-              htmlFor={name}
-            >
-              {label}
-            </label>
+            {label && (
+              <label
+                className={labelStyles({ className: labelClassName })}
+                htmlFor={name}
+              >
+                {label}
+              </label>
+            )}
           </div>
           {errors && errors[name]?.message && (
             <span
