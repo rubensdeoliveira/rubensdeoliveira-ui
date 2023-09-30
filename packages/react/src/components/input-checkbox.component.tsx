@@ -11,15 +11,16 @@ export type InputCheckboxProps = Omit<
   label: string
   labelClassName?: string
   inputClassName?: string
+  containerClassName?: string
 }
 
-const labelStyles = cva(
-  'rdoui-ml-2 rdoui-text-sm rdoui-font-medium rdoui-text-gray-900',
-)
+const labelStyles = cva('rdoui-ml-2')
 
 const inputStyles = cva(
-  'rdoui-w-4 rdoui-h-4 rdoui-bg-gray-100 rdoui-border-gray-300 rdoui-roundedfocus:rdoui-ring-2',
+  'rdoui-w-4 rdoui-h-4 rdoui-text-red-600 rdoui-bg-gray-100 rdoui-border-gray-300 rdoui-rounded focus:rdoui-ring-red-500 focus:rdoui-ring-2',
 )
+
+const containerStyles = cva('rdoui-flex rdoui-items-center rdoui-mr-4')
 
 export function InputCheckbox({
   control,
@@ -27,6 +28,7 @@ export function InputCheckbox({
   label,
   inputClassName,
   labelClassName,
+  containerClassName,
   ...rest
 }: InputCheckboxProps) {
   return (
@@ -34,7 +36,7 @@ export function InputCheckbox({
       name={name}
       control={control}
       render={({ field }) => (
-        <div className="rdoui-flex rdoui-items-center">
+        <div className={containerStyles({ className: containerClassName })}>
           <input
             {...rest}
             checked={field.value}

@@ -5,9 +5,9 @@ import { cva } from 'class-variance-authority'
 
 export type DialogProps = {
   isOpen: boolean
-  setOpen: (open: boolean) => void
   primaryButton: ButtonProps
   secondaryButton?: ButtonProps
+  setOpen?: (open: boolean) => void
   title?: string
   description?: string
   containerClassName?: string
@@ -16,10 +16,10 @@ export type DialogProps = {
 }
 
 const containerStyles = cva(
-  'rdoui-w-full rdoui-transform rdoui-overflow-hidden rdoui-rounded-2xl rdoui-p-6 rdoui-text-left rdoui-align-middle rdoui-shadow-xl rdoui-transition-all',
+  'rdoui-w-full rdoui-transform rdoui-overflow-hidden rdoui-p-6 rdoui-text-left rdoui-align-middle rdoui-shadow-xl rdoui-transition-all',
 )
-const titleStyles = cva('rdoui-text-lg rdoui-font-medium rdoui-leading-6')
-const descriptionStyles = cva('rdoui-text-sm')
+const titleStyles = cva('')
+const descriptionStyles = cva('')
 
 export function Dialog({
   isOpen,
@@ -33,7 +33,9 @@ export function Dialog({
   titleClassName,
 }: DialogProps) {
   async function handleSetOpen(open: boolean) {
-    setOpen(open)
+    if (setOpen) {
+      setOpen(open)
+    }
   }
 
   return (

@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.40
+
+### Patch Changes
+
+- fix dialog props
+
 ## 1.79.39
 
 ### Patch Changes
