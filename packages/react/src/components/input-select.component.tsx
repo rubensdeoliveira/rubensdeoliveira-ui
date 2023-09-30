@@ -51,7 +51,9 @@ export function InputSelect({
   defaultValue,
   ...rest
 }: InputSelectProps) {
-  const [selectedOption, setSelectedOption] = useState(options[0])
+  const [selectedOption, setSelectedOption] = useState(
+    options.find((option) => option.value === defaultValue) ?? options[0],
+  )
 
   return (
     <Controller
@@ -75,7 +77,6 @@ export function InputSelect({
                 field.onChange(option.value)
                 setSelectedOption(option)
               }}
-              defaultValue={defaultValue ?? options[0].value}
             >
               <div className="rdoui-relative">
                 <Listbox.Button
@@ -84,7 +85,10 @@ export function InputSelect({
                   })}
                 >
                   <span className="rdoui-block rdoui-truncate flex-1">
-                    {selectedOption.label}
+                    {
+                      options.find((option) => option.value === field.value)
+                        ?.label
+                    }
                   </span>
                   <span className="rdoui-pointer-events-none rdoui-flex rdoui-items-center">
                     <HiChevronUpDown

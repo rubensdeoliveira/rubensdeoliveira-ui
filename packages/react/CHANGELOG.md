@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.48
+
+### Patch Changes
+
+- Fix input select warning
+
 ## 1.79.47
 
 ### Patch Changes
