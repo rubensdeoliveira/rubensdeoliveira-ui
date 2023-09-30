@@ -7,7 +7,7 @@ export type DialogProps = {
   isOpen: boolean
   primaryButton: ButtonProps
   secondaryButton?: ButtonProps
-  setOpen?: (open: boolean) => void
+  setOpen: (open: boolean) => void
   title?: string
   description?: string
   containerClassName?: string
@@ -33,16 +33,14 @@ export function Dialog({
   titleClassName,
 }: DialogProps) {
   async function handleSetOpen(open: boolean) {
-    if (setOpen) {
-      setOpen(open)
-    }
+    setOpen(open)
   }
 
   return (
     <Transition appear show={isOpen} as={Fragment}>
       <HDialog
         as="div"
-        className="rdoui-relative rdoui-z-10"
+        className="rdoui-relative rdoui-z-50"
         onClose={() => handleSetOpen(false)}
       >
         <Transition.Child

@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.41
+
+### Patch Changes
+
+- Add z index higher to dialog
+
 ## 1.79.40
 
 ### Patch Changes
