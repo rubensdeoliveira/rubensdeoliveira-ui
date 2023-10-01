@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.49
+
+### Patch Changes
+
+- Add default value to input select
+
 ## 1.79.48
 
 ### Patch Changes

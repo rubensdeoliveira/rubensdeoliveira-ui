@@ -59,6 +59,7 @@ export function InputSelect({
     <Controller
       name={name}
       control={control}
+      defaultValue={defaultValue}
       render={({ field }) => (
         <div className={containerStyles({ className: containerClassName })}>
           <label
@@ -72,7 +73,7 @@ export function InputSelect({
           <div className="rdoui-w-full">
             <Listbox
               {...rest}
-              value={field.value}
+              value={selectedOption}
               onChange={(option: OptionProps) => {
                 field.onChange(option.value)
                 setSelectedOption(option)
@@ -85,10 +86,7 @@ export function InputSelect({
                   })}
                 >
                   <span className="rdoui-block rdoui-truncate flex-1">
-                    {
-                      options.find((option) => option.value === field.value)
-                        ?.label
-                    }
+                    {selectedOption.label}
                   </span>
                   <span className="rdoui-pointer-events-none rdoui-flex rdoui-items-center">
                     <HiChevronUpDown
