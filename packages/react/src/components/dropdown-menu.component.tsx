@@ -16,7 +16,7 @@ export type DropdownMenuProps = {
 
 const containerStyles = cva('rdoui-relative rdoui-inline-block rdoui-text-left')
 const menuItemsContainerStyles = cva(
-  'rdoui-absolute rdoui-right-0 rdoui-mt-2 rdoui-origin-top-right rdoui-divide-y rdoui-divide-gray-100 rdoui-rounded-md rdoui-shadow-lg rdoui-ring-1 rdoui-ring-opacity-5 rdoui-focus:outline-none',
+  'rdoui-absolute rdoui-right-0 rdoui-mt-2 rdoui-origin-top-right rdoui-divide-y rdoui-divide-gray-100 rdoui-shadow-lg rdoui-focus:outline-none',
 )
 
 export function DropdownMenu({

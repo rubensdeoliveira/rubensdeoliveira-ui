@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.50
+
+### Patch Changes
+
+- Fix dropdown menu ring
+
 ## 1.79.49
 
 ### Patch Changes
