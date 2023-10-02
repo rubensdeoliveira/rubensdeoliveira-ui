@@ -26,7 +26,7 @@ export function DropdownMenu({
   secondaryMenuItems,
 }: DropdownMenuProps) {
   return (
-    <div className="rdoui-fixed rdoui-top-16 rdoui-w-56 rdoui-text-right">
+    <div className="rdoui-w-56 rdoui-text-right">
       <Menu
         as="div"
         className="rdoui-relative rdoui-inline-block rdoui-text-left"

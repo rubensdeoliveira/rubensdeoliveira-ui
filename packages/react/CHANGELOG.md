@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.52
+
+### Patch Changes
+
+- remove fixed dropdown trigger
+
 ## 1.79.51
 
 ### Patch Changes
