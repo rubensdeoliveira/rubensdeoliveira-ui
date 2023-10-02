@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.51
+
+### Patch Changes
+
+- Change dropdown
+
 ## 1.79.50
 
 ### Patch Changes
