@@ -18,7 +18,7 @@ export const Sample: Story = {}
 
 export const Styled: Story = {
   args: {
-    menuItemsClassName: 'bg-white',
+    menuItemsClassName: 'bg-gray-900 divide-y divide-gray-50',
     primaryMenuItems: [
       {
         label: 'Item 1',
@@ -31,7 +31,7 @@ export const Styled: Story = {
       {
         label: 'Item 2',
         buttonClassName: 'text-white gap-4',
-        buttonActiveClassName: 'text-black',
+        buttonActiveClassName: 'text-black bg-red-500',
         icon: FaUser,
       },
     ],

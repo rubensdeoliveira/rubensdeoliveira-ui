@@ -46,9 +46,9 @@ export function DropdownMenu({
           leaveTo="transform opacity-0 scale-95"
         >
           <Menu.Items
-            className={`${menuItemsClassName} rdoui-absolute rdoui-right-0 rdoui-mt-2 rdoui-w-56 rdoui-origin-top-right rdoui-divide-y rdoui-divide-gray-100 rdoui-shadow-lg focus:rdoui-outline-none`}
+            className={`${menuItemsClassName} rdoui-absolute rdoui-right-0 rdoui-mt-2 rdoui-w-56 rdoui-origin-top-right rdoui-shadow-lg focus:rdoui-outline-none`}
           >
-            <div className="rdoui-px-1 rdoui-py-1 ">
+            <div className="rdoui-px-1 rdoui-py-1">
               {primaryMenuItems.map(
                 ({
                   icon: Icon,
@@ -69,7 +69,7 @@ export function DropdownMenu({
                         }}
                         className={`${
                           active && buttonActiveClassName
-                        } ${buttonClassName} rdoui-group rdoui-flex rdoui-w-full rdoui-items-center rdoui-px-2 rdoui-py-2`}
+                        } ${buttonClassName} rdoui-group rdoui-flex rdoui-w-full rdoui-items-center rdoui-p-3`}
                       >
                         {Icon && <Icon className={iconClassName} />}
                         <span className={labelClassName}>{label}</span>
@@ -101,7 +101,7 @@ export function DropdownMenu({
                           }}
                           className={`${
                             active && buttonActiveClassName
-                          } ${buttonClassName} rdoui-group rdoui-flex rdoui-w-full rdoui-items-center rdoui-px-2 rdoui-py-2`}
+                          } ${buttonClassName} rdoui-group rdoui-flex rdoui-w-full rdoui-items-center rdoui-p-3`}
                         >
                           {Icon && <Icon className={iconClassName} />}
                           <span className={labelClassName}>{label}</span>

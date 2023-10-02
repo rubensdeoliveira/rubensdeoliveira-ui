@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.53
+
+### Patch Changes
+
+- Remove divide y for dropdown menu
+
 ## 1.79.52
 
 ### Patch Changes
