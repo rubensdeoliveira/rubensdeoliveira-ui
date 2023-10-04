@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.54
+
+### Patch Changes
+
+- Add w full for input text masked
+
 ## 1.79.53
 
 ### Patch Changes
