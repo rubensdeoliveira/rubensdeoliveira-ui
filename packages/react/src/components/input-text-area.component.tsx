@@ -52,8 +52,8 @@ export function InputTextArea({
             {label}
           </label>
           <textarea
-            {...rest}
             {...field}
+            {...rest}
             id={name}
             className={inputStyles({ className: inputClassName })}
           ></textarea>

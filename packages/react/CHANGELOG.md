@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.58
+
+### Patch Changes
+
+- update text area
+
 ## 1.79.57
 
 ### Patch Changes
