@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.56
+
+### Patch Changes
+
+- update input mask and input mult select
+
 ## 1.79.55
 
 ### Patch Changes

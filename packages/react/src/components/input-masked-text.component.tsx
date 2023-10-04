@@ -67,8 +67,8 @@ export function InputMaskedText({
             {label}
           </label>
           <InputMask
-            {...rest}
             {...field}
+            {...rest}
             id={name}
             mask={renderMask()}
             maskPlaceholder={' '}

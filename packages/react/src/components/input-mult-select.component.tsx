@@ -24,6 +24,7 @@ export type InputMultSelectProps = Omit<
   inputContainerClassName?: string
   optionClassName?: ({ active }: { active: boolean }) => string
   optionsContainerClassName?: string
+  defaultValue?: string[]
 }
 
 const containerStyles = cva('rdoui-w-full rdoui-flex rdoui-flex-col')
@@ -53,7 +54,9 @@ export function InputMultSelect({
 }: InputMultSelectProps) {
   const optionsWithoutLabel = options.map((optionItem) => optionItem.value)
 
-  const [selectedOptions, setSelectedOptions] = useState<string[]>([])
+  const [selectedOptions, setSelectedOptions] = useState<string[]>(
+    defaultValue ?? [],
+  )
 
   return (
     <Controller
