@@ -37,7 +37,7 @@ export function Modal({
     <Transition appear show={isOpen} as={Fragment}>
       <HModal
         as="div"
-        className="rdoui-relative rdoui-z-10"
+        className="rdoui-relative rdoui-z-50"
         onClose={() => handleSetOpen(false)}
       >
         <Transition.Child
@@ -74,8 +74,8 @@ export function Modal({
                     {title}
                   </HModal.Title>
                 )}
-                <div className="rdoui-mt-2">
-                  {description && (
+                {description && (
+                  <div className="rdoui-mt-2">
                     <p
                       className={descriptionStyles({
                         className: descriptionClassName,
@@ -83,8 +83,8 @@ export function Modal({
                     >
                       {description}
                     </p>
-                  )}
-                </div>
+                  </div>
+                )}
 
                 {children}
               </HModal.Panel>

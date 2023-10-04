@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.59
+
+### Patch Changes
+
+- update modal
+
 ## 1.79.58
 
 ### Patch Changes
