@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.57
+
+### Patch Changes
+
+- Update input masked text and input text area
+
 ## 1.79.56
 
 ### Patch Changes
