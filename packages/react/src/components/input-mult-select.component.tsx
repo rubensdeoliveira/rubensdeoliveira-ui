@@ -28,7 +28,7 @@ export type InputMultSelectProps = Omit<
 
 const containerStyles = cva('rdoui-w-full rdoui-flex rdoui-flex-col')
 const inputContainerStyles = cva(
-  'rdoui-flex rdoui-gap-3 rdoui-items-center rdoui-w-full',
+  'rdoui-flex rdoui-gap-3 rdoui-items-center rdoui-w-full rdoui-text-left',
 )
 const labelStyles = cva('')
 const errorSpanStyles = cva('')
@@ -48,6 +48,8 @@ export function InputMultSelect({
   inputContainerClassName,
   optionsContainerClassName,
   optionClassName,
+  defaultValue,
+  ...rest
 }: InputMultSelectProps) {
   const optionsWithoutLabel = options.map((optionItem) => optionItem.value)
 
@@ -57,6 +59,7 @@ export function InputMultSelect({
     <Controller
       name={name}
       control={control}
+      defaultValue={defaultValue}
       render={({ field }) => (
         <div className={containerStyles({ className: containerClassName })}>
           <label
@@ -69,6 +72,7 @@ export function InputMultSelect({
           </label>
           <div className="rdoui-w-full">
             <Listbox
+              {...rest}
               value={field.value}
               onChange={(option: string[]) => {
                 field.onChange(option)

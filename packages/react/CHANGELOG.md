@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.55
+
+### Patch Changes
+
+- fix: fix input mult select
+
 ## 1.79.54
 
 ### Patch Changes
