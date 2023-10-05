@@ -9,40 +9,45 @@ type TabContent = {
 
 export type TabsProps = {
   tabContents: TabContent[]
-  tabListContainerClassName?: string
-  tabContainerClassName?: ({ selected }: { selected: boolean }) => string
-  tabContentContainerClassName?: string
+  tabListClassName?: string
+  tabClassName?: ({ selected }: { selected: boolean }) => string
+  tabPanelsClassName?: string
+  tabPanelClassName?: string
 }
 
-const tabListContainerStyles = cva('rdoui-flex')
-const tabContentContainerStyles = cva('focus:rdoui-outline-none')
+const tabListStyles = cva('rdoui-flex')
+const tabPanelsStyles = cva('')
+const tabPanelStyles = cva('')
 
 export function Tabs({
   tabContents,
-  tabContainerClassName,
-  tabContentContainerClassName,
-  tabListContainerClassName,
+  tabListClassName,
+  tabPanelsClassName,
+  tabPanelClassName,
+  tabClassName,
 }: TabsProps) {
   return (
-    <div className="rdoui-w-full rdoui-max-w-md rdoui-px-2 rdoui-py-16 sm:rdoui-px-0">
+    <div className="rdoui-w-full">
       <Tab.Group>
         <Tab.List
-          className={tabListContainerStyles({
-            className: tabListContainerClassName,
+          className={tabListStyles({
+            className: tabListClassName,
           })}
         >
           {tabContents.map((tabContent, index) => (
-            <Tab key={index} className={tabContainerClassName}>
+            <Tab key={index} className={tabClassName}>
               {tabContent.tabTitle}
             </Tab>
           ))}
         </Tab.List>
-        <Tab.Panels className="rdoui-mt-2">
+        <Tab.Panels
+          className={tabPanelsStyles({ className: tabPanelsClassName })}
+        >
           {tabContents.map((tabContent, index) => (
             <Tab.Panel
               key={index}
-              className={tabContentContainerStyles({
-                className: tabContentContainerClassName,
+              className={tabPanelStyles({
+                className: tabPanelClassName,
               })}
             >
               {tabContent.children}

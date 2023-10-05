@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.61
+
+### Patch Changes
+
+- Update tabs
+
 ## 1.79.60
 
 ### Patch Changes
