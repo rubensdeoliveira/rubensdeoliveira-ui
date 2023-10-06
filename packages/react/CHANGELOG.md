@@ -1,5 +1,12 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.62
+
+### Patch Changes
+
+- change input select
+- change input select
+
 ## 1.79.61
 
 ### Patch Changes

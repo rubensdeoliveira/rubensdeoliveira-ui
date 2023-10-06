@@ -49,10 +49,13 @@ export function InputSelect({
   optionClassName,
   optionsContainerClassName,
   defaultValue,
+  placeholder,
   ...rest
 }: InputSelectProps) {
-  const [selectedOption, setSelectedOption] = useState(
-    options.find((option) => option.value === defaultValue) ?? options[0],
+  const [selectedOption, setSelectedOption] = useState<OptionProps | null>(
+    options.length > 0
+      ? options.find((option) => option.value === defaultValue) || options[0]
+      : { label: '', value: '' },
   )
 
   return (
@@ -86,7 +89,7 @@ export function InputSelect({
                   })}
                 >
                   <span className="rdoui-block rdoui-truncate flex-1">
-                    {selectedOption.label}
+                    {selectedOption?.label ?? placeholder}
                   </span>
                   <span className="rdoui-pointer-events-none rdoui-flex rdoui-items-center">
                     <HiChevronUpDown
@@ -120,14 +123,14 @@ export function InputSelect({
                           <>
                             <span
                               className={`rdoui-block rdoui-truncate ${
-                                selectedOption.value === option.value
+                                selectedOption?.value === option.value
                                   ? 'rdoui-font-medium'
                                   : 'rdoui-font-normal'
                               }`}
                             >
                               {option.label}
                             </span>
-                            {selectedOption.value === option.value ? (
+                            {selectedOption?.value === option.value ? (
                               <span className="rdoui-absolute rdoui-inset-y-0 rdoui-left-0 rdoui-flex rdoui-items-center rdoui-pl-3 rdoui-text-amber-600">
                                 <HiCheck
                                   className="rdoui-h-5 rdoui-w-5"
