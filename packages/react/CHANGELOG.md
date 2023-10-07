@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.63
+
+### Patch Changes
+
+- Add z index to select inputs
+
 ## 1.79.62
 
 ### Patch Changes

@@ -34,7 +34,7 @@ const inputContainerStyles = cva(
 const labelStyles = cva('')
 const errorSpanStyles = cva('')
 const optionsContainerStyles = cva(
-  'rdoui-absolute rdoui-mt-1 rdoui-max-h-60 rdoui-w-full rdoui-overflow-auto rdoui-py-1 focus:rdoui-outline-none',
+  'rdoui-absolute rdoui-z-10 rdoui-mt-1 rdoui-max-h-60 rdoui-w-full rdoui-overflow-auto rdoui-py-1 focus:rdoui-outline-none',
 )
 
 export function InputMultSelect({
