@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.64
+
+### Patch Changes
+
+- change continar padding
+
 ## 1.79.63
 
 ### Patch Changes

@@ -16,7 +16,7 @@ export type DialogProps = {
 }
 
 const containerStyles = cva(
-  'rdoui-w-full rdoui-transform rdoui-overflow-hidden rdoui-p-6 rdoui-text-left rdoui-align-middle rdoui-shadow-xl rdoui-transition-all',
+  'rdoui-w-full rdoui-transform rdoui-overflow-hidden rdoui-text-left rdoui-align-middle rdoui-shadow-xl rdoui-transition-all',
 )
 const titleStyles = cva('')
 const descriptionStyles = cva('')
