@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.65
+
+### Patch Changes
+
+- update datepicker
+
 ## 1.79.64
 
 ### Patch Changes

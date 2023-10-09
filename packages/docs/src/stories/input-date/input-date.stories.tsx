@@ -6,10 +6,9 @@ export default {
   title: 'Components/InputDate',
   component: InputDateHelper,
   args: {
-    name: 'password',
+    name: 'birthdate',
     inputContainerClassName: 'bg-white px-4',
-    label: 'Nome',
-    type: 'password',
+    label: 'Data de Nascimento',
   },
 } as Meta<InputDateProps>
 
