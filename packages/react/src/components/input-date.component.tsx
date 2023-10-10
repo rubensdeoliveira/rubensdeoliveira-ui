@@ -1,5 +1,4 @@
 import DatePicker, { ReactDatePickerProps } from 'react-datepicker'
-import 'react-datepicker/dist/react-datepicker.css'
 import { cva } from 'class-variance-authority'
 import { Button } from './button.component'
 import { Control, Controller } from 'react-hook-form'
