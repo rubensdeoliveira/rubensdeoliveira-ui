@@ -2,7 +2,7 @@ import { cva } from 'class-variance-authority'
 import Datepicker, { DatepickerType } from 'react-tailwindcss-datepicker'
 import { Control, Controller, FieldErrors } from 'react-hook-form'
 
-export type InputDateProps = DatepickerType & {
+export type InputDateProps = {
   name: string
   control: Control<any>
   label?: string
