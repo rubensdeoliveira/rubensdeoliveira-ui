@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.67
+
+### Patch Changes
+
+- change input date
+
 ## 1.79.66
 
 ### Patch Changes
