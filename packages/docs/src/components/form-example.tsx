@@ -6,15 +6,14 @@ import {
   InputAutoComplete,
   InputCheckbox,
   InputCurrency,
-  InputDate,
   InputMaskedText,
-  FormGroup,
   InputMultSelect,
   InputRadio,
   InputSwitch,
   InputTextArea,
-  Avatar,
+  FormGroup,
 } from '@rubensdeoliveira-ui/react'
+import { InputDate } from '@rubensdeoliveira-ui/react-datepicker'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 
@@ -85,7 +84,11 @@ export function FormExample() {
           <InputCurrency control={control} name="salary" />
         </FormGroup>
         <FormGroup>
-          <InputDate control={control} name="birthday" />
+          <InputDate
+            label="Data de Nascimento"
+            control={control}
+            name="birthday"
+          />
         </FormGroup>
         <FormGroup>
           <InputMaskedText control={control} name="phone" mask="telefone" />
