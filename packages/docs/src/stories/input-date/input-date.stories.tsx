@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { InputDateProps } from '@rubensdeoliveira-ui/react'
+import { InputDateProps } from '@rubensdeoliveira-ui/react-datepicker'
 import { InputDateHelper } from './input-date.component.wrapper'
 
 export default {
@@ -7,8 +7,6 @@ export default {
   component: InputDateHelper,
   args: {
     name: 'birthdate',
-    inputContainerClassName: 'bg-white px-4',
-    label: 'Data de Nascimento',
   },
 } as Meta<InputDateProps>
 

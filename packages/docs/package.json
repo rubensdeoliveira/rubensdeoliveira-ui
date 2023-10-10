@@ -42,6 +42,7 @@
   },
   "dependencies": {
     "@rubensdeoliveira-ui/react": "*",
+    "@rubensdeoliveira-ui/react-datepicker": "*",
     "@rubensdeoliveira-ui/tokens": "*",
     "@rubensdeoliveira-ui/ts-config": "*",
     "@storybook/addon-controls": "^7.4.1",

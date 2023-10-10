@@ -2,6 +2,7 @@ import { themes } from '@storybook/theming'
 
 import '../src/styles/global.css'
 import '@rubensdeoliveira-ui/react/dist/index.css'
+import '@rubensdeoliveira-ui/react-datepicker/dist/index.css'
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
