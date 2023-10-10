@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react-datepicker
 
+## 1.0.3
+
+### Patch Changes
+
+- add dayjs to react datepicker package
+
 ## 1.0.2
 
 ### Patch Changes
