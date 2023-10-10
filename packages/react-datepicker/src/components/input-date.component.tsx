@@ -1,5 +1,5 @@
 import { cva } from 'class-variance-authority'
-import Datepicker, { DatepickerType } from 'react-tailwindcss-datepicker'
+import Datepicker from 'react-tailwindcss-datepicker'
 import { Control, Controller, FieldErrors } from 'react-hook-form'
 
 export type InputDateProps = {
