@@ -1,13 +1,13 @@
 {
   "name": "@rubensdeoliveira-ui/react-datepicker",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "tsup src/index.tsx --format esm,cjs --dts --external react react-hook-form dayjs",
-    "dev": "tsup src/index.tsx --format esm,cjs --dts --external react react-hook-form dayjs --watch",
+    "build": "tsup src/index.tsx --format esm,cjs --dts --external react react-hook-form",
+    "dev": "tsup src/index.tsx --format esm,cjs --dts --external react react-hook-form --watch",
     "lint": "eslint src/**/*.ts* --fix"
   },
   "files": [
@@ -23,7 +23,6 @@
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
     "autoprefixer": "10.4.13",
-    "dayjs": "^1.11.10",
     "eslint": "8.44.0",
     "eslint-config-next": "13.4.8",
     "postcss": "8.4.21",
@@ -36,6 +35,7 @@
   },
   "dependencies": {
     "class-variance-authority": "0.4.0",
-    "react-tailwindcss-datepicker": "^1.6.6"
+    "react-tailwindcss-datepicker": "^1.6.6",
+    "dayjs": "^1.11.10"
   }
 }
