@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.69
+
+### Patch Changes
+
+- update input text
+
 ## 1.79.68
 
 ### Patch Changes

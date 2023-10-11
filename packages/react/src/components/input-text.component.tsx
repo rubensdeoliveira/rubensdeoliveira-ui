@@ -80,6 +80,9 @@ export function InputText({
               onChange={(value) => {
                 if (value) {
                   field.onChange(value)
+                  if (onChange) {
+                    onChange(value)
+                  }
                 }
               }}
               id={name}
