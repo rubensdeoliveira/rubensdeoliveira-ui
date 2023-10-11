@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.70
+
+### Patch Changes
+
+- update input select
+
 ## 1.79.69
 
 ### Patch Changes

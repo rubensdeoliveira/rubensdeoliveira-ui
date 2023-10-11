@@ -54,7 +54,10 @@ export function InputSelect({
 }: InputSelectProps) {
   const [selectedOption, setSelectedOption] = useState<OptionProps | null>(
     options.length > 0
-      ? options.find((option) => option.value === defaultValue) || options[0]
+      ? options.find((option) => option.value === defaultValue) || {
+          label: '',
+          value: '',
+        }
       : { label: '', value: '' },
   )
 
