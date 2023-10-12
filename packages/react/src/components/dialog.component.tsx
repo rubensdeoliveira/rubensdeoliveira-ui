@@ -13,6 +13,7 @@ export type DialogProps = {
   titleClassName?: string
   descriptionClassName?: string
   buttonsContainerClassName?: string
+  customBody: ReactElement
 }
 
 const containerStyles = cva(
@@ -33,6 +34,7 @@ export function Dialog({
   descriptionClassName,
   titleClassName,
   buttonsContainerClassName,
+  customBody,
 }: DialogProps) {
   async function handleSetOpen(open: boolean) {
     setOpen(open)
@@ -88,6 +90,7 @@ export function Dialog({
                     {description}
                   </p>
                 )}
+                {customBody}
 
                 <div
                   className={buttonsContainerStyles({

@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.73
+
+### Patch Changes
+
+- add custom body prop to dialog
+
 ## 1.79.72
 
 ### Patch Changes
