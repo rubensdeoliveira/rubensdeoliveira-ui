@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.72
+
+### Patch Changes
+
+- change dialog buttons props
+
 ## 1.79.71
 
 ### Patch Changes

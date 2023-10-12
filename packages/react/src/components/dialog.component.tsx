@@ -1,12 +1,11 @@
 import { Dialog as HDialog, Transition } from '@headlessui/react'
-import { Fragment } from 'react'
-import { Button, ButtonProps } from './button.component'
 import { cva } from 'class-variance-authority'
+import { Fragment, ReactElement } from 'react'
 
 export type DialogProps = {
   isOpen: boolean
-  primaryButton: ButtonProps
-  secondaryButton?: ButtonProps
+  primaryButton: ReactElement
+  secondaryButton?: ReactElement
   setOpen: (open: boolean) => void
   title?: string
   description?: string
@@ -95,8 +94,8 @@ export function Dialog({
                     className: buttonsContainerClassName,
                   })}
                 >
-                  <Button {...secondaryButton} />
-                  <Button {...primaryButton} />
+                  {secondaryButton}
+                  {primaryButton}
                 </div>
               </HDialog.Panel>
             </Transition.Child>
