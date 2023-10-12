@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.71
+
+### Patch Changes
+
+- change dialog and tabs
+
 ## 1.79.70
 
 ### Patch Changes

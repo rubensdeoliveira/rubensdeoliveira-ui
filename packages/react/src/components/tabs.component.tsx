@@ -17,7 +17,7 @@ export type TabsProps = {
 
 const tabListStyles = cva('rdoui-flex')
 const tabPanelsStyles = cva('')
-const tabPanelStyles = cva('')
+const tabPanelStyles = cva('rdoui-outline-none')
 
 export function Tabs({
   tabContents,

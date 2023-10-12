@@ -13,6 +13,7 @@ export type DialogProps = {
   containerClassName?: string
   titleClassName?: string
   descriptionClassName?: string
+  buttonsContainerClassName?: string
 }
 
 const containerStyles = cva(
@@ -20,6 +21,7 @@ const containerStyles = cva(
 )
 const titleStyles = cva('')
 const descriptionStyles = cva('')
+const buttonsContainerStyles = cva('')
 
 export function Dialog({
   isOpen,
@@ -31,6 +33,7 @@ export function Dialog({
   containerClassName,
   descriptionClassName,
   titleClassName,
+  buttonsContainerClassName,
 }: DialogProps) {
   async function handleSetOpen(open: boolean) {
     setOpen(open)
@@ -77,19 +80,21 @@ export function Dialog({
                     {title}
                   </HDialog.Title>
                 )}
-                <div className="rdoui-mt-2">
-                  {description && (
-                    <p
-                      className={descriptionStyles({
-                        className: descriptionClassName,
-                      })}
-                    >
-                      {description}
-                    </p>
-                  )}
-                </div>
+                {description && (
+                  <p
+                    className={descriptionStyles({
+                      className: descriptionClassName,
+                    })}
+                  >
+                    {description}
+                  </p>
+                )}
 
-                <div className="rdoui-mt-4">
+                <div
+                  className={buttonsContainerStyles({
+                    className: buttonsContainerClassName,
+                  })}
+                >
                   <Button {...secondaryButton} />
                   <Button {...primaryButton} />
                 </div>
