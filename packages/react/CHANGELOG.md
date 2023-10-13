@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.74
+
+### Patch Changes
+
+- add reacr renderizer
+
 ## 1.79.73
 
 ### Patch Changes
