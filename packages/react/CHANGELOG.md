@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.76
+
+### Patch Changes
+
+- change custom body prop to optional on dialog
+
 ## 1.79.75
 
 ### Patch Changes

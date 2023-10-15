@@ -13,7 +13,7 @@ export type DialogProps = {
   titleClassName?: string
   descriptionClassName?: string
   buttonsContainerClassName?: string
-  customBody: ReactElement
+  customBody?: ReactElement
 }
 
 const containerStyles = cva(
