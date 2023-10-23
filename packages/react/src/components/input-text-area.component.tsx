@@ -45,12 +45,16 @@ export function InputTextArea({
       defaultValue={defaultValue}
       render={({ field }) => (
         <div className={containerStyles({ className: containerClassName })}>
-          <label
-            htmlFor={name}
-            className={labelStyles({ className: labelClassName })}
-          >
-            {label}
-          </label>
+          {label && (
+            <label
+              htmlFor={name}
+              className={labelStyles({
+                className: labelClassName,
+              })}
+            >
+              {label}
+            </label>
+          )}
           <textarea
             {...field}
             {...rest}

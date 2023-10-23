@@ -49,14 +49,16 @@ export function InputTextUncontrolled({
   const [showPassword, setShowPassword] = useState<boolean>(!password)
   return (
     <div className={containerStyles({ className: containerClassName })}>
-      <label
-        htmlFor={name}
-        className={labelStyles({
-          className: labelClassName,
-        })}
-      >
-        {label}
-      </label>
+      {label && (
+        <label
+          htmlFor={name}
+          className={labelStyles({
+            className: labelClassName,
+          })}
+        >
+          {label}
+        </label>
+      )}
       <div
         className={inputContainerStyles({
           className: inputContainerClassName,
