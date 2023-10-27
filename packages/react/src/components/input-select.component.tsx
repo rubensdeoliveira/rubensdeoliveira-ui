@@ -55,10 +55,10 @@ export function InputSelect({
   const [selectedOption, setSelectedOption] = useState<OptionProps | null>(
     options.length > 0
       ? options.find((option) => option.value === defaultValue) || {
-          label: '',
+          label: placeholder ?? '',
           value: '',
         }
-      : { label: '', value: '' },
+      : { label: placeholder ?? '', value: '' },
   )
 
   return (

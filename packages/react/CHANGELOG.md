@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.78
+
+### Patch Changes
+
+- Add placeholder to input select
+
 ## 1.79.77
 
 ### Patch Changes
