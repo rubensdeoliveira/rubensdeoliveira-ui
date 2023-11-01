@@ -141,6 +141,7 @@ export function InputMultSelect({
                           <>
                             <span
                               className={`rdoui-block rdoui-truncate ${
+                                field.value.includes(option) ||
                                 selectedOptions.includes(option)
                                   ? 'rdoui-font-medium'
                                   : 'rdoui-font-normal'
@@ -152,7 +153,8 @@ export function InputMultSelect({
                                 )?.label
                               }
                             </span>
-                            {selectedOptions.includes(option) ? (
+                            {field.value.includes(option) ||
+                            selectedOptions.includes(option) ? (
                               <span className="rdoui-absolute rdoui-inset-y-0 rdoui-left-0 rdoui-flex rdoui-items-center rdoui-pl-3 rdoui-text-amber-600">
                                 <HiCheck
                                   className="rdoui-h-5 rdoui-w-5"
