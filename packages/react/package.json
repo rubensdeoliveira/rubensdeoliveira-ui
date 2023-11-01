@@ -1,6 +1,6 @@
 {
   "name": "@rubensdeoliveira-ui/react",
-  "version": "1.79.78",
+  "version": "1.79.79",
   "description": "",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -21,7 +21,6 @@
     "@rubensdeoliveira-ui/tokens": "*",
     "@rubensdeoliveira-ui/ts-config": "*",
     "@types/react": "^18.0.27",
-    "@types/react-datepicker": "^4.15.0",
     "@types/react-dom": "^18.0.10",
     "@types/react-html-parser": "^2.0.3",
     "@types/react-input-mask": "3.0.2",
@@ -48,7 +47,6 @@
     "jotai": "2.0.0",
     "npm": "8.0.0",
     "react-currency-input-field": "^3.6.11",
-    "react-datepicker": "^4.16.0",
     "react-html-parser": "^2.0.2",
     "react-icons": "^4.11.0",
     "react-input-mask": "3.0.0-alpha.2"

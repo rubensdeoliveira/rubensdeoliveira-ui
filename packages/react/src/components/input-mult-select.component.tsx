@@ -92,14 +92,22 @@ export function InputMultSelect({
                   })}
                 >
                   <span className="rdoui-block rdoui-truncate flex-1">
-                    {selectedOptions
-                      .map(
-                        (selectedOption) =>
-                          options.find(
-                            (optionItem) => optionItem.value === selectedOption,
-                          )?.label,
-                      )
-                      .join(', ')}
+                    {field.value
+                      ? options
+                          .filter((option) =>
+                            field.value.includes(option.value),
+                          )
+                          .map((option) => option.label)
+                          .join(', ')
+                      : selectedOptions
+                          .map(
+                            (selectedOption) =>
+                              options.find(
+                                (optionItem) =>
+                                  optionItem.value === selectedOption,
+                              )?.label,
+                          )
+                          .join(', ')}
                   </span>
                   <span className="rdoui-pointer-events-none rdoui-flex rdoui-items-center">
                     <HiChevronUpDown

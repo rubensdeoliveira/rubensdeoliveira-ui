@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.79
+
+### Patch Changes
+
+- change input mult select
+
 ## 1.79.78
 
 ### Patch Changes

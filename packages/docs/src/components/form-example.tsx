@@ -13,7 +13,6 @@ import {
   InputTextArea,
   FormGroup,
 } from '@rubensdeoliveira-ui/react'
-import { InputDate } from '@rubensdeoliveira-ui/react-datepicker'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 
@@ -44,87 +43,24 @@ export function FormExample() {
   return (
     <div className="flex flex-col gap-10 bg-red-300 p-10 rounded">
       <Form onSubmit={handleSubmit(handleSubmitForm)} className="gap-4">
-        <FormGroup>
-          <InputText name="name" control={control} />
-        </FormGroup>
-        <FormGroup>
-          <InputText name="email" control={control} containerClassName="px-0" />
-          <InputText name="password" control={control} type="password" />
-        </FormGroup>
-        <FormGroup>
-          <InputSelect
-            control={control}
-            name="occupation"
-            options={[
-              { label: 'Programador', value: 'programador' },
-              { label: 'Engenheiro', value: 'engenheiro' },
-              { label: 'Dentista', value: 'dentista' },
-            ]}
-          />
-        </FormGroup>
-        <FormGroup>
-          <InputAutoComplete
-            control={control}
-            name="sport"
-            options={[
-              { label: 'Futebol', value: 'futebol' },
-              { label: 'Vôlei', value: 'vôlei' },
-              { label: 'Atletismo', value: 'atletismo' },
-            ]}
-          />
-        </FormGroup>
-        <FormGroup>
-          <InputCheckbox
-            control={control}
-            name="acceptTerms"
-            label="Aceito os termos"
-          />
-        </FormGroup>
-        <FormGroup>
-          <InputCurrency control={control} name="salary" />
-        </FormGroup>
-        <FormGroup>
-          <InputDate
-            label="Data de Nascimento"
-            control={control}
-            name="birthday"
-          />
-        </FormGroup>
-        <FormGroup>
-          <InputMaskedText control={control} name="phone" mask="telefone" />
-        </FormGroup>
-        <FormGroup>
-          <InputMultSelect
-            control={control}
-            name="hobbies"
-            options={[
-              { label: 'Karate', value: 'karate' },
-              { label: 'Futebol', value: 'futebol' },
-              { label: 'Cantar', value: 'cantar' },
-            ]}
-          />
-        </FormGroup>
-        <FormGroup>
-          <InputRadio
-            control={control}
-            name="gender"
-            options={[
-              { label: 'Masculino', value: 'male' },
-              { label: 'Feminino', value: 'female' },
-            ]}
-            renderRadioItemBody={(item, option) => (
-              <span className={item.checked ? 'text-red-500' : 'text-blue-500'}>
-                {option.label}
-              </span>
-            )}
-          />
-        </FormGroup>
-        <FormGroup>
-          <InputSwitch control={control} name="isOrganDonor" />
-        </FormGroup>
-        <FormGroup>
-          <InputTextArea rows={10} control={control} name="about" />
-        </FormGroup>
+        <InputMultSelect
+          containerClassName="gap-[0.8125rem] items-start"
+          inputContainerClassName={`border-d-input-border focus:border-red-500 py-[1.0625rem] px-6 border rounded-[12px] bg-d-bg-two shadow-[0px_4px_6px_0px_rgba(62,73,84,0.04)] text-d-text-one`}
+          labelClassName="leading-[1.5] font-semibold text-d-text-one"
+          errorSpanClassName="bg-red-500"
+          optionClassName={({ active }) =>
+            `${active ? 'bg-blue-500' : 'bg-white'}`
+          }
+          optionsContainerClassName="rounded-[12px]"
+          control={control}
+          name="hobbies"
+          options={[
+            { label: 'Karate', value: 'karate' },
+            { label: 'Futebol', value: 'futebol' },
+            { label: 'Cantar', value: 'cantar' },
+          ]}
+          label="Hobbies"
+        />
         <Button label="Enviar" containerClassName="bg-red-500" type="submit" />
       </Form>
 
