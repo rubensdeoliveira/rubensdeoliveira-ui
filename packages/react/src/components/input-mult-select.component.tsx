@@ -137,33 +137,36 @@ export function InputMultSelect({
                           }`
                         }
                       >
-                        {({ selected }) => (
-                          <>
-                            <span
-                              className={`rdoui-block rdoui-truncate ${
-                                field.value.includes(option) ||
-                                selectedOptions.includes(option)
-                                  ? 'rdoui-font-medium'
-                                  : 'rdoui-font-normal'
-                              }`}
-                            >
-                              {
-                                options.find(
-                                  (optionItem) => optionItem.value === option,
-                                )?.label
-                              }
-                            </span>
-                            {field.value.includes(option) ||
-                            selectedOptions.includes(option) ? (
-                              <span className="rdoui-absolute rdoui-inset-y-0 rdoui-left-0 rdoui-flex rdoui-items-center rdoui-pl-3 rdoui-text-amber-600">
-                                <HiCheck
-                                  className="rdoui-h-5 rdoui-w-5"
-                                  aria-hidden="true"
-                                />
+                        {({ selected }) => {
+                          const selectedOptionsOrFieldValue = field.value
+                            ? field.value
+                            : selectedOptions
+                          return (
+                            <>
+                              <span
+                                className={`rdoui-block rdoui-truncate ${
+                                  selectedOptionsOrFieldValue.includes(option)
+                                    ? 'rdoui-font-medium'
+                                    : 'rdoui-font-normal'
+                                }`}
+                              >
+                                {
+                                  options.find(
+                                    (optionItem) => optionItem.value === option,
+                                  )?.label
+                                }
                               </span>
-                            ) : null}
-                          </>
-                        )}
+                              {selectedOptionsOrFieldValue.includes(option) ? (
+                                <span className="rdoui-absolute rdoui-inset-y-0 rdoui-left-0 rdoui-flex rdoui-items-center rdoui-pl-3 rdoui-text-amber-600">
+                                  <HiCheck
+                                    className="rdoui-h-5 rdoui-w-5"
+                                    aria-hidden="true"
+                                  />
+                                </span>
+                              ) : null}
+                            </>
+                          )
+                        }}
                       </Listbox.Option>
                     ))}
                   </Listbox.Options>

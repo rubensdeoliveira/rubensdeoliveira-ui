@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.81
+
+### Patch Changes
+
+- update mult select
+
 ## 1.79.80
 
 ### Patch Changes
