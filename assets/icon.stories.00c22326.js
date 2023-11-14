@@ -1,0 +1,2 @@
+import{n as t,o as a}from"./index.0f4172ef.js";const n={title:"Components/Icon",component:t,args:{name:a,className:"text-white",size:24}},e={};var o,r,s;e.parameters={...e.parameters,docs:{...(o=e.parameters)==null?void 0:o.docs,source:{originalSource:"{}",...(s=(r=e.parameters)==null?void 0:r.docs)==null?void 0:s.source}}};const c=["Sample"],p=Object.freeze(Object.defineProperty({__proto__:null,default:n,Sample:e,__namedExportsOrder:c},Symbol.toStringTag,{value:"Module"}));export{p as I,e as S};
+//# sourceMappingURL=icon.stories.00c22326.js.map

@@ -1,0 +1,2 @@
+var r={white:"#ffffff",gray300:"#D9D9D9",gray500:"#2A2A39",gray900:"#2E2E30",red500:"#d2140a",red900:"#6C0C0F"},a={16:`${16/16}rem`,24:`${24/16}rem`,32:`${32/16}rem`,40:`${40/16}rem`,48:`${48/16}rem`},e={16:`${16/16}rem`},s={default:"Roboto, sans-serif",code:"monospace"},f={10:`${10/16}rem`},o={100:"100",300:"300",400:"400",500:"500",600:"600",700:"700",900:"900"},t={1:1,"1.1":1.1,"1.2":1.2,"1.3":1.3,"1.4":1.4,"1.5":1.5,"1.6":1.6,"1.7":1.7,"1.8":1.8,"1.9":1.9,2:2};export{o as a,f as b,r as c,s as f,t as l,a as p,e as r};
+//# sourceMappingURL=index.a962db6b.js.map

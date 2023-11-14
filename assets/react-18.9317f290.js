@@ -1,0 +1,2 @@
+import{a as c,j as m,r as a}from"./index.50596548.js";var n={},s=c.exports;n.createRoot=s.createRoot,n.hydrateRoot=s.hydrateRoot;var o=new Map,R=({callback:e,children:t})=>{let r=a.exports.useRef();return a.exports.useLayoutEffect(()=>{r.current!==e&&(r.current=e,e())},[e]),t},l=async(e,t)=>{let r=await d(t);return new Promise(u=>{r.render(m(R,{callback:()=>u(null),children:e}))})},p=(e,t)=>{let r=o.get(e);r&&(r.unmount(),o.delete(e))},d=async e=>{let t=o.get(e);return t||(t=n.createRoot(e),o.set(e,t)),t};export{l as r,p as u};
+//# sourceMappingURL=react-18.9317f290.js.map
