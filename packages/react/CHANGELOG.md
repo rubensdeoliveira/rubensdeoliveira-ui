@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.82
+
+### Patch Changes
+
+- change toast
+
 ## 1.79.81
 
 ### Patch Changes

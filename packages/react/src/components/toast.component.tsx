@@ -11,6 +11,9 @@ export type ToastProps = {
   timerInSeconds?: number
   type?: 'warning' | 'error' | 'success'
   colorType?: 'solid' | 'light'
+  containerClassName?: string
+  titleClassName?: string
+  descriptionClassName?: string
 }
 
 const containerStyles = cva(
@@ -35,6 +38,10 @@ const containerStyles = cva(
   },
 )
 
+const titleStyles = cva('')
+
+const descriptionStyles = cva('')
+
 export function Toast({
   title,
   description,
@@ -42,6 +49,9 @@ export function Toast({
   isOpen,
   colorType = 'light',
   type = 'error',
+  containerClassName,
+  titleClassName,
+  descriptionClassName,
 }: ToastProps) {
   const [open, setOpen] = useState(false)
   const time = timerInSeconds * 1000
@@ -67,16 +77,23 @@ export function Toast({
       <RadixToast.Root
         className={containerStyles({
           color: `${colorType}-${type}`,
+          className: containerClassName,
         })}
         open={open}
         onOpenChange={setOpen}
       >
         <div>
-          <RadixToast.Title className="rdoui-text-sm rdoui-font-inter">
+          <RadixToast.Title
+            className={titleStyles({ className: titleClassName })}
+          >
             {title}
           </RadixToast.Title>
           {description && (
-            <RadixToast.Description>{description}</RadixToast.Description>
+            <RadixToast.Description
+              className={descriptionStyles({ className: descriptionClassName })}
+            >
+              {description}
+            </RadixToast.Description>
           )}
         </div>
         <RadixToast.Close>
