@@ -20,7 +20,7 @@ export type InputCurrencyProps = Omit<
 
 const containerStyles = cva('rdoui-w-full rdoui-flex rdoui-flex-col')
 const labelStyles = cva('')
-const inputStyles = cva()
+const inputStyles = cva('rdoui-overflow-hidden')
 const errorSpanStyles = cva('')
 
 export function InputCurrency({

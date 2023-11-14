@@ -29,7 +29,7 @@ export type InputMultSelectProps = Omit<
 
 const containerStyles = cva('rdoui-w-full rdoui-flex rdoui-flex-col')
 const inputContainerStyles = cva(
-  'rdoui-flex rdoui-gap-3 rdoui-items-center rdoui-w-full rdoui-text-left',
+  'rdoui-flex rdoui-gap-3 rdoui-items-center rdoui-w-full rdoui-text-left rdoui-overflow-hidden',
 )
 const labelStyles = cva('')
 const errorSpanStyles = cva('')

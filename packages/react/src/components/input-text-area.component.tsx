@@ -19,7 +19,7 @@ export type InputTextAreaProps = Omit<
 
 const containerStyles = cva('rdoui-w-full rdoui-flex rdoui-flex-col')
 
-const inputStyles = cva('rdoui-w-full rdoui-outline-none')
+const inputStyles = cva('rdoui-w-full rdoui-outline-none rdoui-overflow-hidden')
 
 const labelStyles = cva('')
 

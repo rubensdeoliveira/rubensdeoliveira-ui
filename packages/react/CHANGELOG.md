@@ -1,5 +1,11 @@
 # @rubensdeoliveira-ui/react
 
+## 1.79.83
+
+### Patch Changes
+
+- update inputs with overflow hidden
+
 ## 1.79.82
 
 ### Patch Changes

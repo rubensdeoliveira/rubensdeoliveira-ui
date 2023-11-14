@@ -30,7 +30,7 @@ const inputContainerStyles = cva(
 )
 const labelStyles = cva('')
 const inputStyles = cva(
-  'rdoui-flex-1 !rdoui-bg-[transparent] rdoui-outline-none',
+  'rdoui-flex-1 !rdoui-bg-[transparent] rdoui-outline-none rdoui-overflow-hidden',
 )
 const iconStyles = cva('')
 const errorSpanStyles = cva('')
